@@ -67,7 +67,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
 5. If **Action Required** pop-up window appears, click on **Ask later**.
 
-      ![](../media/ActionRequired.png)
+     ![](../Labs/images/ActionRequired.png)
  
 6. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Maybe Later" to skip the tour.
  
