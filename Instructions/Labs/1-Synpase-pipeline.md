@@ -62,25 +62,45 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 
 The source data for this exercise is a text file containing product data. The destination is a table in a dedicated SQL pool. Your goal is to create a pipeline that encapsulates a data flow in which the product data in the file is loaded into the table; inserting new products and updating existing ones.
 
+In this task, you will be verifying the data stores by checking the files using Synapse Studio
+
 1. After the script has completed, in the Azure portal, go to the **dp203-*xxxxxxx*** resource group that it created, and select your Synapse workspace.
+
+   ![](images/)
+
 2. In the **Overview** page for your Synapse Workspace, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; signing in if prompted.
+
+   ![](images/)
+
 3. On the left side of Synapse Studio, use the ›› icon to expand the menu - this reveals the different pages within Synapse Studio that you’ll use to manage resources and perform data analytics tasks.
+
+   ![](images/)
+
 4. On the **Manage** page, on the **SQL pools** tab, select the row for the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655;** icon to start it; confirming that you want to resume it when prompted.
 
      Resuming the pool can take a few minutes. You can use the **&#8635; Refresh** button to check its status periodically. The status will show as **Online** when it's ready. While you're waiting, continue with the steps below to view the source data.
 
 5. On the **Data** page, view the **Linked** tab and verify that your workspace includes a link to your Azure Data Lake Storage Gen2 storage account, which should have a name similar to **synapse*xxxxxxx* (Primary - datalake*xxxxxxx*)**.
+
+   ![](images/)
+
 6. Expand your storage account and verify that it contains a file system container named **files (primary)**.
+
 7. Select the files container, and note that it contains a folder named **data**.
+
 8. Open the **data** folder and observe the **Product.csv** file it contains.
+
 9. Right-click **Product.csv** and select **Preview** to see the data it contains. Note that it contains a header row and some records of product data.
+
 10. Return to the **Manage** page and ensure that your dedicated SQL pool is now online. If not, wait for it.
+
 11. In the **Data** page, on the **Workspace** tab, expand **SQL database**, your **sql*xxxxxxx* (SQL)** database, and its **Tables**.
+
 12. Select the **dbo.DimProduct** table. Then in its **...** menu, select **New SQL script** > **Select TOP 100 rows**; which will run a query that returns the product data from the table - there should be a single row.
 
 ## Task 3: Implement a pipeline
 
-To load the data in the text file into the database table, you will implement an Azure Synapse Analytics pipeline that contains a dataflow encapsulating the logic to ingest the data from the text file, lookup the surrogate **ProductKey** column for products that already exist in the database, and then insert or update rows in the table accordingly.
+In this task, you will implement an Azure Synapse Analytics pipeline that contains a dataflow encapsulating the logic to ingest the data from the text file, lookup the surrogate **ProductKey** column for products that already exist in the database, and then insert or update rows in the table accordingly.
 
 ### Task 3.1: Create a pipeline with a data flow activity
 
@@ -236,7 +256,7 @@ To load the data in the text file into the database table, you will implement an
 
 ## Task 4: Debug the Data Flow
 
-Now that you've built a data flow in a pipeline, you can debug it before publishing.
+In this task, you will be debugging the dataflow without publishing it..
 
 1. At the top of the data flow designer, enabled **Data flow debug**. Review the default configuration and select **OK**, then wait for the debug cluster to start (which may take a few minutes).
 2. In the data flow designer, select the **DimProductTable** sink and view its **Data preview** tab.
@@ -248,7 +268,7 @@ Now that you've built a data flow in a pipeline, you can debug it before publish
 
 ## Task 5: Publish and run the pipeline
 
-Now you're ready to publish and run the pipeline.
+In this task, you will be publishing the pipeline as you have reviewed it and run it.
 
 1. Use the **Publish all** button to publish the pipeline (and any other unsaved assets) and on **Publish all** pane click on **Publish**.
 2. When publishing is complete, close the **LoadProductsData** data flow pane and return to the **Load Product Data** pipeline pane.
@@ -265,17 +285,15 @@ Now you're ready to publish and run the pipeline.
     ![Screenshot of an empty data flow activity.](./images/lab1-new4.png)
 
 
-## Validation
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="85f12513-502b-47c1-9ac9-d820218a0f93" />
 
-## Review
+## Summary
 
-In this lab, you have accomplished the following:
-
-- View source and destination data stores.
-- Implement a pipeline.
-- Debug the Data Flow.
-- Publish and run the pipeline.
+In this lab, you have accomplished the following: you have viewed both the source and destination data stores to understand the data flow. You have implemented a pipeline to facilitate data movement and transformations. You have debugged the Data Flow to ensure everything functioned as expected. Finally, you have published and run the pipeline, completing the data integration process.
 
 ## You have successfully completed the lab.
