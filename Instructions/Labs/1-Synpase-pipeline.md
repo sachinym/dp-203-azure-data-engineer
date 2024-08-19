@@ -12,6 +12,7 @@ In this lab, you will be able to complete the following tasks:
 - Task 2: View source and destination data stores
 - Task 3: Implement a pipeline
 - Task 4: Debug the Data Flow
+- Task 5: Publish and run the pipeline
 
 ### Estimated timing: 45 minutes
 
@@ -66,15 +67,11 @@ In this task, you will be verifying the data stores by checking the files using 
 
 1. After the script has completed, in the Azure portal, go to the **dp203-*xxxxxxx*** resource group that it created, and select your Synapse workspace.
 
-   ![](images/)
-
 2. In the **Overview** page for your Synapse Workspace, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; signing in if prompted.
 
-   ![](images/)
+   ![](images/labimg2.png)
 
 3. On the left side of Synapse Studio, use the ›› icon to expand the menu - this reveals the different pages within Synapse Studio that you’ll use to manage resources and perform data analytics tasks.
-
-   ![](images/)
 
 4. On the **Manage** page, on the **SQL pools** tab, select the row for the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655;** icon to start it; confirming that you want to resume it when prompted.
 
@@ -82,21 +79,29 @@ In this task, you will be verifying the data stores by checking the files using 
 
 5. On the **Data** page, view the **Linked** tab and verify that your workspace includes a link to your Azure Data Lake Storage Gen2 storage account, which should have a name similar to **synapse*xxxxxxx* (Primary - datalake*xxxxxxx*)**.
 
-   ![](images/)
+   ![](images/labimg3.png)
 
 6. Expand your storage account and verify that it contains a file system container named **files (primary)**.
 
 7. Select the files container, and note that it contains a folder named **data**.
 
+   ![](images/labimg15.png)
+
 8. Open the **data** folder and observe the **Product.csv** file it contains.
 
 9. Right-click **Product.csv** and select **Preview** to see the data it contains. Note that it contains a header row and some records of product data.
+
+   ![](images/labimg16.png)
 
 10. Return to the **Manage** page and ensure that your dedicated SQL pool is now online. If not, wait for it.
 
 11. In the **Data** page, on the **Workspace** tab, expand **SQL database**, your **sql*xxxxxxx* (SQL)** database, and its **Tables**.
 
+    ![](images/labimg17.png)
+
 12. Select the **dbo.DimProduct** table. Then in its **...** menu, select **New SQL script** > **Select TOP 100 rows**; which will run a query that returns the product data from the table - there should be a single row.
+
+    ![](images/labimg18.png)
 
 ## Task 3: Implement a pipeline
 
@@ -259,24 +264,38 @@ In this task, you will implement an Azure Synapse Analytics pipeline that contai
 In this task, you will be debugging the dataflow without publishing it..
 
 1. At the top of the data flow designer, enabled **Data flow debug**. Review the default configuration and select **OK**, then wait for the debug cluster to start (which may take a few minutes).
+
+   ![](images/labimg21.png)
+
 2. In the data flow designer, select the **DimProductTable** sink and view its **Data preview** tab.
 
    >**Note**: kindly collapse **Integrate** pane to view **Data preview** tab.
    
 3. Use the **&#8635; Refresh** button to refresh the preview, which has the effect of running data through the data flow to debug it.
+
+   ![](images/labimg20.png)
+
 4. Review the preview data, noting that it indicates one upserted row (for the existing *AR5381* product), indicated by a **<sub>*</sub><sup>+</sup>** icon; and ten inserted rows, indicated by a **+** icon.
+
+   ![](images/labimg19.png)
 
 ## Task 5: Publish and run the pipeline
 
 In this task, you will be publishing the pipeline as you have reviewed it and run it.
 
 1. Use the **Publish all** button to publish the pipeline (and any other unsaved assets) and on **Publish all** pane click on **Publish**.
+
+   ![](images/labimg22.png)
+
 2. When publishing is complete, close the **LoadProductsData** data flow pane and return to the **Load Product Data** pipeline pane.
+
 3. At the top of the pipeline designer pane, select **Add trigger** menu, click **Trigger now**. Then select **OK** to confirm you want to run the pipeline.
 
     >**Note**: You can also create a trigger to run the pipeline at a scheduled time or in response to a specific event.
 
 4. When the pipeline has started running, on the **Monitor** page, view the **Pipeline runs** tab and review the status of the **Load Product Data** pipeline.
+
+   ![](images/labimg23.png)
 
     >**Note**: The pipeline may take five minutes or longer to complete. You can use the **&#8635; Refresh** button on the toolbar to check its status.
 
