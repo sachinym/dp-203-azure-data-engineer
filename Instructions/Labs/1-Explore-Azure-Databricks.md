@@ -25,7 +25,7 @@ In this lab, you will perform:
 
 ## Task 1: Provision an Azure Databricks workspace
 
-In this exercise, you'll use a script to provision a new Azure Databricks workspace.
+In this task, you'll use a script to provision a new Azure Databricks workspace.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
@@ -78,6 +78,8 @@ In this exercise, you'll use a script to provision a new Azure Databricks worksp
 
 Azure Databricks is a distributed processing platform that uses Apache Spark *clusters* to process data in parallel on multiple nodes. Each cluster consists of a driver node to coordinate the work, and worker nodes to perform processing tasks.
 
+In this task, you will create a cluster in the Azure Databricks Portal.
+
 > **Note**: In this exercise, you'll create a *single-node* cluster to minimize the compute resources used in the lab environment (in which resources may be constrained). In a production environment, you'd typically create a cluster with multiple worker nodes.
 
 1. In the Azure portal, browse to the **dp203-*xxxxxxx*** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace)
@@ -117,6 +119,8 @@ Azure Databricks is a distributed processing platform that uses Apache Spark *cl
 ## Task 3: Use Spark to analyze a data file
 
 As in many Spark environments, Databricks supports the use of notebooks to combine notes and interactive code cells that you can use to explore data.
+
+In this task, you will use notebook feature in Azure Databricks in which it uses Spark for querying and exploring data.
 
 1. In the sidebar, use the **(+) New** link to create a **Notebook**.
 
@@ -173,6 +177,8 @@ As in many Spark environments, Databricks supports the use of notebooks to combi
 
 While many data analysis are comfortable using languages like Python or Scala to work with data in files, a lot of data analytics solutions are built on relational databases; in which data is stored in tables and manipulated using SQL.
 
+In this task, you will use the notebook which is created previously and query data using various code cells.
+
 1. In the **Explore products** notebook, under the chart output from the previously run code cell, use the **+** icon to add a new cell.
    
 2. Enter and run the following code in the new cell:
@@ -195,7 +201,6 @@ While many data analysis are comfortable using languages like Python or Scala to
    
 5. In the sidebar, select the **Catalog** link, and verify that the **products** table has been created in the default database schema (which is unsurprisingly named **default**). It's possible to use Spark code to create custom database schemas and a schema of relational tables that data analysts can use to explore data and generate analytical reports.
 
-## Validation
 
 <validation step="ff89d27a-7f48-4720-8b81-36b2ae489171" />
 
@@ -206,12 +211,8 @@ While many data analysis are comfortable using languages like Python or Scala to
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
-## Review
+## Summary
 
-In this lab, you have accomplished the following:
- - Provision an Azure Databricks workspace.
- - Create a cluster.
- - Use Spark to analyze a data file.
- - Create and query a database table.
+In this lab, you have performed key tasks to work with Azure Databricks and Spark. You provisioned an Azure Databricks workspace, created a cluster, used Spark to analyze a data file, and then created and queried a database table for data insights.
 
 ## You have successfully completed the lab.
