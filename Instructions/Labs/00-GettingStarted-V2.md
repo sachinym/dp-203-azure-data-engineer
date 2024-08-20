@@ -6,7 +6,7 @@ Welcome to your Guided Lab: Building a Data Pipeline in Synapse Analytics. We ha
  
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Labs/images/labguide-1.png)
+![Access Your VM and Lab Guide](../Labs/images/new-gt-1.png)
 
 ### Virtual Machine & Lab Guide
  

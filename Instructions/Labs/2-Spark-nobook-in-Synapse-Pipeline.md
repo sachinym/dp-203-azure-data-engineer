@@ -2,9 +2,9 @@
 
 ## Lab Scenario
 
-In this exercise, we're going to create an Azure Synapse Analytics pipeline that includes an activity to run an Apache Spark notebook.
+In this lab, we're going to create an Azure Synapse Analytics pipeline that includes an activity to run an Apache Spark notebook.
 
-### Objectives
+### Lab Objectives
   
 In this lab, you will be able to complete the following tasks:
 
@@ -22,7 +22,7 @@ In this lab, you will be able to complete the following tasks:
 
 You'll need an Azure Synapse Analytics workspace with access to data lake storage and a Spark pool.
 
-In this exercise, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
+In this task, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
 
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
     
@@ -60,6 +60,8 @@ In this exercise, you'll use a combination of a PowerShell script and an ARM tem
 ## Task 2: Run a Spark notebook interactively
 
 Before automating a data transformation process with a notebook, it can be useful to run the notebook interactively in order to better understand the process you will later automate.
+
+In this task, you will be using synapse workspace to run the Spark Notebook interactively.
 
 1. After the script has completed, in the Azure portal, go to the dp203-xxxxxxx resource group that it created, and select your Synapse workspace.
 2. In the **Overview** page for your Synapse Workspace, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; signing in if prompted.
@@ -107,7 +109,7 @@ Before automating a data transformation process with a notebook, it can be usefu
 
 ## Task 3: Run the notebook in a pipeline
 
-Now that you understand the transformation process, you're ready to automate it by encapsulating the notebook in a pipeline.
+In this task, you will automate transformation process by encapsulating the notebook in a pipeline.
 
 ### Task 3.1: Create a parameters cell
 
@@ -161,12 +163,14 @@ Now that you understand the transformation process, you're ready to automate it 
 
 ## Validation
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 <validation step="cb57517e-7d94-4fb2-becf-ba2a2de3c858" />
  
-## Review
+## Summary
 
-In this lab, you have accomplished the following:
-- Run a Spark notebook interactively.
-- Run the notebook in a pipeline.
+In this lab, you have performed a series of tasks to enhance your understanding of Spark and its integration with pipelines. You first ran a Spark notebook interactively, allowing you to directly engage with the data and explore its capabilities. Following this, you executed the notebook within a pipeline, demonstrating how to automate and scale the processing of large datasets, thereby streamlining your workflow and enhancing efficiency.
 
 ## You have successfully completed the lab.
