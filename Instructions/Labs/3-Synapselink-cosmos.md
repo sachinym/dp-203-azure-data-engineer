@@ -2,7 +2,9 @@
 
 ## Lab Scenario
 
-Azure Synapse Link for Azure Cosmos DB is a cloud-native *hybrid transactional analytical processing* (HTAP) technology that enables you to run near-real-time analytics over operational data stored in Azure Cosmos DB from Azure Synapse Analytics. In this lab, you will explore about Hybrid Transactional and Analytical Processing (HTAP) is a technique for near real time analytics without a complex ETL solution.
+Azure Synapse Link for Azure Cosmos DB is a cloud-native *hybrid transactional analytical processing* (HTAP) technology that enables you to run near-real-time analytics over operational data stored in Azure Cosmos DB from Azure Synapse Analytics. 
+
+In this lab, you will explore about Hybrid Transactional and Analytical Processing (HTAP) is a technique for near real time analytics without a complex ETL solution.
 
 ### Objectives
   
@@ -21,7 +23,9 @@ In this lab, you will be able to complete the following tasks:
 
 ## Task 1: Provision Azure resources
 
-To explore Azure Synapse Link for Azure Cosmos DB, you'll need an Azure Synapse Analytics workspace and an Azure Cosmos DB account. In this exercise, you'll use a combination of a PowerShell script and an ARM template to provision these resources in your Azure subscription.
+To explore Azure Synapse Link for Azure Cosmos DB, you'll need an Azure Synapse Analytics workspace and an Azure Cosmos DB account. 
+
+In this task, you'll use a combination of a PowerShell script and an ARM template to provision these resources in your Azure subscription.
 
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
     
@@ -59,6 +63,8 @@ To explore Azure Synapse Link for Azure Cosmos DB, you'll need an Azure Synapse 
 ## Task 2: Configure Synapse Link in Azure Cosmos DB
 
 Before you can use Synapse Link for Azure Cosmos DB, you must enable it in your Azure Cosmos DB account and configure a container as an analytical store.
+
+In this task, you will enable Synapse link feature in your Cosmos DB account and will create a container.
 
 ### Task 2.1: Enable the Synapse Link feature in your Cosmos DB account
 
@@ -146,7 +152,10 @@ Before you can use Synapse Link for Azure Cosmos DB, you must enable it in your 
 
 > **Note**: In reality, the analytical store would contain a much larger volume of data, written to the store by an application. These few items will be sufficient to demonstrate the principle in this exercise.
 
-## Validation
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="30981ddf-be34-4a50-ab63-6d5fb1d70f6f" />
 
@@ -154,10 +163,20 @@ Before you can use Synapse Link for Azure Cosmos DB, you must enable it in your 
 
 Now that you have prepared your Azure Cosmos DB account, you can configure Azure Synapse link for Azure Cosmos DB in your Azure Synapse Analytics workspace.
 
+In this task, you will be configuring the Synapse Link in Analytics.
+
 1. In the Azure portal, close the blade for your Cosmos DB account if it is still open, and return to the **dp203-*xxxxxxx*** resource group.
+
 2. Open the **synapse*xxxxxxx*** Synapse workspace, and on its **Overview** page, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; sign in if prompted.
+
+   ![](./images/labimg2.png)
+
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio.
+
 4. On the **Data** page, view the **Linked** tab. Your workspace should already include a link to your Azure Data Lake Storage Gen2 storage account, but no link to your Cosmos DB account.
+
+   ![](./images/labimg3.png)
+
 5. In the **+** menu, select **Connect to external data**, and then select **Azure Cosmos DB for NoSQL**.
 
     ![Adding an Azure Cosmos DB NoSQl API external data link](./images/l14-3.png)
@@ -177,13 +196,18 @@ Now that you have prepared your Azure Cosmos DB account, you can configure Azure
 
     ![Adding an Azure Cosmos DB SQl API external data link](./images/l-14-4.png)
 
-## Validation
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="cd43b165-9370-44c3-acf3-e59e87ef088a" />
 
 ## Task 4: Query Azure Cosmos DB from Azure Synapse Analytics
 
 Now you're ready to query your Cosmos DB database from Azure Synapse Analytics.
+
+In this task, you will query data in Azure Cosmos DB using spark pool in Azure Synapse Analytics.
 
 ### Task 4.1: Query Azure Cosmos DB from a Spark pool
 
@@ -353,7 +377,7 @@ Now you're ready to query your Cosmos DB database from Azure Synapse Analytics.
                     SERVER_CREDENTIAL = 'cosmosxxxxxxxx'
     ) AS [Sales]
     ```
-     >**Note**:Please review the code before executing the query provided. If the query fails to execute successfully, you will not be able to proceed any further.
+     >**Note**: If you see any error as `Credential already exists`, then please ignore it and  proceed with further steps. Review the code carefully before running.
      
 7. Use the **&#9655; Run** button to run the script, and review the results, which should include three records; one for each of the items you added to the Cosmos DB database.
 
@@ -416,11 +440,8 @@ Now you're ready to query your Cosmos DB database from Azure Synapse Analytics.
 4. Return to the Synapse Studio tab and in the **SQL Script 1** tab, re-run the query. Initially, it may show the same results as before, but wait a minute or so and then re-run the query again until the results include the sale to Samir Nadoy on 2019-07-02.
 5. Switch back to the **Notebook 1** tab and re-run the last cell in the Spark notebook to verify that the sale to Samir Nadoy is now included in the query results.
 
-## Review
+## Summary
 
-In this lab, you have accomplished the following:
-- Configure Synapse Link in Azure Cosmos DB.
-- Configure Synapse Link in Azure Synapse Analytics.
-- Query Azure Cosmos DB from Azure Synapse Analytics.
+In this lab, you have performed tasks to integrate and analyze data across platforms. You configured Synapse Link in both Azure Cosmos DB and Azure Synapse Analytics, and then successfully queried Azure Cosmos DB from Azure Synapse Analytics.
 
 ## You have successfully completed the lab.
