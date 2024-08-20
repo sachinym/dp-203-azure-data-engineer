@@ -2,9 +2,11 @@
 
 ## Lab Scenario
 
-Azure Synapse Link for SQL enables you to automatically synchronize a transactional database in SQL Server or Azure SQL Database with a dedicated SQL pool in Azure Synapse Analytics. This synchronization enables you to perform low-latency analytical workloads in Synapse Analytics without incurring query overhead in the source operational database. In this lab, you will explore about Azure Synapse Link for SQL which enables low-latency synchronization of operational data in a relational database to Azure Synapse Analytics.
+Azure Synapse Link for SQL enables you to automatically synchronize a transactional database in SQL Server or Azure SQL Database with a dedicated SQL pool in Azure Synapse Analytics. This synchronization enables you to perform low-latency analytical workloads in Synapse Analytics without incurring query overhead in the source operational database.
 
-### Objectives
+In this lab, you will explore about Azure Synapse Link for SQL which enables low-latency synchronization of operational data in a relational database to Azure Synapse Analytics.
+
+### Lab Objectives
   
 In this lab, you will be able to complete the following tasks:
 
@@ -21,7 +23,7 @@ In this lab, you will be able to complete the following tasks:
 
 ## Task 1: Provision Azure resources
 
-In this exercise, you'll synchronize data from an Azure SQL Database resource to an Azure Synapse Analytics workspace. You'll start by using a script to provision these resources in your Azure subscription.
+In this task, you'll synchronize data from an Azure SQL Database resource to an Azure Synapse Analytics workspace. You'll start by using a script to provision these resources in your Azure subscription.
 
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
     
@@ -62,6 +64,8 @@ In this exercise, you'll synchronize data from an Azure SQL Database resource to
 
 Before you can set up Azure Synapse Link for your Azure SQL Database, you must ensure that the required configuration settings have been applied in your Azure SQL Database server.
 
+In this task, you will work on configuring Azure SQL Database and save those configurations.
+
 1. In the [Azure portal](https://portal.azure.com), browse to the **dp203-*xxxxxxx*** resource group that was created by the setup script, and select your **sqldb*xxxxxxxx*** Azure SQL server.
 
     > **Note**: be careful not to mix up the Azure SQL server resource **sqldb*xxxxxxxx***) and the Azure Synapse Analytics dedicated SQL pool (**sql*xxxxxxxx***).
@@ -89,6 +93,8 @@ Before you can set up Azure Synapse Link for your Azure SQL Database, you must e
 
 Your Azure SQL server hosts a sample database named **AdventureWorksLT**. This database represents a transactional database used for operational application data.
 
+In this task, you will explore the transactional database which is created.
+
 1. In the **Overview** page for your Azure SQL server, at the bottom of the page, select the **AdventureWorksLT** database:
    
 2. In the **AdventureWorksLT** database page, from the left navigation pane, select the **Query editor** tab and log in using SQL server authentication with the following credentials:
@@ -100,6 +106,8 @@ Your Azure SQL server hosts a sample database named **AdventureWorksLT**. This d
 ## Task 4: Configure Azure Synapse Link
 
 Now you're ready to configure Azure Synapse Link for SQL in your Synapse Analytics workspace.
+
+In this task, You will use your Azure Synapse Workspace to configure Synapse Link for SQl.
 
 ### Task 4.1: Start the dedicated SQL pool
 
@@ -209,15 +217,15 @@ Now you're ready to configure Azure Synapse Link for SQL in your Synapse Analyti
    
 5. When you're done, on the **Manage** page, pause the **sql*xxxxxxx*** dedicated SQL pool.
 
-## Validation
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="cdaacaeb-71cb-4907-8d83-52897d503a83" />
 
-## Review
+## Summary
 
-In this lab, you have accomplished the following:
-- Configure Azure SQL Database.
-- Explore the transactional database.
-- Configure Azure Synapse Link.
+In this lab, you have performed tasks to set up and explore data integrations. You configured Azure SQL Database, explored the transactional database, and configured Azure Synapse Link.
 
 ## You have successfully completed the lab.
