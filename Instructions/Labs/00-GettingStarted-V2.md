@@ -6,7 +6,7 @@ Welcome to your Guided Lab: Building a Data Pipeline in Synapse Analytics. We ha
  
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Labs/images/labguide-1.png)
+![Access Your VM and Lab Guide](../Labs/images/new-gt-v2.png)
 
 ### Virtual Machine & Lab Guide
  
@@ -16,7 +16,7 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![Explore Lab Resources](../Labs/images/env-1.png)
+![Explore Lab Resources](../Labs/images/new-gt-v3.png)
  
 ## Utilizing the Split Window Feature
  
