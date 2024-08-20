@@ -377,7 +377,7 @@ In this task, you will query data in Azure Cosmos DB using spark pool in Azure S
                     SERVER_CREDENTIAL = 'cosmosxxxxxxxx'
     ) AS [Sales]
     ```
-     >**Note**:Please review the code before executing the query provided. If the query fails to execute successfully, you will not be able to proceed any further.
+     >**Note**: If you see any error as `Credential already exists`, then proceed with further steps. Please review the code carefully before running.
      
 7. Use the **&#9655; Run** button to run the script, and review the results, which should include three records; one for each of the items you added to the Cosmos DB database.
 
