@@ -129,7 +129,7 @@ You can use the **default** database for your tables, but when building an analy
 
 In this task, you will create a table schema using an external file.
 
-1. Download the [**products.csv**](https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/26/data/products.csv) file to your local computer to download the file press ctrl+s, saving it as **products.csv**, .
+1. Download the [**products.csv**](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/blob/master/Allfiles/labs/26/data/products.csv) file to your local computer to download the file press ctrl+s, saving it as **products.csv**, .
 
 2. In the Azure Databricks workspace portal, in the sidebar, select **(+) New** and then select **Data** and upload the **products.csv** file you downloaded to your computer.
 
