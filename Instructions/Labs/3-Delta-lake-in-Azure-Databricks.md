@@ -6,7 +6,7 @@ Delta Lake is an open source project to build a transactional data storage layer
 
 In this lab, you'll learn about Delta Lake which is an open source relational storage area for Spark that you can use to implement a data lakehouse architecture in Azure Databricks.
 
-### Objectives
+### Lab Objectives
 
 In this lab, you will perform:
 
@@ -22,10 +22,11 @@ In this lab, you will perform:
 
 ## Task 1:  Provision an Azure Databricks workspace
 
-In this exercise, you'll use a script to provision a new Azure Databricks workspace.
+In this task, you'll use a script to provision a new Azure Databricks workspace.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
     ![Azure portal with a cloud shell pane](./images/25-1.png)
 
@@ -33,7 +34,7 @@ In this exercise, you'll use a script to provision a new Azure Databricks worksp
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
     ![Azure portal with a cloud shell pane](./images/21051.png)
 
@@ -53,23 +54,23 @@ In this exercise, you'll use a script to provision a new Azure Databricks worksp
 
 1. Wait for PowerShell terminal to start.
 
-7. In the PowerShell pane, enter the following commands to clone this repo:
+1. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-8. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/25
     ./setup.ps1
     ```
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-10. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [Introduction to Delta Technologies](https://learn.microsoft.com/azure/databricks/introduction/delta-comparison) article in the Azure Databricks documentation.
+1. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [Introduction to Delta Technologies](https://learn.microsoft.com/azure/databricks/introduction/delta-comparison) article in the Azure Databricks documentation.
 
     ![Azure portal with a cloud shell pane](./images/25-6.png)
 
@@ -77,7 +78,7 @@ In this exercise, you'll use a script to provision a new Azure Databricks worksp
 
 Azure Databricks is a distributed processing platform that uses Apache Spark *clusters* to process data in parallel on multiple nodes. Each cluster consists of a driver node to coordinate the work, and worker nodes to perform processing tasks.
 
-> **Note**: In this exercise, you'll create a *single-node* cluster to minimize the compute resources used in the lab environment (in which resources may be constrained). In a production environment, you'd typically create a cluster with multiple worker nodes.
+In this task, you'll create a *single-node* cluster to minimize the compute resources used in the lab environment (in which resources may be constrained). In a production environment, you'd typically create a cluster with multiple worker nodes.
 
 1. In the Azure portal, browse to the **dp203-*xxxxxxx*** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace)
 1. Select your Azure Databricks Service resource (named **databricks*xxxxxxx*** if you used the setup script to create it).
@@ -116,7 +117,7 @@ Azure Databricks is a distributed processing platform that uses Apache Spark *cl
 
 ## Task 3: Explore data lake using a notebook
 
-In this exercise, you'll use code in a notebook to explore delta lake in Azure Databricks.
+In this task, you'll use code in a notebook to explore delta lake in Azure Databricks.
 
 1. In the Azure Databricks workspace portal for your workspace, in the sidebar on the left, select **Workspace**. Then select the **&#8962; Home** folder.
 
@@ -124,22 +125,17 @@ In this exercise, you'll use code in a notebook to explore delta lake in Azure D
    
 1. Connect the notebook to your cluster, and follow the instructions it contains; running the cells it contains to explore delta lake functionality.
 
-## Validation
-
 <validation step="0dca010a-adbc-4610-a1dc-52baca77d863" />
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
+>**Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
 
   > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
-## Review
+## Summary
 
-In this lab, you have accomplished the following:
- - Provision an Azure Databricks workspace.
- - Create a cluster.
- - Explore data using a notebook.
+In this lab, you have performed essential tasks with Azure Databricks. You provisioned an Azure Databricks workspace, created a cluster, and explored data using a notebook to gain valuable insights.
 
 ## You have successfully completed the lab.
