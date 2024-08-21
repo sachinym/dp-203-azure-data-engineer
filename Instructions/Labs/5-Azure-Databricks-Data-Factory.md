@@ -206,6 +206,7 @@ In this task, you will create a pipeline and use it run the Azure Databricks Not
     ![Create storage by clicking confirm.](./images/lab5-14n.png)
 
     ![Create storage by clicking confirm.](./images/lab5-15n.png)
+   
 ### Task 4.2: Run the pipeline
 
 1. Above the pipeline designer surface, select **Add trigger**, and then select **Trigger now**.
