@@ -1,10 +1,12 @@
 # Lab 05: Automate an Azure Databricks Notebook with Azure Data Factory
 
-## Lab-Scenario
+## Lab Scenario
 
-You can use notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables. When you need to orchestrate these tasks as part of a data engineering pipeline, you can use Azure Data Factory. In this lab, you'll explore about notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables.
+You can use notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables. When you need to orchestrate these tasks as part of a data engineering pipeline, you can use Azure Data Factory. 
 
-### Objectives
+In this lab, you'll explore about notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables.
+
+### Lab Objectives
 
 In this lab, you will perform:
 
@@ -12,7 +14,6 @@ In this lab, you will perform:
  - Task 2: Import a notebook
  - Task 3: Enable Azure Databricks integration with Azure Data Factory
  - Task 4: Use a pipeline to run the Azure Databricks notebook
-
 
 ### Estimated timing: 60 minutes
 
@@ -25,7 +26,7 @@ In this lab, you will perform:
 In this task, you'll use a script to provision a new Azure Databricks workspace and an Azure Data Factory resource in your Azure subscription.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
     ![Azure portal with a cloud shell pane](./images/25-1.png)
 
@@ -33,10 +34,9 @@ In this task, you'll use a script to provision a new Azure Databricks workspace 
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
     ![Azure portal with a cloud shell pane](./images/21051.png)
-
 
 1. Within the Getting Started pane, select **Mount storage account**, select your **Storage account subscription** from the dropdown and click **Apply**.
 
@@ -53,30 +53,33 @@ In this task, you'll use a script to provision a new Azure Databricks workspace 
 
 1. Wait for PowerShell terminal to start.
 
-7. In the PowerShell pane, enter the following commands to clone this repo:
+1. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-8. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/27
     ./setup.ps1
     ```
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-10. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review [What is Azure Data Factory?](https://docs.microsoft.com/azure/data-factory/introduction).
-11. When the script has completed, close the cloud shell pane and browse to the **dp203-*xxxxxxx*** resource group that was created by the script to verify that it contains an Azure Databricks workspace and an Azure Data Factory (V2) resource (you may need to refresh the resource group view).
+1. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review [What is Azure Data Factory?](https://docs.microsoft.com/azure/data-factory/introduction).
+1. When the script has completed, close the cloud shell pane and browse to the **dp203-*xxxxxxx*** resource group that was created by the script to verify that it contains an Azure Databricks workspace and an Azure Data Factory (V2) resource (you may need to refresh the resource group view).
 
 ## Task 2: Import a notebook
 
-You can create notebooks in your Azure Databricks workspace to run code written in a range of programming languages. In this exercise, you'll import an existing notebook that contains some Python code.
+You can create notebooks in your Azure Databricks workspace to run code written in a range of programming languages. 
+
+In this task, you'll import an existing notebook that contains some Python code.
 
 1. In the Azure portal, browse to the **dp203-*xxxxxxx*** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace)
+
 2. Select your Azure Databricks Service resource (named **databricks*xxxxxxx*** if you used the setup script to create it).
 
     ![Create storage by clicking confirm.](./images/21055.png)
@@ -105,6 +108,8 @@ You can create notebooks in your Azure Databricks workspace to run code written 
 ## Task 3: Enable Azure Databricks integration with Azure Data Factory
 
 To use Azure Databricks from an Azure Data Factory pipeline, you need to create a linked service in Azure Data Factory that enables access to your Azure Databricks workspace.
+
+In this task, you will generate a access token in the Azure Databricks Portal.
 
 ### Task 3.1: Generate an access token
 
@@ -165,6 +170,8 @@ To use Azure Databricks from an Azure Data Factory pipeline, you need to create 
 
 Now that you have created a linked service, you can use it in a pipeline to run the notebook you viewed previously.
 
+In this task, you will create a pipeline and use it run the Azure Databricks Notebook.
+
 ### Task 4.1: Create a pipeline
 
 1. In Azure Data Factory Studio, in the navigation pane, select **Author**.
@@ -199,6 +206,7 @@ Now that you have created a linked service, you can use it in a pipeline to run 
     ![Create storage by clicking confirm.](./images/lab5-14n.png)
 
     ![Create storage by clicking confirm.](./images/lab5-15n.png)
+   
 ### Task 4.2: Run the pipeline
 
 1. Above the pipeline designer surface, select **Add trigger**, and then select **Trigger now**.
@@ -238,22 +246,16 @@ Now that you have created a linked service, you can use it in a pipeline to run 
 
 5. Note the **runOutput** value, which is the *path* variable to which the notebook saved the data.
 
-## Validation
-
 <validation step="ea0c803b-47db-4f2f-9936-d54c0e8228c1" />
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
+>**Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
   > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
- ## Review
+ ## Summary
 
- In this lab, you have accomplished the following:
- - Import a notebook.
- - Enable Azure Databricks integration with Azure Data Factory.
- - Use a pipeline to run the Azure Databricks notebook.
+In this lab, you have performed tasks to integrate Azure Databricks with Azure Data Factory. You imported a notebook, enabled Azure Databricks integration with Azure Data Factory, and used a pipeline to run the Azure Databricks notebook efficiently.
  
  ## You have successfully completed the lab.
