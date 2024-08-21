@@ -38,7 +38,6 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
     ![Azure portal with a cloud shell pane](./images/21051.png)
 
-
 1. Within the Getting Started pane, select **Mount storage account**, select your **Storage account subscription** from the dropdown and click **Apply**.
 
    ![](./images/21052.png)
@@ -46,7 +45,6 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 1. Within the **Mount storage account** pane, select **I want to create a storage account** and click **Next**.
 
    ![](./images/21053.png)
-
 
 1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected, Please make sure you have selected your resource group **Azure-Databricks** and enter **storage<inject key="DeploymentID" enableCopy="false"/>** for the **Storage account name** and enter **fileshare1** For the **File share name**, then click on **Create**.
 
