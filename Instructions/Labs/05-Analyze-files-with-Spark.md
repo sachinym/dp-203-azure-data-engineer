@@ -36,46 +36,44 @@ In this exercise, you'll use a combination of a PowerShell script and an ARM tem
 
 3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+    ![Azure portal with a cloud shell pane](./images/L3T1S3.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+4. On the **Getting Started** pop-up, select the following information:-
 
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
 
+        ![Azure portal with a cloud shell pane](./images/gettingstarted.png)
 
-4. If You dont have precreated storage account then select advanced setting.
+5. On the **Mount storage account** pop-up, select the following:
 
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
 
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount.png)
 
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
-
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
-
-    ![Azure portal with a cloud shell pane](./images/25-5.png)
-
-7. In the PowerShell pane, enter the following commands to clone this repo:
+6. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
-    rm -r dp500 -f
-    git clone https://github.com/MicrosoftLearning/DP-500-Azure-Data-Analyst dp500
+    rm -r dp203 -f
+    git clone  https://github.com/MicrosoftLearning/Dp-203-azure-data-engineer dp203
     ```
 
-8. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
+7. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
-    cd dp500/Allfiles/02
+    cd dp203/Allfiles/labs/05
     ./setup.ps1
     ```
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+8. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-10. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
+9. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
 
     > **Note**: Be sure to remember this password!
 
-11. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you are waiting, review the [Apache Spark in Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/spark/apache-spark-overview) article in the Azure Synapse Analytics documentation.
+10. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you are waiting, review the [Apache Spark in Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/spark/apache-spark-overview) article in the Azure Synapse Analytics documentation.
 
 ## Task 2: Query data in files
 
@@ -83,7 +81,7 @@ The script provisions an Azure Synapse Analytics workspace and an Azure Storage 
 
 ### Task 2.1: View files in the data lake
 
-1. After the script has been completed, in the Azure portal, go to the **dp500-xxxxxxx** resource group that it created, and select your Synapse workspace.
+1. After the script has been completed, in the Azure portal, go to the **dp000-xxxxxxx** resource group that it created, and select your Synapse workspace.
 
 2. In the **Overview** page for your Synapse workspace, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab, sign in if prompted.
 
