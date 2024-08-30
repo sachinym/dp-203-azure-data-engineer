@@ -25,32 +25,17 @@ You'll need an Azure Synapse Analytics workspace with access to data lake storag
 In this task, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
+    
+    ![Azure portal with a cloud shell pane](./images/cloud-shell1.png)
 
-    ![Azure portal with a cloud shell pane](./images/25-1.png)
+    ![Azure portal with a cloud shell pane](./images/cl2.png)
+   
+2. In the **Getting Started** menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
 
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
+   ![Azure portal with a cloud shell pane](./images/cl3.png)
 
-    ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
-
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
-
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
-
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
-
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
-
-
-4. If You dont have precreated storage account then select advanced setting.
-
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
-
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
-
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
-
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
+3. Note that Cloud Shell can be resized by dragging the separator bar at the top of the pane, or by using the—, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
 
     ![Azure portal with a cloud shell pane](./images/25-5.png)
 7. In the PowerShell pane, enter the following commands to clone this repo:
@@ -95,14 +80,19 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 
 9. Right-click any of the files and select **Preview** to see the data it contains. Note that the files contain a header row, so you can select the option to display column headers.
 
-10. Close the preview. Then download the **Spark Transform.ipynb** from [from Allfiles/labs/06/notebooks](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/tree/master/Allfiles/labs/06/notebooks)
+10. Close the preview. Then download the **Spark Transform.ipynb** using the link below
 
-    > **Note**: It's best to copy this text using the ***ctrl+a*** then ***ctrl+c*** and pasting into a tool using ***ctrl+v***, such as, notepad and then using file, save as **Spark Transform.ipynb** with a filetype of ***all files***. You can also download the file by clicking on it, then selecting the ellipses and then download, remembering where you saved it.
+    ```
+     https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/tree/master/Allfiles/labs/06/notebooks
+    ```
+
+    >**Note**: You can also download the file by clicking on the file, then selecting the ellipses and then download, remembering where you saved it.
+    
     ![Download Spark notebook from GitHub](./images/select-download-notebook.png)
 
 11. Then on **Develop** page, click on the **+** icon, then select Import option.
 
-    ![Spark Notebook import](./image/../images/dp-203-lab6-1.png)
+    ![Spark Notebook import](./images/dp-203-lab6-1.png)
         
 12. Select the file you just downloaded and saved as **Spark Transfrom.ipynb**.
 
@@ -110,9 +100,11 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 
     >**Note**: If you don't find the **Attach to** option, kindly collapse the **Develop** pane to view the **Attach to** option next to the outline option.
 
+    ![Spark Notebook import](./images/spatch.png)
+
 14. Review the notes in the notebook and run the each code cells.
 
-    > **Note**: The first code cell will take a few minutes to run because the Spark pool must be started. Subsequent cells will run more quickly.
+    >**Note**: The first code cell will take a few minutes to run because the Spark pool must be started. Subsequent cells will run more quickly.
 
   **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
 
