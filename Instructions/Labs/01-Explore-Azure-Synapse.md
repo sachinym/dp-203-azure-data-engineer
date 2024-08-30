@@ -101,7 +101,7 @@ In this exercise, you'll use a combination of a PowerShell script and an ARM tem
 
 2. Select your Synapse workspace, and in its **Overview** page, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab. Synapse Studio is a web-based interface that you can use to work with your Synapse Analytics workspace.
 
-  ![](./images/update5.png)
+   ![](./images/update5.png)
 
 
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio that you'll use to manage resources and perform data analytics tasks, as shown here:
@@ -299,6 +299,9 @@ While SQL is a common language for querying structured datasets, many data analy
 
 1. In Synapse Studio, if the **files** tab you opened earlier containing the **products.csv** file is no longer open, on the **Data** page, browse **product_data** folder. Then right-click **products.csv**, point to **New notebook**, and select **Load to DataFrame**.
 2. In the **Notebook 1** pane that opens, in the **Attach to** list, select the **sparkxxxxxxx** Spark pool and ensure that the **Language** is set to **PySpark (Python)**.
+
+    ![](./images/update8.png)
+
 3. Review the code in the first (and only) cell in the notebook, which should look like this:
 
     ```Python
