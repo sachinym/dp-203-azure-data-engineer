@@ -38,18 +38,20 @@ In this exercise, you'll use a combination of a PowerShell script and an ARM tem
 
 1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+    ![Azure portal with a cloud shell pane](./images/update1.png)
 
     > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
 
     ![Azure portal with a cloud shell pane](./images/25-4.png)
 
 
-1. If You dont have precreated storage account then select **Mount storage account** and select the existing **Storage Account Subscription** and then click on **Apply**.
+1. If You dont have precreated storage account , On Getting Started pane select **Mount storage account** and select the existing **Storage Account Subscription** and then click on **Apply**.
 
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
+    ![Azure portal with a cloud shell pane](./images/update2.png)
 
-1. After you click on apply, On Mount Storage Account page select **I want to create a storage account** and click **Next**.
+1.  On Mount Storage Account pane select **I want to create a storage account** and click **Next**.
+
+    ![Azure portal with a cloud shell pane](./images/update3.png)
 
 
 1. In the Create Storage Account pop up Add the following details and click on create.
@@ -62,9 +64,9 @@ In this exercise, you'll use a combination of a PowerShell script and an ARM tem
    
    **Storage Account Name** : Provide unique name
    
-   **File Share Name** : **none** and click on create
+   **File Share Name** : **none** 
    
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
+    ![Azure portal with a cloud shell pane](./images/update4.png)
 
 1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
