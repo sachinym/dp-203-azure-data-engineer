@@ -129,8 +129,11 @@ One of the key tasks you can perform with Azure Synapse Analytics is to define *
 ###  Task 3.1: Use the Copy Data task to create a pipeline
 
 1. In Synapse Studio, on the **Home** page, select **Ingest** to open the **Copy Data** tool
+
+   ![](./images/update6.png)
+
 2. In the Copy Data tool, on the **Properties** step, ensure that **Built-in copy task** and **Run once now** are selected, and click **Next >**.
-3. On the **Source** step, in the **Dataset** substep, select the following settings:
+3. On the **Source** step, in the **Dataset** substep, select the following settings and click on **Create**
     - **Source type**: All
     - **Connection**: *Create a new connection, and in the **New Connection** pane that appears, on the **Generic protocol** tab, select **HTTP**. Then continue and create a connection to a data file using the following settings:*
         - **Name**: Products
@@ -139,6 +142,9 @@ One of the key tasks you can perform with Azure Synapse Analytics is to define *
         - **Base URL**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/01/adventureworks/products.csv`
         - **Server Certificate Validation**: Enable
         - **Authentication type**: Anonymous
+
+          ![](./images/update7.png)
+          
 4. After creating the connection, on the **Source data store** page, ensure the following settings are selected, and then select **Next >**:
     - **Relative URL**: *Leave blank*
     - **Request method**: GET
