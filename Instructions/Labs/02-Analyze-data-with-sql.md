@@ -24,10 +24,10 @@ You'll need an Azure Synapse Analytics workspace with access to data lake storag
 
 In this exercise, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
 
-1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+1. Open [Azure portal](https://portal.azure.com).
+Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
-    ![Azure portal with a cloud shell pane](./images/25-1.png)
+    ![Azure portal with a cloud shell pane](./images/cloudshell(1).png)
 
     >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
 
@@ -35,35 +35,39 @@ In this exercise, you'll use a combination of a PowerShell script and an ARM tem
 
 3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
-
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
-
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
+    ![Azure portal with a cloud shell pane](./images/powershell.png)
 
 
-4. If You dont have precreated storage account then select advanced setting.
+4. On the **Getting Started** pop-up, select the following information:-
 
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
 
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
+        ![Azure portal with a cloud shell pane](./images/gettingstarted.png)
 
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
+5. On the **Mount storage account** pop-up, select the following:
+
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
+
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount.png)
 
 6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
-    ![Azure portal with a cloud shell pane](./images/25-5.png)
+    ![Azure portal with a cloud shell pane](./images/close(1).png)
+    
 7. In the PowerShell pane, manually enter the following commands to clone this repo:
 
     ```
-    rm -r dp500 -f
-    git clone https://github.com/MicrosoftLearning/DP-500-Azure-Data-Analyst dp500
+    rm -r dp203 -f
+    git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp203
     ```
 
 8. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
-    cd dp500/Allfiles/01
+    cd dp203/Allfiles/labs/02
     ./setup.ps1
     ```
 
@@ -81,17 +85,25 @@ The script provisions an Azure Synapse Analytics workspace and an Azure Storage 
 
 ### Task 2.1: View files in the data lake
 
-1. After the script has completed, in the Azure portal, go to the **dp500-*xxxxxxx*** resource group that it created, and select your Synapse workspace.
+1. After the script has completed, in the Azure portal, go to the **dp203-*xxxxxxx*** resource group that it created, and select your Synapse workspace.
+
+    ![Azure portal with a cloud shell pane](./images/dp203-x.png)
 
 2. In the **Overview** page for your Synapse workspace, in the **Open Synapse Studio** card, select **Open** to Open Synapse Studio in a new browser tab, sign in if prompted.
 
+    ![Azure portal with a cloud shell pane](./images/dp203-rg.png)
+
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio that you'll use to manage resources and perform data analytics tasks.
 
-4. On the **Data** page, view the **Linked** tab and verify that your workspace includes a link to your Azure Data Lake Storage Gen2 storage account, which should have a name similar to **synapse*xxxxxxx* (Primary - datalake*xxxxxxx*)**.
+    ![Azure portal with a cloud shell pane](./images/synapseopen.png)
+
+4. On the **Data (1)** page, view the **Linked (2)** tab and verify that your workspace includes a link to your Azure Data Lake Storage Gen2 storage account, which should have a name similar to **synapse*xxxxxxx* (Primary - datalake*xxxxxxx*) (3)**.
 
 5. Expand your storage account and verify that it contains a file system container named **files**.
 
-6. Select the **files** container, and note that it contains a folder named **sales**. This folder contains the data files you are going to query.
+6. Select the **files (4)** container, and note that it contains a folder named **sales (5)**. This folder contains the data files you are going to query.
+
+    ![Azure portal with a cloud shell pane](./images/synapse(2).png)
 
 7. Open the **sales** folder and the **csv** folder it contains, and observe that this folder contains .csv files for three years of sales data.
 
@@ -106,6 +118,8 @@ The script provisions an Azure Synapse Analytics workspace and an Azure Storage 
 12. In the **sales** folder, open the **parquet** folder and observe that it contains a subfolder for each year (2019-2021), in each of which a file named **orders.snappy.parquet** contains the order data for that year. 
 
 13. Return to the **sales** folder so you can see the **csv**, **json**, and **parquet** folders.
+
+    ![Azure portal with a cloud shell pane](./images/csvjson.png)
 
 ### Task 2.2: Use SQL to query CSV files
 
@@ -321,7 +335,11 @@ By defining an external data source in a database, you can use it to reference t
 
 5. Switch back to the **Data** page and use the **&#8635;** button at the top right of Synapse Studio to refresh the page. Then view the **Workspace** tab in the **Data** pane, where a **SQL database** list is now displayed. Expand this list to verify that the **Sales** database has been created.
 
+    ![Azure portal with a cloud shell pane](./images/synapse(3).png)
+
 6. Expand the **Sales** database, its **External Resources** folder, and the **External data sources** folder under that to see the **sales_data** external data source you created.
+
+    ![Azure portal with a cloud shell pane](./images/externalresource.png)
 
 7. In the **...** menu for the **Sales** database, select **New SQL script** > **Empty script**. Then in the new script pane, enter and run the following query:
 
