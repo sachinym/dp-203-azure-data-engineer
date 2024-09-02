@@ -23,33 +23,36 @@ After completing this lab, you will be able to:
 In this task, you'll use a script to provision a new Azure Databricks workspace and an Azure Data Factory resource in your Azure subscription.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
+    
+    ![Azure portal with a cloud shell pane](./images/cloud-shell1.png)
 
-    ![Azure portal with a cloud shell pane](./images/25-1.png)
+    ![Azure portal with a cloud shell pane](./images/cl2.png)
+   
+1. In the **Getting Started** menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
 
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
+   ![Azure portal with a cloud shell pane](./images/cl3.png)
 
-    ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
+1. Note that Cloud Shell can be resized by dragging the separator bar at the top of the pane, or by using the—, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
 
-3. Use the [>_] button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select PowerShell environment.
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-6. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/27
     ./setup.ps1
     ```
 
-7. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-8. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review [What is Azure Data Factory?](https://docs.microsoft.com/azure/data-factory/introduction).
+1. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review [What is Azure Data Factory?](https://docs.microsoft.com/azure/data-factory/introduction).
 
-9. When the script has completed, close the cloud shell pane and browse to the **dp203-*xxxxxxx*** resource group that was created by the script to verify that it contains an Azure Databricks workspace and an Azure Data Factory (V2) resource (you may need to refresh the resource group view).
+1. When the script has completed, close the cloud shell pane and browse to the **dp203-*xxxxxxx*** resource group that was created by the script to verify that it contains an Azure Databricks workspace and an Azure Data Factory (V2) resource (you may need to refresh the resource group view).
 
 ## Task 2: Import a notebook
 
