@@ -312,17 +312,12 @@ Now that you have some tables in your database, you can use them to work with th
 
 8. Close the **Notebook 1** pane, stopping the Spark session and discarding your changes.
 
-   <validation step="c7c2a4b7-1b09-4a42-a89c-255c051ca4e4" />
-
-   <validation step="29d3bdbe-a709-4d66-8667-d5b765e92d45" />
-
-
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.   
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="e7a53592-9fcd-4d0c-a89c-04a0602d0d28" />
 
 ## Review
 
