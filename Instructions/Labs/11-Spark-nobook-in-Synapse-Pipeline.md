@@ -208,6 +208,8 @@ Now that you understand the transformation process, you're ready to automate it 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
+<validation step="5b32d10f-466c-4c6d-ac72-05ee31604ac8" />
  
 ## Review
 
