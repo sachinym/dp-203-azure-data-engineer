@@ -323,12 +323,13 @@ If you will need to transform data frequently, you can use a stored procedure to
 10. Switch back to the SQL script and re-run the `EXEC sp_GetYearlySales;` statement. This time, the operation succeeds and a new data file is generated.
 
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="2475f13a-7ef6-4e92-b3c7-bf694c10bd7e" />
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
 ## Review
 
