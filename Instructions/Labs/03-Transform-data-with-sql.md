@@ -25,6 +25,7 @@ You'll need an Azure Synapse Analytics workspace with access to data lake storag
 In this exercise, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
+
 2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
     ![Azure portal with a cloud shell pane](./images/25-1.png)

@@ -23,9 +23,11 @@ After completing this lab, you will be able to:
 
 In this exercise, you'll synchronize data from an Azure SQL Database resource to an Azure Synapse Analytics workspace. You'll start by using a script to provision these resources in your Azure subscription.
 
-1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
-    
-    ![Azure portal with a cloud shell pane](./images/cloud-shell1.png)
+1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
+
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+
+    ![Azure portal with a cloud shell pane](./images/25-1.png)
 
     >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
 
@@ -33,37 +35,48 @@ In this exercise, you'll synchronize data from an Azure SQL Database resource to
 
 1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/cl2.png)
+    ![Azure portal with a cloud shell pane](./images/L3T1S3.png)
 
-1. In the **Getting Started** menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
+1. On the **Getting Started** pop-up, select the following information:-
 
-   ![Azure portal with a cloud shell pane](./images/cl3.png)
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
+
+        ![Azure portal with a cloud shell pane](./images/gettingstarted.png)
+
+1. On the **Mount storage account** pop-up, select the following:
+
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
+
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount.png)
 
 1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
     ![Azure portal with a cloud shell pane](./images/25-5.png)
 
-7. In the PowerShell pane, enter the following commands to clone this repo:
+1. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-8. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/15
     ./setup.ps1
     ```
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
    
-10. When prompted, enter a suitable password for your Azure SQL Database.
+1. When prompted, enter a suitable password for your Azure SQL Database.
 
     > **Note**: Be sure to remember this password!
 
-11. Wait for the script to complete - this typically takes around 15 minutes, but in some cases may take longer. While you are waiting, review the [What is Azure Synapse Link for SQL?](https://docs.microsoft.com/azure/synapse-analytics/synapse-link/sql-synapse-link-overview) article in the Azure Synapse Analytics documentation.
+1. Wait for the script to complete - this typically takes around 15 minutes, but in some cases may take longer. While you are waiting, review the [What is Azure Synapse Link for SQL?](https://docs.microsoft.com/azure/synapse-analytics/synapse-link/sql-synapse-link-overview) article in the Azure Synapse Analytics documentation.
 
 ## Task 2: Configure Azure SQL Database
 
@@ -79,7 +92,7 @@ Before you can set up Azure Synapse Link for your Azure SQL Database, you must e
 
 3. In the pane on the left, in the **Security** section, select **Networking**. Then, under **Firewall rules**, select the exception checkbox to **Allow Azure services and resources to access this server**.
 
-4. Use the **&#65291; Add a firewall rule** button to add a new firewall rule with the following settings:
+4. Use the **&#65291; Add a firewall rule** button to add a new firewall rule with the following settings, select **OK**:
 
     | Rule name | Start IP | End IP |
     | -- | -- | -- |
@@ -239,12 +252,12 @@ In this task, You will use your Azure Synapse Workspace to configure Synapse Lin
    
 5. When you're done, on the **Manage** page, pause the **sql*xxxxxxx*** dedicated SQL pool.
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
+<validation step="c386e672-aa05-44e0-80af-24f6ce16cb04" />
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ## Review
 
