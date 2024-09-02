@@ -8,6 +8,7 @@ In this lab, you'll load data into a dedicated SQL Pool using a pipeline in Azur
   
 After completing this lab, you will be able to:
 
+- Provision an Azure Synapse Analytics workspace
 - View source and destination data stores.
 - Implement a pipeline.
 - Debug the Data Flow.
@@ -25,33 +26,23 @@ You'll need an Azure Synapse Analytics workspace with access to data lake storag
 
 In this task, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
 
-1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
-
-    ![Azure portal with a cloud shell pane](./images/25-1.png)
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
+    
+    ![Azure portal with a cloud shell pane](./images/cloud-shell1.png)
 
     >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+    ![Azure portal with a cloud shell pane](./images/cl2.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+1. In the **Getting Started** menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
 
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
+   ![Azure portal with a cloud shell pane](./images/cl3.png)
 
-
-4. If You dont have precreated storage account then select advanced setting.
-
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
-
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
-
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
-
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
+1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
     ![Azure portal with a cloud shell pane](./images/25-5.png)
 
@@ -70,7 +61,10 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
     ```
 
 9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+
 10. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
+
+    ![Azure portal with a cloud shell pane](./images/25-5a.png)
 
     > **Note**: Be sure to remember this password!
 
@@ -81,20 +75,42 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 The source data for this exercise is a text file containing product data. The destination is a table in a dedicated SQL pool. Your goal is to create a pipeline that encapsulates a data flow in which the product data in the file is loaded into the table; inserting new products and updating existing ones.
 
 1. After the script has completed, in the Azure portal, go to the **dp203-*xxxxxxx*** resource group that it created, and select your Synapse workspace.
+
 2. In the **Overview** page for your Synapse Workspace, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; signing in if prompted.
+
+   ![](images/labimg2.png)
+
 3. On the left side of Synapse Studio, use the ›› icon to expand the menu - this reveals the different pages within Synapse Studio that you’ll use to manage resources and perform data analytics tasks.
+
 4. On the **Manage** page, on the **SQL pools** tab, select the row for the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655;** icon to start it; confirming that you want to resume it when prompted.
 
      Resuming the pool can take a few minutes. You can use the **&#8635; Refresh** button to check its status periodically. The status will show as **Online** when it's ready. While you're waiting, continue with the steps below to view the source data.
 
 5. On the **Data** page, view the **Linked** tab and verify that your workspace includes a link to your Azure Data Lake Storage Gen2 storage account, which should have a name similar to **synapse*xxxxxxx* (Primary - datalake*xxxxxxx*)**.
+
+   ![](images/labimg3.png)
+
 6. Expand your storage account and verify that it contains a file system container named **files (primary)**.
+
 7. Select the files container, and note that it contains a folder named **data**.
+
+   ![](images/labimg15.png)
+
 8. Open the **data** folder and observe the **Product.csv** file it contains.
+
 9. Right-click **Product.csv** and select **Preview** to see the data it contains. Note that it contains a header row and some records of product data.
+
+   ![](images/labimg16.png)
+
 10. Return to the **Manage** page and ensure that your dedicated SQL pool is now online. If not, wait for it.
+
 11. In the **Data** page, on the **Workspace** tab, expand **SQL database**, your **sql*xxxxxxx* (SQL)** database, and its **Tables**.
+
+    ![](images/labimg17.png)
+
 12. Select the **dbo.DimProduct** table. Then in its **...** menu, select **New SQL script** > **Select TOP 100 rows**; which will run a query that returns the product data from the table - there should be a single row.
+
+    ![](images/labimg18.png)
 
 ## Task 3: Implement a pipeline
 
@@ -154,6 +170,7 @@ To load the data in the text file into the database table, you will implement an
             - **Name**: Data_Warehouse
             - **Description**: Dedicated SQL pool
             - **Connect via integration runtime**: AutoResolveIntegrationRuntime
+            - **Version**: Legacy
             - **Account selection method** From Azure subscription
             - **Azure subscription**: Select your Azure subscription
             - **Server name**: synapse*xxxxxxx* (Synapse workspace)
@@ -165,7 +182,20 @@ To load the data in the text file into the database table, you will implement an
         - **Import schema**: From connection/store
         -  Click **OK**.
     - **Allow schema drift**: Selected
-4. On the **Projection** tab for the new **ProductTable** source, verify that the following data types are set:
+
+4. Select **Open** under **Dataset** to add the table and import the schema
+
+    ![Screenshot of an empty data flow activity.](./images/lab1-new1.png)
+
+5. On the **connection** page, select the **dbo.DimProduct(1)** table from the dropdown and click on **Schema(2)**
+
+    ![Screenshot of an empty data flow activity.](./images/lab1-new2.png)
+
+6. On the **Schema** page, click on **Import schema** and naviage back to **ProductTable** source
+
+   ![Screenshot of an empty data flow activity.](./images/lab1-new3.png)
+
+7. On the **Projection** tab for the new **ProductTable** source, verify that the following data types are set:
     - **ProductKey**: integer
     - **ProductAltKey**: string
     - **ProductName**: string
@@ -173,7 +203,7 @@ To load the data in the text file into the database table, you will implement an
     - **Size**: string
     - **ListPrice**: decimal
     - **Discontinued**: boolean
-5. Verify that your data flow contains two sources, as shown here:
+8. Verify that your data flow contains two sources, as shown here:
 
     ![Screenshot of a data flow with two sources.](./images/dataflow_sources(1).png)
 
@@ -242,28 +272,44 @@ To load the data in the text file into the database table, you will implement an
 Now that you've built a data flow in a pipeline, you can debug it before publishing.
 
 1. At the top of the data flow designer, enabled **Data flow debug**. Review the default configuration and select **OK**, then wait for the debug cluster to start (which may take a few minutes).
+
+   ![](images/labimg21.png)
+
 2. In the data flow designer, select the **DimProductTable** sink and view its **Data preview** tab.
 
    >**Note**: kindly collapse **Integrate** pane to view **Data preview** tab.
    
 3. Use the **&#8635; Refresh** button to refresh the preview, which has the effect of running data through the data flow to debug it.
+
+   ![](images/labimg20.png)
+
 4. Review the preview data, noting that it indicates one upserted row (for the existing *AR5381* product), indicated by a **<sub>*</sub><sup>+</sup>** icon; and ten inserted rows, indicated by a **+** icon.
+
+   ![](images/labimg19.png)
 
 ## Task 5: Publish and run the pipeline
 
 Now you're ready to publish and run the pipeline.
 
 1. Use the **Publish all** button to publish the pipeline (and any other unsaved assets) and on **Publish all** pane click on **Publish**.
+
+   ![](images/labimg22.png)
+
 2. When publishing is complete, close the **LoadProductsData** data flow pane and return to the **Load Product Data** pipeline pane.
+
 3. At the top of the pipeline designer pane, select **Add trigger** menu, click **Trigger now**. Then select **OK** to confirm you want to run the pipeline.
 
     >**Note**: You can also create a trigger to run the pipeline at a scheduled time or in response to a specific event.
 
 4. When the pipeline has started running, on the **Monitor** page, view the **Pipeline runs** tab and review the status of the **Load Product Data** pipeline.
 
+   ![](images/labimg23.png)
+
     >**Note**: The pipeline may take five minutes or longer to complete. You can use the **&#8635; Refresh** button on the toolbar to check its status.
 
 5. When the pipeline run has succeeded, on the **Data** page, use the **...** menu for the **dbo.DimProduct** table in your SQL database to run a query that selects the top 100 rows. The table should contain the data loaded by the pipeline.
+
+    ![Screenshot of an empty data flow activity.](./images/lab1-new4.png)
 
   **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
 
@@ -272,9 +318,12 @@ Now you're ready to publish and run the pipeline.
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
+<validation step="378b666a-80b4-42e0-b48e-04e47eb229f6" />
+
 ## Review
 
 In this lab, you have accomplished the following:
+- Provision an Azure Synapse Analytics workspace
 - View source and destination data stores.
 - Implement a pipeline.
 - Debug the Data Flow.
