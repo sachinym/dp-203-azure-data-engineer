@@ -41,11 +41,11 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
     > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
 
-    ![Azure portal with a cloud shell pane](./images/L19T1S4.png)
-
-4. In the Getting Started menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
-
     ![Azure portal with a cloud shell pane](./images/25-4.png)
+
+4. In the Getting Started menu,nchoose **No storage account required (1)**, select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
+
+    ![Azure portal with a cloud shell pane](./images/L19T1S4.png)
 
 5. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
