@@ -31,49 +31,25 @@ In this task, you'll use a script to provision a new Azure Databricks workspace 
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
-
-    ![Azure portal with a cloud shell pane](./images/update1.png)
-
-
-4. On the **Getting Started** pop-up, select the following information:-
-
-    - Select **Mount storage account (1)**
-    - Storage account subscription: **Select the existing subscription (2)**
-    - Select **Apply (3)**
-
-        ![Azure portal with a cloud shell pane](./images/gettingstarted1.png)
-      
-5. On the **Mount storage account** pop-up, select the following:
-
-    - **We will create a storage account for you (1)**
-    - Select **Next (2)**
-
-        ![Azure portal with a cloud shell pane](./images/mount-storageaccount1.png)
-
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
-
-    ![Azure portal with a cloud shell pane](./images/25-5.png)
-
-7. In the PowerShell pane, enter the following commands to clone this repo:
+3. Use the [>_] button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select PowerShell environment.
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-8. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
+6. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/27
     ./setup.ps1
     ```
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+7. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-10. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review [What is Azure Data Factory?](https://docs.microsoft.com/azure/data-factory/introduction).
+8. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review [What is Azure Data Factory?](https://docs.microsoft.com/azure/data-factory/introduction).
 
-11. When the script has completed, close the cloud shell pane and browse to the **dp203-*xxxxxxx*** resource group that was created by the script to verify that it contains an Azure Databricks workspace and an Azure Data Factory (V2) resource (you may need to refresh the resource group view).
+9. When the script has completed, close the cloud shell pane and browse to the **dp203-*xxxxxxx*** resource group that was created by the script to verify that it contains an Azure Databricks workspace and an Azure Data Factory (V2) resource (you may need to refresh the resource group view).
 
 ## Task 2: Import a notebook
 
@@ -201,12 +177,12 @@ Now that you have created a linked service, you can use it in a pipeline to run 
 
 5. Note the **runOutput** value, which is the *path* variable to which the notebook saved the data.
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  <validation step="7ca96f58-2197-4798-afc5-f02401a56827" />
+  
+  > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  > - If you receive a success message, you can proceed to the next task.
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
  ## Review
 
