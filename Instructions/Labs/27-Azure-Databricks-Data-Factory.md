@@ -33,18 +33,6 @@ In this task, you'll use a script to provision a new Azure Databricks workspace 
 
 3. Use the [>_] button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select PowerShell environment.
 
-    ![Azure portal with a cloud shell pane](./images/L19T1S3.png)
-
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
-
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
-
-4. In the Getting Started menu, choose **No storage account required (1)**, select your default **Subscription (2)** from the dropdown and click on **Apply (3)**.
-
-    ![Azure portal with a cloud shell pane](./images/L19T1S4.png)
-
-5. In the PowerShell pane, enter the following commands to clone this repo:
-
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203

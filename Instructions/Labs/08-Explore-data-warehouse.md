@@ -22,29 +22,48 @@ After completing this lab, you will be able to:
 
 In this exercise, you'll use a combination of a PowerShell script and an ARM template to provision Azure Synapse Analytics.
 
-1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
-    
-    ![Azure portal with a cloud shell pane](./images/cloud-shell1.png)
+1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 
-    ![Azure portal with a cloud shell pane](./images/cl2.png)
-   
-1. In the **Getting Started** menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
-   ![Azure portal with a cloud shell pane](./images/cl3.png)
+    ![Azure portal with a cloud shell pane](./images/25-1.png)
+
+    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
+
+    ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
+
+1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+
+    ![Azure portal with a cloud shell pane](./images/L3T1S3.png)
+
+1. On the **Getting Started** pop-up, select the following information:-
+
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
+
+        ![Azure portal with a cloud shell pane](./images/gettingstarted.png)
+
+1. On the **Mount storage account** pop-up, select the following:
+
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
+
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount.png)
 
 1. Note that Cloud Shell can be resized by dragging the separator bar at the top of the pane, or by using the—, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
 
 1. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
-    rm -r dp500 -f
-    git clone https://github.com/MicrosoftLearning/DP-500-Azure-Data-Analyst dp500
+    rm -r dp203 -f
+    git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
 1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
-    cd dp500/Allfiles/03
+    cd dp-203/Allfiles/labs/08
     ./setup.ps1
     ```
 
@@ -61,17 +80,20 @@ In this lab, the data warehouse is hosted in a dedicated SQL pool in Azure Synap
 
 ### Task 2.1: Start the dedicated SQL pool
 
-1. After the script has completed, in the Azure portal, go to the **dp500-*xxxxxxx*** resource group that it created, and select your Synapse workspace.
+1. After the script has completed, in the Azure portal, go to the **dp203-*xxxxxxx*** resource group that it created, and select your Synapse workspace.
    
 2. In the **Overview** page for your Synapse workspace, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; signing in if prompted.
    
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio that are used to manage resources and perform data analytics tasks.
-4. On the **Manage** page, ensure the **SQL pools** tab is selected and then select the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655;** icon to start it; confirming that you want to resume it when prompted.
+
+4. On the **Manage** page, ensure the **SQL pools** tab is selected and then select the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655;** icon to start it; confirming that you want to **resume** it when prompted.
+
 5. Wait for the SQL pool to resume. This can take a few minutes. Use the **&#8635; Refresh** button to check its status periodically. The status will show as **Online** when it is ready.
 
 ### Task 2.2: View the tables in the database
 
 1. In Synapse Studio, select the **Data** page and ensure that the **Workspace** tab is selected and contains a **SQL database** category.
+
 2. Expand **SQL database**, the **sql*xxxxxxx*** pool, and its **Tables** folder to see the tables in the database.
 
     > **Note**: A relational data warehouse is typically based on a schema that consists of *fact* and *dimension* tables. The tables are optimized for analytical queries in which numeric metrics in the fact tables are aggregated by attributes of the entities represented by the dimension tables - for example, enabling you to aggregate Internet sales revenue by product, customer, date, and so on.
@@ -194,32 +216,7 @@ Another common requirement when analyzing large volumes of data is to group the 
 
 2. Select only the new query code, and use the **&#9655; Run** button to run it. Then review the results, which should look similar to the following table:
 
-    | Region | RowNumber | OrderNo | LineItem | SalesAmount | RegionTotal | RegionAverage |
-    |--|--|--|--|--|--|--|
-    |Australia|1|SO73943|2|2.2900|2172278.7900|375.8918|
-    |Australia|2|SO74100|4|2.2900|2172278.7900|375.8918|
-    |...|...|...|...|...|...|...|
-    |Australia|5779|SO64284|1|2443.3500|2172278.7900|375.8918|
-    |Canada|1|SO66332|2|2.2900|563177.1000|157.8411|
-    |Canada|2|SO68234|2|2.2900|563177.1000|157.8411|
-    |...|...|...|...|...|...|...|
-    |Canada|3568|SO70911|1|2443.3500|563177.1000|157.8411|
-    |France|1|SO68226|3|2.2900|816259.4300|315.4016|
-    |France|2|SO63460|2|2.2900|816259.4300|315.4016|
-    |...|...|...|...|...|...|...|
-    |France|2588|SO69100|1|2443.3500|816259.4300|315.4016|
-    |Germany|1|SO70829|3|2.2900|922368.2100|352.4525|
-    |Germany|2|SO71651|2|2.2900|922368.2100|352.4525|
-    |...|...|...|...|...|...|...|
-    |Germany|2617|SO67908|1|2443.3500|922368.2100|352.4525|
-    |United Kingdom|1|SO66124|3|2.2900|1051560.1000|341.7484|
-    |United Kingdom|2|SO67823|3|2.2900|1051560.1000|341.7484|
-    |...|...|...|...|...|...|...|
-    |United Kingdom|3077|SO71568|1|2443.3500|1051560.1000|341.7484|
-    |United States|1|SO74796|2|2.2900|2905011.1600|289.0270|
-    |United States|2|SO65114|2|2.2900|2905011.1600|289.0270|
-    |...|...|...|...|...|...|...|
-    |United States|10051|SO66863|1|2443.3500|2905011.1600|289.0270|
+    ![Azure portal with a cloud shell pane](./images/results.png)
 
 3. Observe the following facts about these results:
 
@@ -308,12 +305,12 @@ When exploring very large volumes of data, queries can take significant time and
 4. When you're done, on the **Manage** page, pause the **sql*xxxxxxx*** dedicated SQL pool.
 
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
+<validation step="2c7f21a5-6a6b-4f04-8870-961c4a7450d7" />
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ## Review
 
