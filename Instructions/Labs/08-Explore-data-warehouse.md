@@ -305,12 +305,12 @@ When exploring very large volumes of data, queries can take significant time and
 4. When you're done, on the **Manage** page, pause the **sql*xxxxxxx*** dedicated SQL pool.
 
 
-<validation step="2c7f21a5-6a6b-4f04-8870-961c4a7450d7" />
-
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - If you receive a success message, you can proceed to the next task.
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
 > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="2c7f21a5-6a6b-4f04-8870-961c4a7450d7" />
 
 ## Review
 
