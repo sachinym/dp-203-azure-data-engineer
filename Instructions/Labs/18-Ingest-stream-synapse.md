@@ -73,6 +73,9 @@ Let's start by ingesting a stream of data directly into a table in an Azure Syna
 2. Select your Synapse workspace, and in its **Overview** page, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab. Synapse Studio is a web-based interface that you can use to work with your Synapse Analytics workspace.
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio that you'll use to manage resources and perform data analytics tasks.
 4. On the **Manage** page, in the **SQL pools** section, select the **sql*xxxxxxx*** dedicated SQL pool row and then use its **&#9655;** icon to resume it.
+
+    ![Resume](./images/DP-203-lab18-new-01.jpg)
+
 5. While you wait for the SQL pool to start, switch back to the browser tab containing the Azure portal and re-open the cloud shell pane.
 6. In the cloud shell pane, enter the following command to run a client app that sends 100 simulated orders to Azure Event Hubs:
 
@@ -160,7 +163,10 @@ Let's start by ingesting a stream of data directly into a table in an Azure Syna
 ### Task 2.6: Run the streaming job to ingest order data
 
 1. View the **Overview** page for the **ingest-orders** Stream Analytics job, and on the **Properties** tab review the **Inputs**, **Query**, **Outputs**, and **Functions** for the job. If the number of **Inputs** and **Outputs** is 0, use the **&#8635; Refresh** button on the **Overview** page to display the **orders** input and **FactTable** output.
-2. Select the **&#9655; Start job** button, and start the streaming job now. Wait until you are notified that the streaming job started successfully.
+2. Select the **&#9655; Start job** button, and then click on **Start** to start the streaming job now. Wait until you are notified that the streaming job started successfully.
+
+    ![Start Job](./images/DP-203-lab18-new-02.jpg)
+
 3. Re-open the cloud shell pane and re-run the following command to submit another 100 orders.
 
     ```
