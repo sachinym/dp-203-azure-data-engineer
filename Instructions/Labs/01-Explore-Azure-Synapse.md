@@ -40,33 +40,20 @@ In this exercise, you'll use a combination of a PowerShell script and an ARM tem
 
     ![Azure portal with a cloud shell pane](./images/update1.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+1. On the **Getting Started** pop-up, select the following information:-
 
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
 
+        ![Azure portal with a cloud shell pane](./images/gettingstarted1.png)
 
-1. If You dont have precreated storage account , On Getting Started pane select **Mount storage account** and select the existing **Storage Account Subscription** and then click on **Apply**.
+1. On the **Mount storage account** pop-up, select the following:
 
-    ![Azure portal with a cloud shell pane](./images/update2.png)
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
 
-1.  On Mount Storage Account pane select **I want to create a storage account** and click **Next**.
-
-    ![Azure portal with a cloud shell pane](./images/update3.png)
-
-
-1. In the Create Storage Account pop up Add the following details and click on create.
-
-   **Subscription** : Existing Subscription
-
-   **Resource Group**: Existing Resource Group
-   
-   **Region** : West US
-   
-   **Storage Account Name** : Provide unique name
-   
-   **File Share Name** : **none** 
-   
-    ![Azure portal with a cloud shell pane](./images/update4.png)
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount1.png)
 
 1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
