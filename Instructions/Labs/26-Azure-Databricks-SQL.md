@@ -144,14 +144,13 @@ Saving a query makes it easy to retrieve the same data again at a later time.
 7. Select **Done editing** to view the dashboard as users will see it.
 
 Dashboards are a great way to share data tables and visualizations with business users. You can schedule the dashboards to be refreshed periodically, and emailed to subscribers.
-
- <validation step="e098cf8a-1f27-46cf-8e9a-7771c0eafa37" />
  
- > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-
- > - If you receive a success message, you can proceed to the next task.
- > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
- > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="e098cf8a-1f27-46cf-8e9a-7771c0eafa37" />
 
  ## Review
 
