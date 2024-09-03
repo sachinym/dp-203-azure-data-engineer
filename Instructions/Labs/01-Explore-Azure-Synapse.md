@@ -349,7 +349,7 @@ While SQL is a common language for querying structured datasets, many data analy
 
 11. In the results output for the cell, select the **Chart** view. The resulting chart should resemble this:
 
-    ![Image showing category count chart view](./images/bar-chart.png)
+    ![Image showing category count chart view](./images/bar-chart1.png)
 
 12. If it is not already visible, show the **Properties** page by selecting the **Properties** button (which looks similar to **&#128463;<sub>*</sub>**) on the right end of the toolbar. Then in the **Properties** pane, change the notebook name to **Explore products** and use the **Publish** button on the toolbar to save it.
 
