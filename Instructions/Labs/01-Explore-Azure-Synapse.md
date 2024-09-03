@@ -383,6 +383,14 @@ So far you've seen some techniques for exploring and processing file-based data 
 
 10. On the **Manage** page, select the **sql*xxxxxxx*** dedicated SQL pool row and use its &#10074;&#10074; icon to pause it.
 
+    <validation step="651c596f-e98d-42e4-ba66-7f4fe96743fd" />
+ 
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+ 
+  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
 ## Review
 In this lab, you have accomplished the following:
 - Provision an Azure Synapse Analytics workspace
