@@ -24,15 +24,13 @@ You'll need an Azure Synapse Analytics workspace with access to data lake storag
 
 In this exercise, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
 
-1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
+1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
-Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+   ![Azure portal with a cloud shell pane](./images/cloudshell(1).png)
 
-    ![Azure portal with a cloud shell pane](./images/cloudshell(1).png)
+   ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
-
-    ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
+   >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
 
 1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
@@ -444,13 +442,12 @@ Now that you've explored various ways to query files in the data lake by using S
 
 7. Experiment with the charting functionality in the query editor. It offers some basic charting capabilities that you can use while interactively exploring data, and you can save charts as images to include in reports. However, functionality is limited compared to enterprise data visualization tools such as Microsoft Power BI.
 
-<validation step="323f47df-3316-4e9d-ada6-d96ebc2cef6e" />
-
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - If you receive a success message, you can proceed to the next task.
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
 > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
+<validation step="323f47df-3316-4e9d-ada6-d96ebc2cef6e" />
 
 ## Review
 

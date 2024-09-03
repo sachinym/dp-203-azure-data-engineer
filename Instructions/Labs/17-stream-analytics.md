@@ -29,33 +29,46 @@ You'll use a combination of a PowerShell script and an ARM template to provision
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 
-
-1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
-
 2. Use the [>_] button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select PowerShell environment.
-
 
     ![Azure portal with a cloud shell pane](./images/L14T1S1-i.png)
     ![Azure portal with a cloud shell pane](./images/L14T1S1.png)
 
-3. In the Getting Started menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
+3. On the **Getting Started** pop-up, select the following information:-
 
-    ![Azure portal with a cloud shell pane](./images/L14T1S2.png)
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
+
+        ![Azure portal with a cloud shell pane](./images/gettingstarted.png)
+
+4. On the **Mount storage account** pop-up, select the following:
+
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
+
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount.png)
+
+5. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
+
+    ![Azure portal with a cloud shell pane](./images/close(1).png)
+    
+6. In the PowerShell pane, manually enter the following commands to clone this repo:
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
-1. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
+7. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
 
     ```
     cd dp-203/Allfiles/labs/17
     ./setup.ps1
     ```
-1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+8. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-1. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [Welcome to Azure Stream Analytics](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-introduction) article in the Azure Stream Analytics documentation.
+9. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [Welcome to Azure Stream Analytics](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-introduction) article in the Azure Stream Analytics documentation.
 
 ## Task 2: View the streaming data source
 
@@ -103,19 +116,19 @@ Now you're ready to create an Azure Stream Analytics job to process the sales tr
         
 2. Wait for deployment to complete and then go to the deployed Stream Analytics job resource.
 
-    <validation step="cfbef9ad-000c-4cdc-b432-dfb2a75a3f77" />
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="cfbef9ad-000c-4cdc-b432-dfb2a75a3f77" />
 
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - If you receive a success message, you can proceed to the next task.
-    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-    <validation step="4fef5a67-aa5f-4293-9d5e-01792f6ddf7e" />
-
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - If you receive a success message, you can proceed to the next task.
-    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="4fef5a67-aa5f-4293-9d5e-01792f6ddf7e" />
 
 ## Task 4: Create an input for the event stream
 
@@ -145,12 +158,12 @@ Your Azure Stream Analytics job must get input data from the event hub where the
     
 2. Save the input and wait while it is created. You will see several notifications. Wait for a **Successful connection test** notification.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
    <validation step="e64cb23c-ae14-4a80-b5e7-d96b34c5b5e9" />
-
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - If you receive a success message, you can proceed to the next task.
-    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ## Task 5: Create an output for the blob store
 
@@ -191,12 +204,12 @@ You will store the aggregated sales order data in JSON format in an Azure Storag
 
 2. Save the output and wait while it is created. You will see several notifications. Wait for a **Successful connection test** notification.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
    <validation step="d89b45d3-05b9-4697-bc41-86bb49a59dbb" />
-
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - If you receive a success message, you can proceed to the next task.
-    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ## Task 6: Create a query
 
@@ -282,12 +295,12 @@ OK, now you're ready to run the job and process some real-time sales order data.
 
 13. At the top of the Stream Analytics job page, use the **&#11036; Stop Job** button to stop the job, confirming as **Yes** when prompted.
 
-  <validation step="d40d2d10-d40b-42eb-a29a-22c09818cd44" />
-
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - If you receive a success message, you can proceed to the next task.
-    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="d40d2d10-d40b-42eb-a29a-22c09818cd44" />
 
 ## Review
 

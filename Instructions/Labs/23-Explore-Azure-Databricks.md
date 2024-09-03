@@ -179,12 +179,12 @@ While many data analysis are comfortable using languages like Python or Scala to
    
 5. In the sidebar, select the **Data** link, and verify that the **products** table has been created in the default database schema (which is unsurprisingly named **default**). It's possible to use Spark code to create custom database schemas and a schema of relational tables that data analysts can use to explore data and generate analytical reports.
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="56d34a71-5aa4-48c5-83db-c91ed9e3086e" />
 
 ## Review
 

@@ -440,12 +440,12 @@ In addition to Spark pools, Azure Synapse Analytics includes a built-in serverle
 
 7. Run the code and observe that you can also use the serverless SQL pool to query Delta Lake data in catalog tables that are defined the Spark metastore.
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="826237d0-d31b-4cb5-a21e-34e85156fc21" />
 
 ## Review
 

@@ -252,12 +252,12 @@ In this task, You will use your Azure Synapse Workspace to configure Synapse Lin
    
 5. When you're done, on the **Manage** page, pause the **sql*xxxxxxx*** dedicated SQL pool.
 
-<validation step="c386e672-aa05-44e0-80af-24f6ce16cb04" />
-
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - If you receive a success message, you can proceed to the next task.
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
 > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="c386e672-aa05-44e0-80af-24f6ce16cb04" />
 
 ## Review
 

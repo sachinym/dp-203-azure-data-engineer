@@ -146,12 +146,12 @@ Before you can use Synapse Link for Azure Cosmos DB, you must enable it in your 
 
 > **Note**: In reality, the analytical store would contain a much larger volume of data, written to the store by an application. These few items will be sufficient to demonstrate the principle in this exercise.
 
-  **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="007e6308-0778-4ee9-b7b4-5811e871a536" />
 
 ## Task 3: Configure Synapse Link in Azure Synapse Analytics
 
@@ -180,12 +180,12 @@ Now that you have prepared your Azure Cosmos DB account, you can configure Azure
 
     ![Adding an Azure Cosmos DB SQl API external data link](./images/l-14-4.png)
 
-  **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="e0f6a259-4817-44e0-b560-14df092d8703" />
 
 ## Task 4: Query Azure Cosmos DB from Azure Synapse Analytics
 
