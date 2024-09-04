@@ -252,18 +252,18 @@ JSON is another popular data format, so it;s useful to be able to query .json fi
     - Add parameters for field terminator, quoted fields, and row terminators with the character code *0x0b*.
     - Format the results as a single field containing the JSON row of data as an NVARCHAR(MAX) string.
 
-    ```sql
-    SELECT
+      ```sql
+      SELECT
         TOP 100 *
-    FROM
-        OPENROWSET(
-            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/json/',
-            FORMAT = 'CSV',
-            FIELDTERMINATOR ='0x0b',
-            FIELDQUOTE = '0x0b',
-            ROWTERMINATOR = '0x0b'
-        ) WITH (Doc NVARCHAR(MAX)) as rows
-    ```
+      FROM
+          OPENROWSET(
+              BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/json/',
+              FORMAT = 'CSV',
+              FIELDTERMINATOR ='0x0b',
+              FIELDQUOTE = '0x0b',
+              ROWTERMINATOR = '0x0b'
+          ) WITH (Doc NVARCHAR(MAX)) as rows
+      ```
 
 5. Run the modified code and observe that the results include a JSON document for each order.
 
