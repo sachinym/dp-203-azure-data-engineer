@@ -28,51 +28,47 @@ In this task, you'll capture a stream of simulated sales transaction data, proce
 You'll use a combination of a PowerShell script and an ARM template to provision these resources.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
-    ![Azure portal with a cloud shell pane](./images/25-1.png)
+2. Use the [>_] button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select PowerShell environment.
 
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
+    ![Azure portal with a cloud shell pane](./images/L14T1S1-i.png)
+    ![Azure portal with a cloud shell pane](./images/L14T1S1.png)
 
-    ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
+3. On the **Getting Started** pop-up, select the following information:-
 
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+        ![Azure portal with a cloud shell pane](./images/gettingstarted.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+4. On the **Mount storage account** pop-up, select the following:
 
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
 
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount.png)
 
-4. If You dont have precreated storage account then select advanced setting.
+5. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
-
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
-
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
-
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
-
-    ![Azure portal with a cloud shell pane](./images/25-5.png)
-
-7. In the PowerShell pane, enter the following commands to clone the repo containing this exercise:
+    ![Azure portal with a cloud shell pane](./images/close(1).png)
+    
+6. In the PowerShell pane, manually enter the following commands to clone this repo:
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
+7. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
-8. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/17
     ./setup.ps1
     ```
+8. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
-10. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [Welcome to Azure Stream Analytics](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-introduction) article in the Azure Stream Analytics documentation.
+9. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [Welcome to Azure Stream Analytics](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-introduction) article in the Azure Stream Analytics documentation.
 
 ## Task 2: View the streaming data source
 
@@ -95,86 +91,134 @@ Before creating an Azure Stream Analytics job to process real-time data, let's t
 Now you're ready to create an Azure Stream Analytics job to process the sales transaction data as it arrives in the event hub.
 
 1. In the Azure portal, on the **dp203-*xxxxxxx*** page, select **+ Create** and search for `Stream Analytics job`. Then create a **Stream Analytics job** with the following properties and click on **Review + Create** and then click on **Create**.
+    
     - **Basics**:
+        
         - **Subscription**: Your Azure subscription
+        
         - **Resource group**: Select the existing **dp203-*xxxxxxx*** resource group.
+        
         - **Name**: **process-orders**
+        
         - **Region**: Select the region where your other Azure resources are provisioned.
+        
         - **Hosting environment**: Cloud
+        
         - **Streaming units**: 1
+    
     - **Storage**:
+        
         - **Add storage account**: Unselected
+    
     - **Tags**:
+        
         - *None*
+        
 2. Wait for deployment to complete and then go to the deployed Stream Analytics job resource.
 
-  **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="cfbef9ad-000c-4cdc-b432-dfb2a75a3f77" />
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="4fef5a67-aa5f-4293-9d5e-01792f6ddf7e" />
 
 ## Task 4: Create an input for the event stream
 
 Your Azure Stream Analytics job must get input data from the event hub where the sales orders are recorded.
 
-1. On the **process-orders** overview page, select **Add input**. Then  on the **Inputs** page, click on  **+ Add input** menu to add an **Event Hub** input with the following properties:
+1. On the **process-orders** overview page. Select **Properties**, under **Inputs** select **Add input**. Then  on the **Inputs** page, click on  **+ Add input** menu to add an **Event Hub** input with the following properties:
+    
     - **Input alias**: **orders**
+    
     - **Select Event Hub from your subscriptions**: Selected
+    
     - **Subscription**: Your Azure subscription
+    
     - **Event Hub namespace**: Select the **events*xxxxxxx*** Event Hubs namespace
+    
     - **Event Hub name**: Select the existing **eventhub*xxxxxxx*** event hub.
+    
     - **Event Hub consumer group**: Select the existing **$Default** consumer group
+    
     - **Authentication mode**: Managed Identity: System assigned
+    
     - **Partition key**: *Leave blank*
+    
     - **Event serialization format**: JSON
+    
     - **Encoding**: UTF-8
     
 2. Save the input and wait while it is created. You will see several notifications. Wait for a **Successful connection test** notification.
 
-  **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="e64cb23c-ae14-4a80-b5e7-d96b34c5b5e9" />
 
 ## Task 5: Create an output for the blob store
 
 You will store the aggregated sales order data in JSON format in an Azure Storage blob container.
 
-1. View the **Outputs** page from the left navigation pane in the  **process-orders** Stream Analytics job page. Then use the **Add** menu to add a **Blob storage/ADLS Gen2** output with the following properties:
+1. Select the **Outputs** page from the left navigation pane in the  **process-orders** Stream Analytics job page. Then use the **Add output** menu to add a **Blob storage/ADLS Gen2** output with the following properties:
+    
     - **Output alias**: **blobstore**
-    - **Select Select Blob storage/ADLS Gen2 from your subscriptions from your subscriptions**: Selected
+    
+    - **Select Select Blob storage/ADLS Gen2 from your subscriptions from your subscriptions**: 
+    Selected
+    
     - **Subscription**: Your Azure subscription
+    
     - **Storage account**: Select the **store*xxxxxxx*** storage account
+    
     - **Container**: Select the existing **data** container
+    
     - **Authentication mode**: Managed Identity: System assigned
+    
     - **Event serialization format**: JSON
+    
     - **Format**: Line separated
+    
     - **Encoding**: UTF-8
+    
     - **Write mode**: Append as results arrive
+    
     - **Path pattern**: `{date}`
+    
     - **Date format**: YYYY/MM/DD
+    
     - **Time format**: *Not applicable*
+    
     - **Minimum rows**: 20
+    
     - **Maximum time**: 0 Hours, 1 minutes, 0 seconds
+
 2. Save the output and wait while it is created. You will see several notifications. Wait for a **Successful connection test** notification.
 
-  **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="d89b45d3-05b9-4697-bc41-86bb49a59dbb" />
 
 ## Task 6: Create a query
 
 Now that you have defined an input and an output for your Azure Stream Analytics job, you can use a query to select, filter, and aggregate data from the input and send the results to the output.
 
 1. From the left navigation pane, view the **Query** page for the **process-orders** Stream Analytics job. Then wait a few moments until the input preview is displayed (based on the sales order events previously captured in the event hub).
+
 2. Observe that the input data includes the **ProductID** and **Quantity** fields in the messages submitted by the client app, as well as additional Event Hubs fields - including the **EventProcessedUtcTime** field that indicates when the event was added to the event hub.
+
 3. Modify the default query as follows:
 
     ```
@@ -204,7 +248,8 @@ Now that you have defined an input and an output for your Azure Stream Analytics
 OK, now you're ready to run the job and process some real-time sales order data.
 
 1. View the **Overview** page for the **process-orders** Stream Analytics job, and on the **Properties** tab review the **Inputs**, **Query**, **Outputs**, and **Functions** for the job. If the number of **Inputs** and **Outputs** is 0, use the **&#8635; Refresh** button on the **Overview** page to display the **orders** input and **blobstore** output.
-2. Select the **&#9655; Start** button, and start the streaming job now. Wait until you are notified that the streaming job started successfully.
+
+2. Select the **&#9655; Start Job** button, make sure **Now** is selected, select **Start** and start the streaming job now. Wait until you are notified that the streaming job started successfully.
 
    >**Note**: This might take some time. Kindly refresh the page to check the latest status.
 
@@ -215,10 +260,15 @@ OK, now you're ready to run the job and process some real-time sales order data.
     ```
 
 4. While the app is running, in the Azure portal, return to the page for the **dp203-*xxxxxxx*** resource group, and select the **store*xxxxxxxxxxxx*** storage account.
+
 5. In the pane on the left of the storage account blade, select the **Containers** tab.
+
 6. Open the **data** container, and use the **&#8635; Refresh** button to refresh the view until you see a folder with the name of the current year.
+
 7. In the **data** container, navigate through the folder hierarchy, which includes the folder for the current year, with subfolders for the month and day.
+
 8. In the folder for the hour, note the file that has been created, which should have a name similar to **0_xxxxxxxxxxxxxxxx.json**.
+
 9. On the **...** menu for the file (to the right of the file details), select **View/edit**, and review the contents of the file; which should consist of a JSON record for each 10 second period, showing the number of orders processed for each product ID, like this:
 
     ```
@@ -238,16 +288,19 @@ OK, now you're ready to run the job and process some real-time sales order data.
     ```
 
 10. In the Azure Cloud Shell pane, wait for the order client app to finish.
+
 11. In the Azure portal, refresh the file to see the full set of results that were produced.
+
 12. Return to the **dp203-*xxxxxxx*** resource group, and re-open the **process-orders** Stream Analytics job.
-13. At the top of the Stream Analytics job page, use the **&#11036; Stop** button to stop the job, confirming when prompted.
 
-  **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+13. At the top of the Stream Analytics job page, use the **&#11036; Stop Job** button to stop the job, confirming as **Yes** when prompted.
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="d40d2d10-d40b-42eb-a29a-22c09818cd44" />
 
 ## Review
 

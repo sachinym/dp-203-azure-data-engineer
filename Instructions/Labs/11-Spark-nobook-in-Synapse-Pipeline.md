@@ -2,12 +2,13 @@
 
 ## Lab Scenario
 
-In this exercise, we're going to create an Azure Synapse Analytics pipeline that includes an activity to run an Apache Spark notebook.
+In this Lab, we're going to create an Azure Synapse Analytics pipeline that includes an activity to run an Apache Spark notebook.
 
 ### Objectives
   
 After completing this lab, you will be able to:
 
+- Provision an Azure Synapse Analytics workspace
 - Run a Spark notebook interactively.
 - Run the notebook in a pipeline.
 
@@ -25,33 +26,23 @@ You'll need an Azure Synapse Analytics workspace with access to data lake storag
 
 In this exercise, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
 
-1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
-
-    ![Azure portal with a cloud shell pane](./images/25-1.png)
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
+    
+    ![Azure portal with a cloud shell pane](./images/cloud-shell1.png)
 
     >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+    ![Azure portal with a cloud shell pane](./images/cl2.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+1. In the **Getting Started** menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
 
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
+   ![Azure portal with a cloud shell pane](./images/cl3.png)
 
-
-4. If You dont have precreated storage account then select advanced setting.
-
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
-
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
-
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
-
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
+1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
     ![Azure portal with a cloud shell pane](./images/25-5.png)
 
@@ -81,25 +72,46 @@ In this exercise, you'll use a combination of a PowerShell script and an ARM tem
 Before automating a data transformation process with a notebook, it can be useful to run the notebook interactively in order to better understand the process you will later automate.
 
 1. After the script has completed, in the Azure portal, go to the dp203-xxxxxxx resource group that it created, and select your Synapse workspace.
-2. In the **Overview** page for your Synapse Workspace, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; signing in if prompted.
-3. On the left side of Synapse Studio, use the ›› icon to expand the menu - this reveals the different pages within Synapse Studio.
-4. On the **Data** page, view the Linked tab and verify that your workspace includes a link to your Azure Data Lake Storage Gen2 storage account, which should have a name similar to **synapsexxxxxxx (Primary - datalakexxxxxxx)**.
-5. Expand your storage account and verify that it contains a file system container named **files (primary)**.
-6. Select the files container, and note that it contains a folder named **data**, which contains the data files you're going to transform.
-7. Open the **data**** folder and view the CSV files it contains. Right-click any of the files and select **Preview** to see a sample of the data. Close the preview when finished.
-8. Right-click any of the files and select **Preview** to see the data it contains. Note that the files contain a header row, so you can select the option to display column headers.
-9. Close the preview. Then download the **Spark Transform.ipynb** [from Allfiles/labs/11/notebooks](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/tree/master/Allfiles/labs/11/notebooks)
 
-    > **Note**: It's best to copy this text using the ***ctrl+a*** then ***ctrl+c*** and pasting into a tool using ***ctrl+v***, such as, notepad and then using file, save as **Spark Transform.ipynb** with a filetype of ***all files***. You also have the option to select the file within GitHub and then selecting the ellipses and then select download, saving it to a location you can remember. 
-    ![download notebook file from GitHub](./images/select-download-notebook.png)
+2. In the **Overview** page for your Synapse Workspace, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; signing in if prompted.
+
+   ![](./images/labimg2.png)
+
+3. On the left side of Synapse Studio, use the ›› icon to expand the menu - this reveals the different pages within Synapse Studio.
+
+4. On the **Data** page, view the Linked tab and verify that your workspace includes a link to your Azure Data Lake Storage Gen2 storage account, which should have a name similar to **synapsexxxxxxx (Primary - datalakexxxxxxx)**.
+
+   ![](./images/labimg3.png)
+
+5. Expand your storage account and verify that it contains a file system container named **files (primary)**.
+
+6. Select the files container, and note that it contains a folder named **data**, which contains the data files you're going to transform.
+
+   ![](./images/labimg5.png)
+
+7. Open the **data** folder and view the CSV files it contains. Right-click any of the files and select **Preview** to see a sample of the data. Close the preview when finished.
+
+8. Right-click any of the files and select **Preview** to see the data it contains. Note that the files contain a header row, so you can select the option to display column headers.
+
+9. Close the preview. Then download the **Spark Transform.ipynb** by using the link below through browser.
+
+    ```
+    https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/tree/master/Allfiles/labs/11/notebooks
+    ```
+
+    ![download notebook file from GitHub](./images/downloadt.png)
 
 
 10. Then on **Develop** page, expand **Notebooks** click on the + Import options
 
-    ![Spark Notebook import](./image/../images/spark-notebook-import.png)
+    ![Spark Notebook import](./image/../images/importt.png)
         
 11. Select the file you just downloaded and saved as **Spark Transfrom.ipynb**.
+
 12. Attach the notebook to your **spark*xxxxxxx*** Spark pool.
+
+    ![Spark Notebook import](./image/../images/importta.png)
+
 13. Review the notes in the notebook and run the code cells.
 
     > **Note**: The first code cell will take a few minutes to run because the Spark pool must be started. Subsequent cells will run more quickly. 
@@ -126,14 +138,24 @@ Now that you understand the transformation process, you're ready to automate it 
 ### Task 3.1: Create a parameters cell
 
 1. In Synapse Studio, return to the **Spark Transform** tab that contains the notebook, and in the toolbar, in the **...** menu at the right end, select **Clear output**.
+
+   ![](./images/newimg50.png)
+
 2. Select the first code cell (which contains the code to set the **folderName** variable).
 3. In the pop-up toolbar at the top right of the code cell, in the **...** menu, select **\[@] Toggle parameter cell**. Verify that the word **parameters** appears at the bottom right of the cell.
+
+   ![](./images/newimg5a.png)
+
 4. In the toolbar, use the **Publish** button to save the changes.
 
 ### Task 3.2: Create a pipeline
 
 1. In Synapse Studio, select the **Integrate** page. Then in the **+** menu select **Pipeline** to create a new pipeline.
+
 2. In the **Properties** pane for your new pipeline, change its name from **Pipeline1** to **Transform Sales Data**. Then use the **Properties** button above the **Properties** pane to hide it.
+
+   ![](./images/importtat.png)
+
 3. In the **Activities** pane, expand **Synapse**; and then drag a **Notebook** activity to the pipeline design surface as shown here:
 
     ![Screenshot of a pipeline containing a Notebook activity.](images/dp203notebook-pipeline.png)
@@ -150,32 +172,43 @@ Now that you understand the transformation process, you're ready to automate it 
 
     Your pipeline pane should look similar to this:
 
-    ![Screenshot of a pipeline containing a Notebook activity with settings.](images/dp203run.png)
+    ![Screenshot of a pipeline containing a Notebook activity with settings.](images/dp203run1.png)
 
 ### Task 3.3: Publish and run the pipeline
 
 1. Use the **Publish all** button to publish the pipeline (and any other unsaved assets).
+
+   ![](./images/newlbimg1.png)
+
 2. At the top of the pipeline designer pane, in the **Add trigger** menu, select **Trigger now**. Then select **OK** to confirm you want to run the pipeline.
+
+   ![](./images/newlbimg2.png)
 
     **Note**: You can also create a trigger to run the pipeline at a scheduled time or in response to a specific event.
 
 3. When the pipeline has started running, on the **Monitor** page, view the **Pipeline runs** tab and review the status of the **Transform Sales Data** pipeline.
+
+   ![](./images/newlbimg3.png)
+
 4. Select the **Transform Sales Data** pipeline to view its details, and note the Pipeline run ID in the **Activity runs** pane.
 
     The pipeline may take five minutes or longer to complete. You can use the **&#8635; Refresh** button on the toolbar to check its status.
 
 5. When the pipeline run has succeeded, on the **Data** page, browse to the **files** storage container and verify that a new folder named for the pipeline run ID has been created, and that it contains Parquet files for the transformed sales data.
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
+   ![](./images/newimg2.png)
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="5b32d10f-466c-4c6d-ac72-05ee31604ac8" />
  
 ## Review
 
 In this lab, you have accomplished the following:
+- Provision an Azure Synapse Analytics workspace
 - Run a Spark notebook interactively.
 - Run the notebook in a pipeline.
 

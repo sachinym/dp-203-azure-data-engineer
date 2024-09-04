@@ -8,6 +8,7 @@ Azure Synapse Link for SQL enables you to automatically synchronize a transactio
   
 After completing this lab, you will be able to:
 
+- Provision Azure resources
 - Configure Azure SQL Database.
 - Explore the transactional database.
 - Configure Azure Synapse Link.
@@ -23,7 +24,8 @@ After completing this lab, you will be able to:
 In this exercise, you'll synchronize data from an Azure SQL Database resource to an Azure Synapse Analytics workspace. You'll start by using a script to provision these resources in your Azure subscription.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
     ![Azure portal with a cloud shell pane](./images/25-1.png)
 
@@ -31,48 +33,50 @@ In this exercise, you'll synchronize data from an Azure SQL Database resource to
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+    ![Azure portal with a cloud shell pane](./images/L3T1S3.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+1. On the **Getting Started** pop-up, select the following information:-
 
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
 
+        ![Azure portal with a cloud shell pane](./images/gettingstarted.png)
 
-4. If You dont have precreated storage account then select advanced setting.
+1. On the **Mount storage account** pop-up, select the following:
 
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
 
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount.png)
 
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
-
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
+1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
     ![Azure portal with a cloud shell pane](./images/25-5.png)
 
-7. In the PowerShell pane, enter the following commands to clone this repo:
+1. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-8. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/15
     ./setup.ps1
     ```
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
    
-10. When prompted, enter a suitable password for your Azure SQL Database.
+1. When prompted, enter a suitable password for your Azure SQL Database.
 
     > **Note**: Be sure to remember this password!
 
-11. Wait for the script to complete - this typically takes around 15 minutes, but in some cases may take longer. While you are waiting, review the [What is Azure Synapse Link for SQL?](https://docs.microsoft.com/azure/synapse-analytics/synapse-link/sql-synapse-link-overview) article in the Azure Synapse Analytics documentation.
+1. Wait for the script to complete - this typically takes around 15 minutes, but in some cases may take longer. While you are waiting, review the [What is Azure Synapse Link for SQL?](https://docs.microsoft.com/azure/synapse-analytics/synapse-link/sql-synapse-link-overview) article in the Azure Synapse Analytics documentation.
 
 ## Task 2: Configure Azure SQL Database
 
@@ -88,7 +92,7 @@ Before you can set up Azure Synapse Link for your Azure SQL Database, you must e
 
 3. In the pane on the left, in the **Security** section, select **Networking**. Then, under **Firewall rules**, select the exception checkbox to **Allow Azure services and resources to access this server**.
 
-4. Use the **&#65291; Add a firewall rule** button to add a new firewall rule with the following settings:
+4. Use the **&#65291; Add a firewall rule** button to add a new firewall rule with the following settings, select **OK**:
 
     | Rule name | Start IP | End IP |
     | -- | -- | -- |
@@ -104,22 +108,34 @@ Before you can set up Azure Synapse Link for your Azure SQL Database, you must e
 
 Your Azure SQL server hosts a sample database named **AdventureWorksLT**. This database represents a transactional database used for operational application data.
 
+In this task, you will explore the transactional database which is created.
+
 1. In the **Overview** page for your Azure SQL server, at the bottom of the page, select the **AdventureWorksLT** database:
+
+   ![Screenshot of the Azure SQL server Networking page in the Azure portal.](./images/sqldb-network1a.png)
    
 2. In the **AdventureWorksLT** database page, from the left navigation pane, select the **Query editor** tab and log in using SQL server authentication with the following credentials:
+
     - **Login** SQLUser
     - **Password**: *The password you specified when running the setup script.*
       
 3. When the query editor opens, expand the **Tables** node and view the list of tables in the database. Note that they include tables in a **SalesLT** schema (for example, **SalesLT.Customer**).
 
+   ![Screenshot of the Azure SQL server Networking page in the Azure portal.](./images/sqldb-network1b.png)
+
 ## Task 4: Configure Azure Synapse Link
 
 Now you're ready to configure Azure Synapse Link for SQL in your Synapse Analytics workspace.
 
+In this task, You will use your Azure Synapse Workspace to configure Synapse Link for SQl.
+
 ### Task 4.1: Start the dedicated SQL pool
 
 1. In the Azure portal, close the query editor for your Azure SQL database (discarding any changes) and return to the page for your **dp203-*xxxxxxx*** resource group.
+
 2. Open the **synapse*xxxxxxx*** Synapse workspace, and on its **Overview** page, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; signing in if prompted.
+
+   ![](images/labimg2.png)
    
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio.
    
@@ -145,21 +161,27 @@ Now you're ready to configure Azure Synapse Link for SQL in your Synapse Analyti
 ### Task 4.3: Create a link connection
 
 1. In Synapse Studio, on the **Integrate** page, select the **&#65291;** icon and from drop-down menu, select **Link connection**. Then create a new linked connection with the following settings:
+
+    ![](images/sqldb-network1c.png)
+
     - **Source type**: Azure SQL database
     - **Source linked service**: Select **+ New** from the dropdown to add a new linked service with the following settings (a new tab will be opened):
-        - **Name**: SqlAdventureWorksLT
-        - **Description**: Connection to AdventureWorksLT database
-        - **Connect via integration runtime**: AutoResolveIntegrationRuntime
-        - **Connection String**: Selected
-        - **From Azure subscription**: Selected
-        - **Azure subscription**: *Select your Azure subscription*
-        - **Server name**: *Select your **sqldbxxxxxxx** Azure SQL server*
-        - **Database name**: AdventureWorksLT
-        - **Authentication type**: SQL authentication
-        - **User name**: SQLUser
-        - **Password**: *The password you set when running the setup script*
+        - **Name**: SqlAdventureWorksLT (1)
+        - **Description**: Connection to AdventureWorksLT database (2)
+        - **Connect via integration runtime**: AutoResolveIntegrationRuntime (3)
+        - **Version**:Legacy (4)
+        - **Connection String**: Selected (5)
+        - **From Azure subscription**: Selected(6)
+        - **Azure subscription**: *Select your Azure subscription*(7)
+        - **Server name**: *Select your **sqldbxxxxxxx** Azure SQL server*(8)
+        - **Database name**: AdventureWorksLT (9)
+        - **Authentication type**: SQL authentication (10)
+        - **User name**: SQLUser (11)
+        - **Password**: *The password you set when running the setup script* (12)
 
-        *Use the **Test Connection** option to ensure your connection settings are correct before continuing! Afterwards, click **Create**.*
+        Use the **Test Connection** (13) option to ensure your connection settings are correct before continuing! Afterwards, click **Create** (14).
+
+        ![Screenshot of the Azure SQL server Networking page in the Azure portal.](./images/cl4.1.png)
 
     - **Source tables**: Select the following tables:
         - **SalesLT.Customer**
@@ -188,9 +210,20 @@ Now you're ready to configure Azure Synapse Link for SQL in your Synapse Analyti
     |SalesLT.SalesOrderDetail **&#8594;**|\[SalesLT].\[SalesOrderDetail]|Round robin|-|Clustered columnstore index|
     |SalesLT.SalesOrderHeader **&#8594;**|\[SalesLT].\[SalesOrderHeader]|Round robin|-|Heap|
 
+    - **Target pool**: *Select your **sqlxxxxxxx** dedicated SQL pool*
+    - Click **Continue** to configure the following settings
+
+    - **Link connection name**: sql-adventureworkslt-conn
+    - **Core count**: 4 (+ 4 Driver cores)
+    - Click **Ok**
+
+
 4. At the top of the **sql-adventureworkslt-conn** page that is created, use the **&#9655; Start** button to start synchronization. When prompted, select **OK** to publish and start the link connection.
+
+5. Click on **Publish** to Publish all the pending changes.
    
 5. After starting the connection, on the **Monitor** page, select the **Link connections** tab and view the **sql-adventureworkslt-conn** connection. You can use the **&#8635; Refresh** button to update the status periodically. It may take several minutes to complete the initial snapshot copy process and start replicating - after that, all changes in the source database tables will be automatically replayed in the synchronized tables.
+
 
 ### Tsk 4.4: View the replicated data
 
@@ -219,16 +252,18 @@ Now you're ready to configure Azure Synapse Link for SQL in your Synapse Analyti
    
 5. When you're done, on the **Manage** page, pause the **sql*xxxxxxx*** dedicated SQL pool.
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="c386e672-aa05-44e0-80af-24f6ce16cb04" />
 
 ## Review
 
 In this lab, you have accomplished the following:
+
+- Provision Azure resources
 - Configure Azure SQL Database.
 - Explore the transactional database.
 - Configure Azure Synapse Link.

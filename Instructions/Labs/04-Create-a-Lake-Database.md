@@ -37,51 +37,44 @@ In this exercise, you'll use a combination of a PowerShell script and an ARM tem
 
 3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+    ![Azure portal with a cloud shell pane](./images/L3T1S3.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+4. On the **Getting Started** pop-up, select the following information:-
 
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
 
+        ![Azure portal with a cloud shell pane](./images/gettingstarted.png)
 
-4. If You dont have precreated storage account, select mount storage account.
+5. On the **Mount storage account** pop-up, select the following:
 
-    ![Azure portal with a cloud shell pane](./images/cloudshell_image1.png)
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
 
-5. Select i want to create a storage, click on **Next**. provide all the details, give unique storage account name and in file share section write **None**. Click on **Create**.
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount.png)
 
-
-    ![Azure portal with a cloud shell pane](./images/cloudshell_image2.png)
-
-
-    ![Azure portal with a cloud shell pane](./images/cloudshell_image3.png)
-
-
-7. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
-
-    ![Azure portal with a cloud shell pane](./images/25-5.png)
-
-8. In the PowerShell pane, enter the following commands to clone this repo:
+6. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-9. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
+7. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/04
     ./setup.ps1
     ```
 
-10. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+8. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-11. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
+9. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
 
     > **Note**: Be sure to remember this password!
 
-12. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you are waiting, review the [Lake database](https://docs.microsoft.com/azure/synapse-analytics/database-designer/concepts-lake-database) and [Lake database templates](https://docs.microsoft.com/azure/synapse-analytics/database-designer/concepts-database-templates) articles in the Azure Synapse Analytics documentation.
+10. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you are waiting, review the [Lake database](https://docs.microsoft.com/azure/synapse-analytics/database-designer/concepts-lake-database) and [Lake database templates](https://docs.microsoft.com/azure/synapse-analytics/database-designer/concepts-database-templates) articles in the Azure Synapse Analytics documentation.
 
 ## Task 2: Modify container permissions
 
@@ -89,15 +82,15 @@ In this exercise, you'll use a combination of a PowerShell script and an ARM tem
 
 2. Select the **Storage account** named **datalakexxxxxxx** 
 
-     ![Data lake navigation to container](./images/datalakexxxxxx-storage.png)
+     ![Data lake navigation to container](./images/L4T2S2.png)
 
 3. Within the **datalakexxxxxx** container, select the **files** folder.
 
     ![Select the files folder within the data lake container](./images/dp203-Container.png)
 
-4. Within the **files** folder you'll note the **Authentication method:** is listed as ***Access key (Switch to Azure AD User Account)*** click on this to change to Azure AD User Account.
+4. Within the **files** folder you'll note the **Authentication method:** is listed as ***Access key (Switch to Microsoft Entra User Account)*** click on this to change to Microsoft Entra User Account.
 
-    ![Change to Azure AD user account](./images/dp203-switch-to-aad-user.png)
+    ![Change to Azure AD user account](./images/L4T2S4.png)
 
 ## Task 3: Create a lake database
 
@@ -154,7 +147,9 @@ Now that you have created a lake database, you can define its schema by creating
 
 2. Open the new **Customer** folder, which should be empty.
 
-3. Download the **customer.csv** data file from [https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/04/data/customer.csv](https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/04/data/customer.csv) and save it in a folder on your local computer (it doesn't matter where). Then in the **Customer** folder in Synapse Explorer, use the **&#10514; Upload** button to upload the **customer.csv** file to the **RetailDB/Customer** folder in your data lake.
+3. Download the **customer.csv** data file from [https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/blob/master/Allfiles/labs/04/data/customer.csv](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/blob/master/Allfiles/labs/04/data/customer.csv) and save it in a folder on your local computer (it doesn't matter where). Then in the **Customer** folder in Synapse Explorer, use the **&#10514; Upload** button to upload the **customer.csv** file to the **RetailDB/Customer** folder in your data lake.
+
+    ![Change to Azure AD user account](./images/L4T4.2S3.png)
 
     > **Note**: In a real production scenario, you would probably create a pipeline to ingest data into the folder for the table data. We're uploading it directly in the Synapse Studio user interface in this exercise for expediency.
 
@@ -205,7 +200,9 @@ As you've seen, you can create the tables you need in your lake database from sc
 
 3. Open the new **Product** folder, which should be empty.
 
-4. Download the **product.csv** data file from [https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/04/data/product.csv](https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/04/data/product.csv) and save it in a folder on your local computer (it doesn't matter where). Then in the **Product** folder in Synapse Explorer, use the **&#10514; Upload** button to upload the **product.csv** file to the **RetailDB/Product** folder in your data lake.
+4. Download the **product.csv** data file from [https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/blob/master/Allfiles/labs/04/data/product.csv](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/blob/master/Allfiles/labs/04/data/product.csv) and save it in a folder on your local computer (it doesn't matter where). Then in the **Product** folder in Synapse Explorer, use the **&#10514; Upload** button to upload the **product.csv** file to the **RetailDB/Product** folder in your data lake.
+
+    ![Change to Azure AD user account](./images/L4T5.2S4.png)
 
 5. In the **Data** pane on the left, on the **Workspace** tab, in the **...** menu for the **Product** table, select **New SQL script** > **Select TOP 100 rows**. Then, in the new **SQL script 1** pane that has opened, ensure that the **Built-in** SQL pool is connected, and use the **&#9655; Run** button to run the SQL code. The results should include first 100 rows from the **Product** table, based on the data stored in the underlying folder in the data lake.
 
@@ -223,7 +220,9 @@ So far, you've created tables and then populated them with data. In some cases, 
 
 3. Open the new **SalesOrder** folder, which should be empty.
 
-4. Download the **salesorder.csv** data file from [https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/04/data/salesorder.csv](https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/04/data/salesorder.csv) and save it in a folder on your local computer (it doesn't matter where). Then in the **SalesOrder** folder in Synapse Explorer, use the **&#10514; Upload** button to upload the **salesorder.csv** file to the **RetailDB/SalesOrder** folder in your data lake.
+4. Download the **salesorder.csv** data file from [https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/blob/master/Allfiles/labs/04/data/salesorder.csv](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/blob/master/Allfiles/labs/04/data/salesorder.csv) and save it in a folder on your local computer (it doesn't matter where). Then in the **SalesOrder** folder in Synapse Explorer, use the **&#10514; Upload** button to upload the **salesorder.csv** file to the **RetailDB/SalesOrder** folder in your data lake.
+
+    ![Change to Azure AD user account](./images/L4T6.1S4.png)
 
 ### Task 6.2: Create a table
 
@@ -313,17 +312,12 @@ Now that you have some tables in your database, you can use them to work with th
 
 8. Close the **Notebook 1** pane, stopping the Spark session and discarding your changes.
 
-   <validation step="c7c2a4b7-1b09-4a42-a89c-255c051ca4e4" />
-
-   <validation step="29d3bdbe-a709-4d66-8667-d5b765e92d45" />
-
-
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.   
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="e7a53592-9fcd-4d0c-a89c-04a0602d0d28" />
 
 ## Review
 

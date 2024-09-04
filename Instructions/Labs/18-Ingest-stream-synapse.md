@@ -29,55 +29,50 @@ In this exercise, you'll need an Azure Synapse Analytics workspace with access t
 You'll use a combination of a PowerShell script and an ARM template to provision these resources.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+1. Use the [>_] button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select PowerShell environment.
 
-    ![Azure portal with a cloud shell pane](./images/25-1.png)
+    ![Azure portal with a cloud shell pane](./images/L14T1S1-i.png)
+    ![Azure portal with a cloud shell pane](./images/L14T1S1.png)
 
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
+1. On the **Getting Started** pop-up, select the following information:-
 
-    ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
 
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+        ![Azure portal with a cloud shell pane](./images/gettingstarted.png)
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+1. On the **Mount storage account** pop-up, select the following:
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
 
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount.png)
 
-
-4. If You dont have precreated storage account then select advanced setting.
-
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
-
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
-
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
-
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
+1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
     ![Azure portal with a cloud shell pane](./images/25-5.png)
 
-7. In the PowerShell pane, enter the following commands to clone the repo containing this exercise:
+1. In the PowerShell pane, enter the following commands to clone the repo containing this exercise:
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-8. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/18
     ./setup.ps1
     ```
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
-10. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
 
     > **Note**: Be sure to remember this password!
 
-11. Wait for the script to complete - this typically takes around 15 minutes, but in some cases may take longer. While you are waiting, review the [Welcome to Azure Stream Analytics](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-introduction) article in the Azure Stream Analytics documentation.
+1. Wait for the script to complete - this typically takes around 15 minutes, but in some cases may take longer. While you are waiting, review the [Welcome to Azure Stream Analytics](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-introduction) article in the Azure Stream Analytics documentation.
 
 ## Task 2: Ingest streaming data into a dedicated SQL pool
 
@@ -89,6 +84,9 @@ Let's start by ingesting a stream of data directly into a table in an Azure Syna
 2. Select your Synapse workspace, and in its **Overview** page, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab. Synapse Studio is a web-based interface that you can use to work with your Synapse Analytics workspace.
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio that you'll use to manage resources and perform data analytics tasks.
 4. On the **Manage** page, in the **SQL pools** section, select the **sql*xxxxxxx*** dedicated SQL pool row and then use its **&#9655;** icon to resume it.
+
+    ![Resume](./images/DP-203-lab18-new-01.jpg)
+
 5. While you wait for the SQL pool to start, switch back to the browser tab containing the Azure portal and re-open the cloud shell pane.
 6. In the cloud shell pane, enter the following command to run a client app that sends 100 simulated orders to Azure Event Hubs:
 
@@ -124,7 +122,7 @@ Let's start by ingesting a stream of data directly into a table in an Azure Syna
 
 ### Task 2.3: Create an input for the event data stream
 
-1. On the **ingest-orders** overview page, select the **Inputs** page. Use the **Add input** menu to add an **Event Hub** input with the following properties:
+1. On the **ingest-orders** overview page, select the **Inputs** page under **Job topology**. Use the **+ Add input** menu to add an **Event Hub** input with the following properties:
     - **Input alias**: `orders`
     - **Select Event Hub from your subscriptions**: Selected
     - **Subscription**: Your Azure subscription
@@ -141,7 +139,7 @@ Let's start by ingesting a stream of data directly into a table in an Azure Syna
 
 ### Task 2.4: Create an output for the SQL table
 
-1. View the **Outputs** page for the **ingest-orders** Stream Analytics job. Then use the **Add output** menu to add an **Azure Synapse Analytics** output with the following properties:
+1. View the **Outputs** page for the **ingest-orders** Stream Analytics job under **Job topology**. Then use the **+ Add output** menu to add an **Azure Synapse Analytics** output with the following properties:
     - **Output alias**: `FactOrder`
     - **Select Azure Synapse Analytics from your subscriptions**: Selected
     - **Subscription**: Your Azure subscription
@@ -176,7 +174,10 @@ Let's start by ingesting a stream of data directly into a table in an Azure Syna
 ### Task 2.6: Run the streaming job to ingest order data
 
 1. View the **Overview** page for the **ingest-orders** Stream Analytics job, and on the **Properties** tab review the **Inputs**, **Query**, **Outputs**, and **Functions** for the job. If the number of **Inputs** and **Outputs** is 0, use the **&#8635; Refresh** button on the **Overview** page to display the **orders** input and **FactTable** output.
-2. Select the **&#9655; Start** button, and start the streaming job now. Wait until you are notified that the streaming job started successfully.
+2. Select the **&#9655; Start job** button, and then click on **Start** to start the streaming job now. Wait until you are notified that the streaming job started successfully.
+
+    ![Start Job](./images/DP-203-lab18-new-02.jpg)
+
 3. Re-open the cloud shell pane and re-run the following command to submit another 100 orders.
 
     ```
@@ -215,14 +216,14 @@ So far, you've seen how to use a Stream Analytics job to ingest messages from a 
 
 ### Task 3.2: Create an input for the raw order data
 
-1. On the **aggregate-orders** overview page, select the **Inputs** page. Use the **Add input** menu to add an **Event Hub** input with the following properties:
+1. On the **aggregate-orders** overview page, select the **Inputs** page. Use the **+ Add input** menu to add an **Event Hub** input with the following properties:
     - **Input alias**: `orders`
     - **Select Event Hub from your subscriptions**: Selected
     - **Subscription**: Your Azure subscription
     - **Event Hub namespace**: Select the **events*xxxxxxx*** Event Hubs namespace
     - **Event Hub name**: Select the existing **eventhub*xxxxxxx*** event hub.
     - **Event Hub consumer group**: Select **Use Existing**, then the existing **$Default** consumer group
-    - **Authentication mode**: Create system assigned managed identity
+    - **Authentication mode**: Create Managed Identity: System assigned
     - **Partition key**: *Leave blank*
     - **Event serialization format**: JSON
     - **Encoding**: UTF-8
@@ -230,7 +231,7 @@ So far, you've seen how to use a Stream Analytics job to ingest messages from a 
 
 ### Task 3.3: Create an output for the data lake store
 
-1. View the **Outputs** page for the **aggregate-orders** Stream Analytics job. Then use the **Add output** menu to add a **Blob storage/ADLS Gen2** output with the following properties:
+1. View the **Outputs** page for the **aggregate-orders** Stream Analytics job. Then use the **+ Add output** menu to add a **Blob storage/ADLS Gen2** output with the following properties:
     - **Output alias**: `datalake`
     - **Select Select Blob storage/ADLS Gen2 from your subscriptions from your subscriptions**: Selected
     - **Subscription**: Your Azure subscription
@@ -297,16 +298,18 @@ So far, you've seen how to use a Stream Analytics job to ingest messages from a 
         ) AS [result]
     ```
 
+    > **Note**: In **https://datalakexxxxxxx.dfs.core.windows.net/files/2023/**** link change the **datalakexxxxxxx** with the storage acount name present in **dp203-xxxxx** resource group and update the year also in the link with the present year.
+
 8. Use the **&#9655; Run** button to run the SQL query and view the results, which show the quantity of each product ordered in five-second periods.
 
 9. Return to the browser tab containing the Azure Portal and use the **&#128454; Stop** button to stop the Stream Analytics job and wait for the notification that the Stream Analytics job has stopped successfully.
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="6f9d43b0-336e-4b0b-af7e-c4b73b165e6c" />
 
 ## Review
 

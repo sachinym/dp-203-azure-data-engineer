@@ -23,7 +23,8 @@ After completing this lab, you will be able to:
 In this exercise, you'll use a combination of a PowerShell script and an ARM template to provision Azure Synapse Analytics.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
     ![Azure portal with a cloud shell pane](./images/25-1.png)
 
@@ -31,46 +32,47 @@ In this exercise, you'll use a combination of a PowerShell script and an ARM tem
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+    ![Azure portal with a cloud shell pane](./images/L3T1S3.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+1. On the **Getting Started** pop-up, select the following information:-
 
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
 
+        ![Azure portal with a cloud shell pane](./images/gettingstarted.png)
 
-4. If You dont have precreated storage account then select advanced setting.
+1. On the **Mount storage account** pop-up, select the following:
 
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
 
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount.png)
 
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
+1. Note that Cloud Shell can be resized by dragging the separator bar at the top of the pane, or by using the—, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
 
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
-
-    ![Azure portal with a cloud shell pane](./images/25-5.png)
-7. In the PowerShell pane, enter the following commands to clone this repo:
-
-    ```
-    rm -r dp500 -f
-    git clone https://github.com/MicrosoftLearning/DP-500-Azure-Data-Analyst dp500
-    ```
-
-8. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
+1. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
-    cd dp500/Allfiles/03
+    rm -r dp203 -f
+    git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
+    ```
+
+1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
+
+    ```
+    cd dp-203/Allfiles/labs/08
     ./setup.ps1
     ```
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
-10. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
 
     > **Note**: Be sure to remember this password!
 
-11. Wait for the script to complete - this typically takes around 15 minutes, but in some cases may take longer. While you are waiting, review the [What is dedicated SQL pool in Azure Synapse Analytics?](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is) article in the Azure Synapse Analytics documentation.
+1. Wait for the script to complete - this typically takes around 15 minutes, but in some cases may take longer. While you are waiting, review the [What is dedicated SQL pool in Azure Synapse Analytics?](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is) article in the Azure Synapse Analytics documentation.
 
 ## Task 2: Explore the data warehouse schema
 
@@ -78,17 +80,20 @@ In this lab, the data warehouse is hosted in a dedicated SQL pool in Azure Synap
 
 ### Task 2.1: Start the dedicated SQL pool
 
-1. After the script has completed, in the Azure portal, go to the **dp500-*xxxxxxx*** resource group that it created, and select your Synapse workspace.
+1. After the script has completed, in the Azure portal, go to the **dp203-*xxxxxxx*** resource group that it created, and select your Synapse workspace.
    
 2. In the **Overview** page for your Synapse workspace, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; signing in if prompted.
    
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio that are used to manage resources and perform data analytics tasks.
-4. On the **Manage** page, ensure the **SQL pools** tab is selected and then select the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655;** icon to start it; confirming that you want to resume it when prompted.
+
+4. On the **Manage** page, ensure the **SQL pools** tab is selected and then select the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655;** icon to start it; confirming that you want to **resume** it when prompted.
+
 5. Wait for the SQL pool to resume. This can take a few minutes. Use the **&#8635; Refresh** button to check its status periodically. The status will show as **Online** when it is ready.
 
 ### Task 2.2: View the tables in the database
 
 1. In Synapse Studio, select the **Data** page and ensure that the **Workspace** tab is selected and contains a **SQL database** category.
+
 2. Expand **SQL database**, the **sql*xxxxxxx*** pool, and its **Tables** folder to see the tables in the database.
 
     > **Note**: A relational data warehouse is typically based on a schema that consists of *fact* and *dimension* tables. The tables are optimized for analytical queries in which numeric metrics in the fact tables are aggregated by attributes of the entities represented by the dimension tables - for example, enabling you to aggregate Internet sales revenue by product, customer, date, and so on.
@@ -118,8 +123,10 @@ Now that you have explored some of the more important aspects of the data wareho
 Numeric values in a relational data warehouse are stored in fact tables with related dimension tables that you can use to aggregate the data across multiple attributes. This design means that most queries in a relational data warehouse involve aggregating and grouping data (using aggregate functions and GROUP BY clauses) across related tables (using JOIN clauses).
 
 1. On the **Data** page, select the **sql*xxxxxxx*** SQL pool and in its **...** menu, select **New SQL script** > **Empty script**.
-2. When a new **SQL Script 1** tab opens, in its **Properties** pane, change the name of the script to **Analyze Internet Sales** and change the **Result settings per query** to return all rows. Then use the **Publish** button on the toolbar to save the script, and use the **Properties** button (which looks similar to **&#128463;.**) on the right end of the toolbar to close the **Properties** pane so you can see the script pane.
-3. In the empty script, add the following code:
+
+1. When a new **SQL Script 1** tab opens, in its **Properties** pane, change the name of the script to **Analyze Internet Sales** and change the **Result settings per query** to return all rows. Then use the **Publish** button on the toolbar to save the script, and use the **Properties** button (which looks similar to **&#128463;.**) on the right end of the toolbar to close the **Properties** pane so you can see the script pane.
+
+1. In the empty script, add the following code:
 
     ```sql
     SELECT  d.CalendarYear AS Year,
@@ -130,9 +137,9 @@ Numeric values in a relational data warehouse are stored in fact tables with rel
     ORDER BY Year;
     ```
 
-4. Use the **&#9655; Run** button to run the script, and review the results, which should show the Internet sales totals for each year. This query joins the fact table for Internet sales to a time dimension table based on the order date, and aggregates the sales amount measure in the fact table by the calendar month attribute of the dimension table.
+1. Use the **&#9655; Run** button to run the script, and review the results, which should show the Internet sales totals for each year. This query joins the fact table for Internet sales to a time dimension table based on the order date, and aggregates the sales amount measure in the fact table by the calendar month attribute of the dimension table.
 
-5. Modify the query as follows to add the month attribute from the time dimension, and then run the modified query.
+1. Modify the query as follows to add the month attribute from the time dimension, and then run the modified query.
 
     ```sql
     SELECT  d.CalendarYear AS Year,
@@ -162,7 +169,7 @@ Numeric values in a relational data warehouse are stored in fact tables with rel
 
    > **Note**: that geography is a *snowflake* dimension that is related to the Internet sales fact table through the customer dimension. You therefore need two joins in the query to aggregate Internet sales by geography.
 
-7. Modify and re-run the query to add another snowflake dimension and aggregate the yearly regional sales by product category:
+1. Modify and re-run the query to add another snowflake dimension and aggregate the yearly regional sales by product category:
 
     ```sql
     SELECT  d.CalendarYear AS Year,
@@ -182,7 +189,7 @@ Numeric values in a relational data warehouse are stored in fact tables with rel
 
     > **Note**:This time, the snowflake dimension for product category requires three joins to reflect the hierarchical relationship between products, subcategories, and categories.
 
-8. Publish the script to save it.
+1. Publish the script to save it.
 
 ### Task 3.2: Use ranking functions
 
@@ -209,32 +216,7 @@ Another common requirement when analyzing large volumes of data is to group the 
 
 2. Select only the new query code, and use the **&#9655; Run** button to run it. Then review the results, which should look similar to the following table:
 
-    | Region | RowNumber | OrderNo | LineItem | SalesAmount | RegionTotal | RegionAverage |
-    |--|--|--|--|--|--|--|
-    |Australia|1|SO73943|2|2.2900|2172278.7900|375.8918|
-    |Australia|2|SO74100|4|2.2900|2172278.7900|375.8918|
-    |...|...|...|...|...|...|...|
-    |Australia|5779|SO64284|1|2443.3500|2172278.7900|375.8918|
-    |Canada|1|SO66332|2|2.2900|563177.1000|157.8411|
-    |Canada|2|SO68234|2|2.2900|563177.1000|157.8411|
-    |...|...|...|...|...|...|...|
-    |Canada|3568|SO70911|1|2443.3500|563177.1000|157.8411|
-    |France|1|SO68226|3|2.2900|816259.4300|315.4016|
-    |France|2|SO63460|2|2.2900|816259.4300|315.4016|
-    |...|...|...|...|...|...|...|
-    |France|2588|SO69100|1|2443.3500|816259.4300|315.4016|
-    |Germany|1|SO70829|3|2.2900|922368.2100|352.4525|
-    |Germany|2|SO71651|2|2.2900|922368.2100|352.4525|
-    |...|...|...|...|...|...|...|
-    |Germany|2617|SO67908|1|2443.3500|922368.2100|352.4525|
-    |United Kingdom|1|SO66124|3|2.2900|1051560.1000|341.7484|
-    |United Kingdom|2|SO67823|3|2.2900|1051560.1000|341.7484|
-    |...|...|...|...|...|...|...|
-    |United Kingdom|3077|SO71568|1|2443.3500|1051560.1000|341.7484|
-    |United States|1|SO74796|2|2.2900|2905011.1600|289.0270|
-    |United States|2|SO65114|2|2.2900|2905011.1600|289.0270|
-    |...|...|...|...|...|...|...|
-    |United States|10051|SO66863|1|2443.3500|2905011.1600|289.0270|
+    ![Azure portal with a cloud shell pane](./images/results.png)
 
 3. Observe the following facts about these results:
 
@@ -323,12 +305,12 @@ When exploring very large volumes of data, queries can take significant time and
 4. When you're done, on the **Manage** page, pause the **sql*xxxxxxx*** dedicated SQL pool.
 
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+   <validation step="2c7f21a5-6a6b-4f04-8870-961c4a7450d7" />
 
 ## Review
 
