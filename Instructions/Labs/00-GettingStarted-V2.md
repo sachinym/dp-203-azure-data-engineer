@@ -61,12 +61,16 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
       ![Enter Your Password](../Labs/images/sc900-image-2.png)
+
+4. If **Action required** pop-up window appears, click on **Ask later**.
+
+   ![Ask Later](../Labs/images/ask-later-01.png)
  
-4. If prompted to stay signed in, you can click "No."
+5. If prompted to stay signed in, you can click "No."
  
-5. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
+6. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
  
-6. Click **Next** from the bottom right corner to embark on your Lab journey!
+7. Click **Next** from the bottom right corner to embark on your Lab journey!
  
    ![Start Your Azure Journey](../Labs/images/sc900-image(3).png)
  
