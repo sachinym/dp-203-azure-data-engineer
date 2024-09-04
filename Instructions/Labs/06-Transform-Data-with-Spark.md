@@ -37,7 +37,6 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 
 1. Note that Cloud Shell can be resized by dragging the separator bar at the top of the pane, or by using the—, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
 
-    ![Azure portal with a cloud shell pane](./images/25-5.png)
 1. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
