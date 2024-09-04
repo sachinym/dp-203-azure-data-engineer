@@ -118,6 +118,8 @@ Lake databases are accessible in Synapse SQL serverless SQL pool and Apache Spar
     - ***External table name***: Products
     - ***Linked service***: synapse*xxxxxxx*-WorkspaceDefaultStorage(datalake*xxxxxxx*)
     - ***Input file or folder***: files/products/products.csv
+  
+      ![](./images/tablelakedb.png)   
 
 5. Click **Continue** and in the **New external table** pane, select the First Row option to ***infer column names*** and click **create**.
 
@@ -125,7 +127,7 @@ Lake databases are accessible in Synapse SQL serverless SQL pool and Apache Spar
 7. In the **Data** pane, expand the **Lake database** section, the expand **lakedb1**, then in the **Products** table's **...** menu, select **Create SQL Script** > ***Top 100 rows***.
 8. Ensure that the **Connect to** is listed as **Built-in** and the refresh the **Use database** list and select **lakedb**.
 
-![first external query in lake database](./images/sql1.png)
+   ![first external query in lake database](./images/sql1.png)
 
 9. Use the **Run** button to run the query and view the data within the **Products** table.
 
