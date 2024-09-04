@@ -29,46 +29,34 @@ You'll use a combination of a PowerShell script and an ARM template to provision
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 
-2. Use the [>_] button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select PowerShell environment.
-
-    ![Azure portal with a cloud shell pane](./images/L14T1S1-i.png)
-    ![Azure portal with a cloud shell pane](./images/L14T1S1.png)
-
-3. On the **Getting Started** pop-up, select the following information:-
-
-    - Select **Mount storage account (1)**
-    - Storage account subscription: **Select the existing subscription (2)**
-    - Select **Apply (3)**
-
-        ![Azure portal with a cloud shell pane](./images/gettingstarted.png)
-
-4. On the **Mount storage account** pop-up, select the following:
-
-    - **We will create a storage account for you (1)**
-    - Select **Next (2)**
-
-        ![Azure portal with a cloud shell pane](./images/mount-storageaccount.png)
-
-5. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
-
-    ![Azure portal with a cloud shell pane](./images/close(1).png)
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
     
-6. In the PowerShell pane, manually enter the following commands to clone this repo:
+    ![Azure portal with a cloud shell pane](./images/cloud-shell1.png)
+
+    ![Azure portal with a cloud shell pane](./images/cl2.png)
+   
+1. In the **Getting Started** menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
+
+   ![Azure portal with a cloud shell pane](./images/cl3.png)
+
+1. Note that Cloud Shell can be resized by dragging the separator bar at the top of the pane, or by using the—, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
+
+1. In the PowerShell pane, manually enter the following commands to clone this repo:
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
-7. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
 
     ```
     cd dp-203/Allfiles/labs/17
     ./setup.ps1
     ```
-8. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-9. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [Welcome to Azure Stream Analytics](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-introduction) article in the Azure Stream Analytics documentation.
+1. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [Welcome to Azure Stream Analytics](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-introduction) article in the Azure Stream Analytics documentation.
 
 ## Task 2: View the streaming data source
 
