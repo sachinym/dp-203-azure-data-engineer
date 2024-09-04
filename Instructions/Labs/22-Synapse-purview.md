@@ -26,38 +26,19 @@ After completing this lab, you will be able to:
 In this exercise, you'll use Microsoft Purview to track assets and data lineage in an Azure Synapse Analytics workspace. You'll start by using a script to provision these resources in your Azure subscription.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
+    
+    ![Azure portal with a cloud shell pane](./images/cloud-shell1.png)
 
-    ![Azure portal with a cloud shell pane](./images/25-1.png)
+    ![Azure portal with a cloud shell pane](./images/cl2.png)
+   
+1. In the **Getting Started** menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
 
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
+   ![Azure portal with a cloud shell pane](./images/cl3.png)
 
-    ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
+1. Note that Cloud Shell can be resized by dragging the separator bar at the top of the pane, or by using the—, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
 
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
-
-    ![Azure portal with a cloud shell pane](./images/update1.png)
-
-4. On the **Getting Started** pop-up, select the following information:-
-
-    - Select **Mount storage account (1)**
-    - Storage account subscription: **Select the existing subscription (2)**
-    - Select **Apply (3)**
-
-        ![Azure portal with a cloud shell pane](./images/gettingstarted1.png)
-
-5. On the **Mount storage account** pop-up, select the following:
-
-    - **We will create a storage account for you (1)**
-    - Select **Next (2)**
-
-        ![Azure portal with a cloud shell pane](./images/mount-storageaccount1.png)
-
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
-
-    ![Azure portal with a cloud shell pane](./images/25-5.png)
-
-7. In the PowerShell pane, enter the following commands to clone this repo:
+1. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```powershell
     rm -r dp-203 -f
@@ -65,18 +46,18 @@ In this exercise, you'll use Microsoft Purview to track assets and data lineage 
     
     ```
 
-8. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```powershell
     cd dp-203/Allfiles/labs/22
     ./setup.ps1
     ```
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-10. Wait for the script to complete - this typically takes around 15 minutes, but in some cases may take longer. While you are waiting, review the [What's available in the Microsoft Purview governance portal?](https://docs.microsoft.com/azure/purview/overview) article in the Microsoft Purview documentation.
+1. Wait for the script to complete - this typically takes around 15 minutes, but in some cases may take longer. While you are waiting, review the [What's available in the Microsoft Purview governance portal?](https://docs.microsoft.com/azure/purview/overview) article in the Microsoft Purview documentation.
 
-11. When the script has completed, review the output and note that a unique suffix in the form xxxxxxx has been generated for your resource names - for example, the resource group that has been created is named dp203-xxxxxxx. Make a note of this suffix - you will need it later when creating additional resources.
+1. When the script has completed, review the output and note that a unique suffix in the form xxxxxxx has been generated for your resource names - for example, the resource group that has been created is named dp203-xxxxxxx. Make a note of this suffix - you will need it later when creating additional resources.
 
 > **Note**: After running the setup script, if you are presented with errors regarding failure of lakedb resource not being deployed/available; please consider deleting the **dp-203-xxxxxx** resource group and then re-run the psscript.
 
