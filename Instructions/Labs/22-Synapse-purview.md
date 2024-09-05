@@ -133,13 +133,13 @@ Microsoft Purview is configured to use a managed identity. In order to catalog d
 3. On the **+ Add** button menu, select **Add role assignment**. 
 4. In the **Add role assigmnent** page, on the **Role** tab, search for "storage blob" and select the **Storage Blob Data Reader** role. Then select **Next** to move to the **Members** tab:
 
-    ![A screenshot of the Add role assignment Role tab.](./images/storage-role-assignment.png)
+   ![A screenshot of the Add role assignment Role tab.](./images/storage-role-assignment.png)
 
 5. On the **Members** tab, in the **Assign access to** list, select **Managed identity**; and then, under **Members**, select **Select members**.
 
 6. In the **Select managed identities** pane, in the **Managed identity** list, select **Microsoft Purview account (*n*)** and select your Microsoft Purview account, which should have a name similar to **purview*xxxxxxx***; and use the **Select** button to add this account to the role assignment:
 
-    ![A screenshot of the Select managed identities tab.](./images/storage-role-members.png)
+   ![A screenshot of the Select managed identities tab.](./images/storage-role-members.png)
 
 7. Use the **Review + Assign** button to complete the role assignment, which makes the **purview*xxxxxxx*** account used by the managed identity for your Microsoft Purview resource a member of the **Storage Blob Data Reader** role for your storage account.
 
@@ -223,7 +223,7 @@ Now that you've configured the required access for Microsoft Purview to scan the
 
 4. On the **Data map** page, on the **Data Sources** sub-page, select **Register**:
 
-    ![Screenshot of the Data map page in the Microsoft Purview Governance Portal.](./images/dp-203-data1.png)
+   ![Screenshot of the Data map page in the Microsoft Purview Governance Portal.](./images/dp-203-data1.png)
 
 5. In the **Register sources** tab that appears, select **Azure Synapse Analytics**, and continue to register a source with the following settings:
     - **Name**: Synapse_data
@@ -259,7 +259,7 @@ Now that you've configured the required access for Microsoft Purview to scan the
     - **SQL Database**: *Select <u>both</u> the **sqlxxxxxxx** dedicated database and the **lakedb1** serverless database.*
     - **Select a collection**: Root (purview*xxxxxxx*)
 
-    ![A screenshot of the New scan pane.](./images/purview-scan.png)
+      ![A screenshot of the New scan pane.](./images/purview-scan.png)
 
 3. Continue to the **Select a scan rule set** page, on which the default **AzureSynapseSQL** rule set should be selected.
    
@@ -279,7 +279,7 @@ Now that you've configured the required access for Microsoft Purview to scan the
       
 7. Wait for both scans to complete - this may take several minutes. You can view the details page for each of the sources to see the **Last run status**, as shown below (you can use the **&#8635; Refresh** button to update the status). You can also view the **Monitoring** page (though it may take some time for the scans to appear there):
 
-    ![A screenshot of the Synapse_data details with a completed scan.](./images/purview-scan-complete.png)
+   ![A screenshot of the Synapse_data details with a completed scan.](./images/purview-scan-complete.png)
 
 ### Task 2.5: View the scanned assets
 
@@ -287,7 +287,7 @@ Now that you've configured the required access for Microsoft Purview to scan the
    
 2. To filter the results, in the **Narrow results by** list of object types, select **Files** and **Tables** so that only the files, tables, and views that were cataloged by the scan are listed:
 
-    ![A screenshot of the Data catalog filtered to show only files and tables.](./images/purview-collection.png)
+   ![A screenshot of the Data catalog filtered to show only files and tables.](./images/purview-collection.png)
 
     Note that the data assets include:
 
@@ -311,7 +311,7 @@ Azure Synapse Analytics supports integration with Microsoft Purview to make data
    
 2. After connecting the account, view the **Purview account** tab to verify that the account is has a **Data Lineage - Synapse Pipeline** status of **Connected**:
 
-    ![A screenshot showing the Purview account in Synapse Studio.](./images/synapse-purview.png)
+   ![A screenshot showing the Purview account in Synapse Studio.](./images/synapse-purview.png)
 
 ### Task 3.2: Search the Purview catalog in Synapse Studio
 
@@ -321,7 +321,7 @@ Now that you've connected your Microsoft Purview account to your Azure Synapse A
    
 2. At the top of the page, use the **Search** box at the top to search the **Purview** source for the term "products", as shown here:
 
-    ![Screenshot of the search box in Synapse Studio searching Purview.](./images/synapse-search-purview.png)
+   ![Screenshot of the search box in Synapse Studio searching Purview.](./images/synapse-search-purview.png)
 
 3. In the results, select **products.csv** to view its details from the Purview catalog.
 
@@ -379,7 +379,7 @@ You've used a Synapse pipeline to load data into a database. Let's verify that t
 
 5. On the **Lineage** tab for the **Copy_*xxx*** asset, view the diagram showing the data flow from the **products.csv** file to the **products** table:
 
-    ![A screenshot of the Lineage tab for a pipeline asset, showing the source and target.](./images/purview-lineage.png)
+   ![A screenshot of the Lineage tab for a pipeline asset, showing the source and target.](./images/purview-lineage.png)
 
 6. In the **Copy_*xxx*** lineage diagram, select the **products.csv** file and use its **Switch to asset** link to view details of the source file.
    
