@@ -124,7 +124,7 @@ An Azure Stream Analytics job defines a perpetual query that operates on streami
     - **Hosting environment**: Cloud
     - **Streaming units**: 1
    
-    ![A screenshot of the Create workspace tab in Power BI.](./images/stream1.png)
+      ![A screenshot of the Create workspace tab in Power BI.](./images/stream1.png)
 
 3. Click on **Create**
 
@@ -228,7 +228,7 @@ Now that you have a dataset for the streaming order data, you can create a Power
 1. In the **+ New** drop-down menu for your workspace, select **Dashboard**, and create a new dashboard named **Order Tracking**.
 2. In the **&#9999;&#65039; Edit** menu for the **Order Tracking** dashboard, select **Add a tile**. Then in the **Add a tile** pane, select **Custom Streaming Data** and click **Next**:
 
-    ![A screenshot of the Add a tile pane in Power BI.](./images/powerbi-stream-tile.png)
+   ![A screenshot of the Add a tile pane in Power BI.](./images/powerbi-stream-tile.png)
 
 3. In the **Add a custom streaming data tile** pane, under **Your datasets**, select the **realtime-data** dataset, and click **Next**.
 
