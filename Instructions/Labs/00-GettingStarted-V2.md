@@ -65,7 +65,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
  
 4. If prompted to stay signed in, you can click "No."
 
-   ![](../Labs/images/Sign-in-No.png)
+   ![](../Labs/images/Sign-in-no.png)
 
 6. If **Action Required** pop-up window appears, click on **Ask later**.
 
