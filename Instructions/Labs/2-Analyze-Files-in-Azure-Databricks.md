@@ -80,11 +80,13 @@ In this task, you will be using Azure Databricks Portal to create a cluster.
 
 > **Tip**: If you already have a cluster with a 13.3 LTS runtime version in your Azure Databricks workspace, you can use it to complete this exercise and skip this procedure.
 
-1. In the Azure portal, browse to the **dp203-*xxxxxxx*** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace)
+1. In the Azure portal, in the **Search resources, services, and docs (G+/)** text box at the top of the Azure portal page, type **dp203-*xxxxxxx* (1)** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace) and select the **Resource group (2).**
 
+   ![](./images/ad-task-1-3.png)
+ 
 1. Select your Azure Databricks Service resource (named **databricks*xxxxxxx*** if you used the setup script to create it).
 
-    ![Create storage by clicking confirm.](./images/21055.png)
+    ![Create storage by clicking confirm.](./images/ad-task-1-4.png)
 
 1. In the **Overview** page for your workspace, use the **Launch Workspace** button to open your Azure Databricks workspace in a new browser tab; signing in if prompted.
 
@@ -94,18 +96,21 @@ In this task, you will be using Azure Databricks Portal to create a cluster.
 
 1. View the Azure Databricks workspace portal and note that the sidebar on the left side contains icons for the various tasks you can perform.
 
-1. Select the **(+) New** task, and then select **Cluster**.
+1. Select the **(+) New (1)** link in the sidebar, and then select **More (2)** ,then click on **Cluster (3)**.
 
-    ![Create storage by clicking confirm.](./images/21057.png)
+    ![Create storage by clicking confirm.](./images/ad-task-1-5.png)
+ 
+1. In the **New Cluster** page, create a new cluster with the following settings
+    - **Cluster name**: *User Name's* cluster (the default cluster name)
+    - **Cluster mode (1)**: Single Node
+    - **Access mode (2)**: Single user 
+    - **Single user access (3)**: with your user account selected
+    - **Databricks runtime version (4)**: 13.3 LTS (Spark 3.4.1, Scala 2.12)
+    - **Use Photon Acceleration (5)**: Selected
+    - **Node type (6)**: Standard_DS3_v2
+    - **Terminate after (7)** *30* **minutes of inactivity**
 
-1. In the **New Cluster** page, create a new cluster with the following settings:
-    - **Cluster name**: Leave it as **default**
-    - **Cluster mode**: Single Node
-    - **Access mode** Single user (*with your user account selected*)
-    - **Databricks runtime version**: 13.3 LTS (Spark 3.4.1, Scala 2.12)
-    - **Use Photon Acceleration**: Selected
-    - **Node type**: Standard_DS3_v2
-    - **Terminate after** *30* **minutes of inactivity**
+   Once all the required settings is been provided click on **Create compute (8)**
 
     ![Create storage by clicking confirm.](./images/21058.png)
 
