@@ -107,14 +107,17 @@ In this task, you will create a cluster in the Azure Databricks Portal.
 
     ![Create storage by clicking confirm.](./images/ad-task-1-5.png)
  
-1. In the **New Cluster** page, create a new cluster with the following settings:
+1. In the **New Cluster** page, create a new cluster with the following settings
     - **Cluster name**: *User Name's* cluster (the default cluster name)
-    - **Cluster mode**: Single Node
-    - **Access mode** Single user (*with your user account selected*)
-    - **Databricks runtime version**: 13.3 LTS (Spark 3.4.1, Scala 2.12)
-    - **Use Photon Acceleration**: Selected
-    - **Node type**: Standard_DS3_v2
-    - **Terminate after** *30* **minutes of inactivity**
+    - **Cluster mode (1)**: Single Node
+    - **Access mode (2)**: Single user 
+    - **Single user access (3)**: with your user account selected
+    - **Databricks runtime version (4)**: 13.3 LTS (Spark 3.4.1, Scala 2.12)
+    - **Use Photon Acceleration (5)**: Selected
+    - **Node type (6)**: Standard_DS3_v2
+    - **Terminate after (7)** *30* **minutes of inactivity**
+
+   once all the required settings is been provided click on **Create compute (8)**
 
     ![Create storage by clicking confirm.](./images/21058.png)
 
@@ -130,41 +133,51 @@ As in many Spark environments, Databricks supports the use of notebooks to combi
 
 In this task, you will use notebook feature in Azure Databricks in which it uses Spark for querying and exploring data.
 
-1. In the sidebar, use the **(+) New** link to create a **Notebook**.
+1. In the sidebar, use the **(+) New (1)** link to create a **Notebook (2)**.
 
     ![Create storage by clicking confirm.](./images/210510.png)
 
-2. Change the default notebook name (**Untitled Notebook *[date]***) to **Explore products** and in the **Connect** drop-down list, select your cluster if it is not already selected. If the cluster is not running, it may take a minute or so to start.
+1. Change the default notebook name (**Untitled Notebook *[date]***) to **Explore products**.
 
-3. Download the [**products.csv**](https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/23/adventureworks/products.csv) file inside the LabVM, saving it as **products.csv**. Then, in the **Explore products** notebook, on the **File** menu, select **Upload data to DBFS**.
+   ![Create storage by clicking confirm.](./images/ad-task-1-6.png)
+
+1. In the **Connect** drop-down list, select your cluster if it is not already selected. If the cluster is not running, it may take a minute or so to start.
+
+   ![](./images/ad-task-1-7.png)
+
+1. Download the [**products.csv**](https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/23/adventureworks/products.csv) file inside the LabVM, saving it as **products.csv**. Then, in the **Explore products** notebook, on the **File (1)** menu, select **Upload data to DBFS (2)**.
 
     ![Create storage by clicking confirm.](./images/210511.png)
 
-4. In the **Upload Data** dialog box, note the **DBFS Target Directory** to where the file will be uploaded. Then select the **Files** area, and upload the **products.csv** file you downloaded to your computer. When the file has been uploaded, select **Next**.
+1. In the **Upload Data** dialog box, note the **DBFS Target Directory** to where the file will be uploaded. Then select the **Files** area, and upload the **products.csv (1)** file you downloaded to your computer. When the file has been uploaded, select **Next (2)**.
 
     ![Create storage by clicking confirm.](./images/210512.png)
    
-5. In the **Access files from notebooks** pane, select the sample PySpark code and copy it to the clipboard. You will use it to load the data from the file into a DataFrame. Then select **Done**.
+1. In the **Access files from notebooks** pane, select the sample PySpark code and **copy (1)** it to the clipboard. You will use it to load the data from the file into a DataFrame. Then select **Done (2)**.
 
-6. In the **Explore products** notebook, in the empty code cell, paste the code you copied; which should look similar to this:
+ ![Create storage by clicking confirm.](./images/ad-task-1-8.png)
+   
+8. In the **Explore products** notebook, in the empty code cell, paste the code you copied; which should look similar to this:
 
     ```python
     df1 = spark.read.format("csv").option("header", "true").load("dbfs:/FileStore/shared_uploads/user@outlook.com/products.csv")
     ```
 
-7. Use the **&#9656; Run Cell** menu option at the top-right of the cell to run it, starting and attaching the cluster if prompted.
+9. Use the **&#9656; Run Cell** menu option at the top-right of the cell to run it, starting and attaching the cluster if prompted.
 
     ![Create storage by clicking confirm.](./images/210513.png)
 
-8. Wait for the Spark job run by the code to complete. The code has created a *dataframe* object named **df1** from the data in the file you uploaded.
+10. Wait for the Spark job run by the code to complete. The code has created a *dataframe* object named **df1** from the data in the file you uploaded.
    
-9. Under the existing code cell, use the **+** icon to add a new code cell. Then in the new cell, enter the following code:
+11. Under the existing code cell, use the **+** icon to add a new code cell. Then in the new cell, enter the following code:
+
+     ![Create storage by clicking confirm.](./images/.png)
 
     ```python
     display(df1)
     ```
 
-10. Use the **&#9656; Run Cell** menu option at the top-right of the new cell to run it. This code displays the contents of the dataframe, which should look similar to this:
+13. Use the **&#9656; Run Cell** menu option at the top-right of the new cell to run it. This code displays the contents of the dataframe, which should look similar to this:
 
     | ProductID | ProductName | Category | ListPrice |
     | -- | -- | -- | -- |
@@ -172,7 +185,7 @@ In this task, you will use notebook feature in Azure Databricks in which it uses
     | 772 | Mountain-100 Silver, 42 | Mountain Bikes | 3399.9900 |
     | ... | ... | ... | ... |
 
-11. Above the table of results, select **+** and then select **Visualization** to view the visualization editor, and then apply the following options:
+14. Above the table of results, select **+** and then select **Visualization** to view the visualization editor, and then apply the following options:
     - **Visualization type**: Bar
     - **X Column**: Category
     - **Y Column**: *Add a new column and select* **ProductID**. *Apply the* **Count** *aggregation*.
@@ -209,15 +222,12 @@ In this task, you will use the notebook which is created previously and query da
    
 5. In the sidebar, select the **Catalog** link, and verify that the **products** table has been created in the default database schema (which is unsurprisingly named **default**). It's possible to use Spark code to create custom database schemas and a schema of relational tables that data analysts can use to explore data and generate analytical reports.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
 
 <validation step="ff89d27a-7f48-4720-8b81-36b2ae489171" />
-
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
 ## Summary
 
