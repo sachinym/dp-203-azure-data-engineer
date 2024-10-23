@@ -115,7 +115,7 @@ In this task, you will create a cluster in the Azure Databricks Portal.
     - **Node type (6)**: Standard_DS3_v2
     - **Terminate after (7)** *30* **minutes of inactivity**
 
-   once all the required settings is been provided click on **Create compute (8)**
+   Once all the required settings is been provided click on **Create compute (8)**
 
     ![Create storage by clicking confirm.](./images/21058.png)
 
@@ -153,7 +153,7 @@ In this task, you will use notebook feature in Azure Databricks in which it uses
    
 1. In the **Access files from notebooks** pane, select the sample PySpark code and **copy (1)** it to the clipboard. You will use it to load the data from the file into a DataFrame. Then select **Done (2)**.
 
- ![Create storage by clicking confirm.](./images/ad-task-1-8.png)
+   ![Create storage by clicking confirm.](./images/ad-task-1-8.png)
    
 8. In the **Explore products** notebook, in the empty code cell, paste the code you copied; which should look similar to this:
 
@@ -175,7 +175,7 @@ In this task, you will use notebook feature in Azure Databricks in which it uses
 
 13. Use the **&#9656; Run Cell** menu option at the top-right of the new cell to run it.
 
-    ![Create storage by clicking confirm.](./images/ad-task-9.png)
+    ![Create storage by clicking confirm.](./images/ad-task-1-9.png)
     
 15. This code displays the contents of the dataframe, which should look similar to this:
     
