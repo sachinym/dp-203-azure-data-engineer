@@ -42,9 +42,9 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
     ![Azure portal with a cloud shell pane](./images/21051.png)
 
 
-1. Within the Getting Started pane, select **Mount storage account**, select your **Storage account subscription** from the dropdown and click **Apply**.
+1. Within the Getting started pane, select **Mount storage account (1)**, select your **Storage account subscription (2)** from the dropdown and click **Apply (3)**.
 
-   ![](./images/21052.png)
+   ![](./images/ad-task-1.png)
 
 1. Within the **Mount storage account** pane, select **I want to create a storage account** and click **Next**.
 
