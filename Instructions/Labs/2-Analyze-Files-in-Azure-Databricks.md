@@ -132,7 +132,7 @@ In this task, you will be importing a notebook to Azure Databricks Portal.
 
    ![Create storage by clicking confirm.](./images/ad-task3-1.png)
 
-1. Then in the **Import** dialog box, select **URL** , in the **url** import the notebook from `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/24/Databricks-Spark.ipynb` **(2)** and then click on **Import (3)**.
+1. Then in the **Import** dialog box, select **URL** , in the **URL** import the notebook from `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/24/Databricks-Spark.ipynb` **(2)** and then click on **Import (3)**.
 
    ![Create storage by clicking confirm.](./images/210516.png)
 
