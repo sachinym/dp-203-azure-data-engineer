@@ -133,7 +133,7 @@ In this task, you'll use code in a notebook to explore delta lake in Azure Datab
    
 1. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from  `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/25/Delta-Lake.ipynb` **(2)** and then click on **Import (3)**.
 
-   ![Create storage by clicking confirm.](./images/210516.png)
+   ![Create storage by clicking confirm.](./images/save-url.png)
    
 1. Connect the notebook to your cluster, and follow the instructions it contains; running the cells it contains to explore delta lake functionality.
 
