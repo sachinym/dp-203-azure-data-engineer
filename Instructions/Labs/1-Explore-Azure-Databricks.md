@@ -103,9 +103,9 @@ In this task, you will create a cluster in the Azure Databricks Portal.
 
 1. View the Azure Databricks workspace portal and note that the sidebar on the left side contains links for the various types of task you can perform.
 
-1. Select the **(+) New** link in the sidebar, and then select **Cluster**.
+1. Select the **(+) New (1)** link in the sidebar, and then select **More (2)** ,then click on **Cluster (3)**.
 
-    ![Create storage by clicking confirm.](./images/21057.png)
+    ![Create storage by clicking confirm.](./images/ad-task-1-5.png)
  
 1. In the **New Cluster** page, create a new cluster with the following settings:
     - **Cluster name**: *User Name's* cluster (the default cluster name)
