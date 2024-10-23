@@ -205,14 +205,16 @@ While many data analysis are comfortable using languages like Python or Scala to
 In this task, you will use the notebook which is created previously and query data using various code cells.
 
 1. In the **Explore products** notebook, under the chart output from the previously run code cell, use the **+** icon to add a new cell.
+
+   ![Create storage by clicking confirm.](./images/plus-icon.png)
    
-2. Enter and run the following code in the new cell:
+3. Enter and run the following code in the new cell:
 
     ```python
     df1.write.saveAsTable("products")
     ```
 
-3. When the cell has completed, add a new cell under it with the following code:
+4. When the cell has completed, add a new cell under it with the following code:
 
     ```sql
     %sql
@@ -222,9 +224,9 @@ In this task, you will use the notebook which is created previously and query da
     WHERE Category = 'Touring Bikes';
     ```
 
-4. Run the new cell, which contains SQL code to return the name and price of products in the *Touring Bikes* category. 
+5. Run the new cell, which contains SQL code to return the name and price of products in the *Touring Bikes* category. 
    
-5. In the sidebar, select the **Catalog (1)** link, and verify that the **products (3)** table has been created in the **default database schema (2)** (which is unsurprisingly named **default**). It's possible to use Spark code to create custom database schemas and a schema of relational tables that data analysts can use to explore data and generate analytical reports.
+6. In the sidebar, select the **Catalog (1)** link, and verify that the **products (3)** table has been created in the **default database schema (2)** (which is unsurprisingly named **default**). It's possible to use Spark code to create custom database schemas and a schema of relational tables that data analysts can use to explore data and generate analytical reports.
 
    ![Create storage by clicking confirm.](./images/ad-task-1-11.png)
 
