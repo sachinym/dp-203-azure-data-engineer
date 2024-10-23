@@ -38,19 +38,21 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
     ![Azure portal with a cloud shell pane](./images/21051.png)
 
-1. Within the Getting Started pane, select **Mount storage account**, select your **Storage account subscription** from the dropdown and click **Apply**.
+1. Within the Getting Started pane, select **Mount storage account (1)**, select your **Storage account subscription (2)** from the dropdown and click **Apply (3)**.
 
    ![](./images/21052.png)
 
-1. Within the **Mount storage account** pane, select **I want to create a storage account** and click **Next**.
+1. Within the **Mount storage account** pane, select **I want to create a storage account (1)** and click **Next (2)**.
 
    ![](./images/21053.png)
 
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected, Please make sure you have selected your resource group **Azure-Databricks** and enter **storage<inject key="DeploymentID" enableCopy="false"/>** for the **Storage account name** and enter **fileshare1** For the **File share name**, then click on **Create**.
+1. If you are prompted to create storage for your Cloud Shell, ensure your **Subscription** is selected, Please make sure you have selected your **Resource Group** which is **Azure-Databricks (1)** , select **Region** from the drop-down **(US) East US (2)** and enter **storage<inject key="DeploymentID" enableCopy="false"/> (3)** for the **Storage account name** and enter **fileshare1 (4)** for the **File share name**, then click on **Create (5)**.
 
     ![Create storage by clicking confirm.](./images/21054.png "Create storage advanced settings")
 
-1. Wait for PowerShell terminal to start.
+1. You can see a pop up appearing **Depployment is in Progress** ,Wait for PowerShell terminal to start.
+
+   ![](./images/ad-task-1-2.png)
 
 1. In the PowerShell pane, enter the following commands to clone this repo:
 
@@ -78,11 +80,13 @@ In this task, you will be using Azure Databricks Portal to create a cluster.
 
 > **Tip**: If you already have a cluster with a 13.3 LTS runtime version in your Azure Databricks workspace, you can use it to complete this exercise and skip this procedure.
 
-1. In the Azure portal, browse to the **dp203-*xxxxxxx*** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace)
+1. In the Azure portal, in the **Search resources, services, and docs (G+/)** text box at the top of the Azure portal page, type **dp203-*xxxxxxx* (1)** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace) and select the **Resource group (2).**
 
+   ![](./images/ad-task-1-3.png)
+ 
 1. Select your Azure Databricks Service resource (named **databricks*xxxxxxx*** if you used the setup script to create it).
 
-    ![Create storage by clicking confirm.](./images/21055.png)
+    ![Create storage by clicking confirm.](./images/ad-task-1-4.png)
 
 1. In the **Overview** page for your workspace, use the **Launch Workspace** button to open your Azure Databricks workspace in a new browser tab; signing in if prompted.
 
@@ -92,18 +96,21 @@ In this task, you will be using Azure Databricks Portal to create a cluster.
 
 1. View the Azure Databricks workspace portal and note that the sidebar on the left side contains icons for the various tasks you can perform.
 
-1. Select the **(+) New** task, and then select **Cluster**.
+1. Select the **(+) New (1)** link in the sidebar, and then select **More (2)** ,then click on **Cluster (3)**.
 
-    ![Create storage by clicking confirm.](./images/21057.png)
+    ![Create storage by clicking confirm.](./images/ad-task-1-5.png)
+ 
+1. In the **New Cluster** page, create a new cluster with the following settings
+    - **Cluster name**: *User Name's* cluster (the default cluster name)
+    - **Cluster mode (1)**: Single Node
+    - **Access mode (2)**: Single user 
+    - **Single user access (3)**: with your user account selected
+    - **Databricks runtime version (4)**: 13.3 LTS (Spark 3.4.1, Scala 2.12)
+    - **Use Photon Acceleration (5)**: Selected
+    - **Node type (6)**: Standard_DS3_v2
+    - **Terminate after (7)** *30* **minutes of inactivity**
 
-1. In the **New Cluster** page, create a new cluster with the following settings:
-    - **Cluster name**: Leave it as **default**
-    - **Cluster mode**: Single Node
-    - **Access mode** Single user (*with your user account selected*)
-    - **Databricks runtime version**: 13.3 LTS (Spark 3.4.1, Scala 2.12)
-    - **Use Photon Acceleration**: Selected
-    - **Node type**: Standard_DS3_v2
-    - **Terminate after** *30* **minutes of inactivity**
+   Once all the required settings is been provided click on **Create compute (8)**
 
     ![Create storage by clicking confirm.](./images/21058.png)
 
@@ -119,24 +126,26 @@ As in many Spark environments, Databricks supports the use of notebooks to combi
 
 In this task, you will be importing a notebook to Azure Databricks Portal.
 
-1. In the Azure Databricks workspace portal for your workspace, in the sidebar on the left, select **Workspace**. Then select the **&#8962; Home** folder.
+1. In the Azure Databricks workspace portal for your workspace, in the sidebar on the left, select **Workspace (1)**. Then select the **&#8962; Home (2)** folder.
 
-1. At the top of the page, in the **&#8942;** menu next to your user name, select **Import**. Then in the **Import** dialog box, select **URL** and import the notebook from `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/24/Databricks-Spark.ipynb`
+1. At the top of the page, in the **&#8942; (3)** menu next to your user name, select **Import (4)**.
 
-    ![Create storage by clicking confirm.](./images/210515.png)
+   ![Create storage by clicking confirm.](./images/ad-task3-1.png)
 
-    ![Create storage by clicking confirm.](./images/210516.png)
+1. Then in the **Import** dialog box, select **URL** , in the **URL** import the notebook from `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/24/Databricks-Spark.ipynb` **(2)** and then click on **Import (3)**.
+
+   ![Create storage by clicking confirm.](./images/210516.png)
 
 1. Connect the notebook to your cluster, and follow the instructions it contains; running the cells it contains to explore data in files.
 
+   ![Create storage by clicking confirm.](./images/ad-task3-2.png)
+   
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+
 <validation step="0fa9a722-c79c-4bf4-a1f5-726d5e03453f" />
-
->**Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
 ## Summary
 
