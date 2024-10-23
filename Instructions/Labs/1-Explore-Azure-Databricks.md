@@ -55,7 +55,9 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
    ![Create storage by clicking confirm.](./images/21054.png "Create storage advanced settings")
 
-1. Wait for PowerShell terminal to start.
+1. You can see a pop up appearing **Depployment is in Progress** ,Wait for PowerShell terminal to start.
+
+   ![](./images/ad-task-1-2.png)
 
 1. In the PowerShell pane, enter the following commands to clone this repo:
 
