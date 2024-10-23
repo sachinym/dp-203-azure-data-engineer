@@ -187,16 +187,16 @@ In this task, you will use notebook feature in Azure Databricks in which it uses
     
 17. Above the table of results, select **+ (1)** and then select **Visualization (2)** to view the visualization editor.
 
-   ![Create storage by clicking confirm.](./images/ad-task-10.png)
+    ![Create storage by clicking confirm.](./images/ad-task-10.png)
      
 18.  Then apply the following options:
-    - **Visualization type**: Bar
-    - **X Column**: Category
-    - **Y Column**: *Add a new column and select* **ProductID**. *Apply the* **Count** *aggregation*.
+    - **Visualization type (1)**: Bar
+    - **X Column (2)**: Category
+    - **Y Column (3)**: *Add a new column and select* **ProductID**. *Apply the* **Count (4)** *aggregation*.
 
-    Save the visualization and observe that it is displayed in the notebook, like this:
+     **Save (5)** the visualization and observe that it is displayed in the notebook, like this:
 
-    ![Create storage by clicking confirm.](./images/210514.png)
+     ![Create storage by clicking confirm.](./images/210514.png)
 
 ## Task 4: Create and query table
 
