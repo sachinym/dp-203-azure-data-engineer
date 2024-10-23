@@ -171,21 +171,27 @@ In this task, you will use notebook feature in Azure Databricks in which it uses
    
 11. Under the existing code cell, use the **+** icon to add a new code cell. Then in the new cell, enter the following code:
 
-     ![Create storage by clicking confirm.](./images/.png)
-
     ```python
     display(df1)
     ```
 
-13. Use the **&#9656; Run Cell** menu option at the top-right of the new cell to run it. This code displays the contents of the dataframe, which should look similar to this:
+13. Use the **&#9656; Run Cell** menu option at the top-right of the new cell to run it.
 
+    ![Create storage by clicking confirm.](./images/ad-task-9.png)
+    
+15. This code displays the contents of the dataframe, which should look similar to this:
+    
     | ProductID | ProductName | Category | ListPrice |
     | -- | -- | -- | -- |
     | 771 | Mountain-100 Silver, 38 | Mountain Bikes | 3399.9900 |
     | 772 | Mountain-100 Silver, 42 | Mountain Bikes | 3399.9900 |
     | ... | ... | ... | ... |
+    
+17. Above the table of results, select **+ (1)** and then select **Visualization (2)** to view the visualization editor.
 
-14. Above the table of results, select **+** and then select **Visualization** to view the visualization editor, and then apply the following options:
+   ![Create storage by clicking confirm.](./images/ad-task-10.png)
+     
+18.  Then apply the following options:
     - **Visualization type**: Bar
     - **X Column**: Category
     - **Y Column**: *Add a new column and select* **ProductID**. *Apply the* **Count** *aggregation*.
@@ -218,9 +224,11 @@ In this task, you will use the notebook which is created previously and query da
     WHERE Category = 'Touring Bikes';
     ```
 
-4. Run the new cell, which contains SQL code to return the name and price of products in the *Touring Bikes* category.
+4. Run the new cell, which contains SQL code to return the name and price of products in the *Touring Bikes* category. 
    
-5. In the sidebar, select the **Catalog** link, and verify that the **products** table has been created in the default database schema (which is unsurprisingly named **default**). It's possible to use Spark code to create custom database schemas and a schema of relational tables that data analysts can use to explore data and generate analytical reports.
+5. In the sidebar, select the **Catalog (1)** link, and verify that the **products (3)** table has been created in the **default database schema (2)** (which is unsurprisingly named **default**). It's possible to use Spark code to create custom database schemas and a schema of relational tables that data analysts can use to explore data and generate analytical reports.
+
+   ![Create storage by clicking confirm.](./images/ad-task-1-11.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
