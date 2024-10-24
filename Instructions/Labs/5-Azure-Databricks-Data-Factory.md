@@ -152,23 +152,23 @@ In this task, you will generate a access token in the Azure Databricks Portal.
 
     ![Create storage by clicking confirm.](./images/ad-lab5-5.png)
    
-3. On the **Overview** page, select the **Launch studio** to open the Azure Data Factory Studio. Sign in if prompted.
+2. On the **Overview** page, select the **Launch studio** to open the Azure Data Factory Studio. Sign in if prompted.
 
     ![Create storage by clicking confirm.](./images/ad-lab5-6.png)
    
-5. In Azure Data Factory Studio, use the **>>** icon to expand the navigation pane on the left. Then select the **Manage** page.
+3. In Azure Data Factory Studio, use the **>>** icon to expand the navigation pane on the left. Then select the **Manage** page.
 
    ![Create storage by clicking confirm.](./images/lab5-5n.png)
    
-6. On the **Manage** page, in the **Linked services (1)** tab, select **+ New (2)** to add a new linked service.
+4. On the **Manage** page, in the **Linked services (1)** tab, select **+ New (2)** to add a new linked service.
 
    ![Create storage by clicking confirm.](./images/ad-lab5-7.png)
    
-7. In the **New linked service** pane, select the **Compute (1)** tab at the top. Then select **Azure Databricks (2)** and click on **Continue (3).**
+5. In the **New linked service** pane, select the **Compute (1)** tab at the top. Then select **Azure Databricks (2)** and click on **Continue (3).**
 
    ![Create storage by clicking confirm.](./images/ad-lab5-8.png)
    
-9. Create the linked service with the following settings:
+6. Create the linked service with the following settings:
     - **Name (1)**: AzureDatabricks
     - **Description (2)**: Azure Databricks workspace
     - **Connect via integration runtime (3)**: AutoResolveInegrationRuntime
@@ -213,7 +213,7 @@ In this task, you will create a pipeline and use it run the Azure Databricks Not
 
    ![Create storage by clicking confirm.](./images/ad-lab5-11.png)
    
-6. With the new **Notebook1** activity selected, set the following properties in the bottom pane:
+5. With the new **Notebook1** activity selected, set the following properties in the bottom pane:
     - **General**:
         - **Name**: Process Data
     - **Azure Databricks**:
@@ -228,7 +228,7 @@ In this task, you will create a pipeline and use it run the Azure Databricks Not
 
     ![Create storage by clicking confirm.](./images/lab5-13n.png)   
        
-7. Use the **Validate (1)** button above the pipeline designer surface to validate the pipeline. Then use the **Publish all (2)** button to publish (save) it.
+6. Use the **Validate (1)** button above the pipeline designer surface to validate the pipeline. Then use the **Publish all (2)** button to publish (save) it.
 
     ![Create storage by clicking confirm.](./images/lab5-14n.png)
 
@@ -248,7 +248,7 @@ In this task, you will create a pipeline and use it run the Azure Databricks Not
 
     > **Note**: If your pipeline fails, your subscription may have insufficient quota in the region where your Azure Databricks workspace is provisioned to create a job cluster. See [CPU core limit prevents cluster creation](https://docs.microsoft.com/azure/databricks/kb/clusters/azure-core-limit) for details. If this happens, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
 
-5. When the run succeeds, select its name to view the run details. Then, on the **Process Data with Databricks** page, in the **Activity Runs** section, select the **Process Data** activity and use its ***output*** icon to view the output JSON from the activity, which should resemble this:
+4. When the run succeeds, select its name to view the run details. Then, on the **Process Data with Databricks** page, in the **Activity Runs** section, select the **Process Data** activity and use its ***output*** icon to view the output JSON from the activity, which should resemble this:
     ```json
     {
         "runPageUrl": "https://adb-..../run/...",
@@ -273,7 +273,7 @@ In this task, you will create a pipeline and use it run the Azure Databricks Not
 
     ![Create storage by clicking confirm.](./images/lab5-17n.png)
 
-6. Note the **runOutput** value, which is the *path* variable to which the notebook saved the data.
+5. Note the **runOutput** value, which is the *path* variable to which the notebook saved the data.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
