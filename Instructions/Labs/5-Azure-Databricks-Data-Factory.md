@@ -85,11 +85,13 @@ You can create notebooks in your Azure Databricks workspace to run code written 
 
 In this task, you'll import an existing notebook that contains some Python code.
 
-1. In the Azure portal, browse to the **dp203-*xxxxxxx*** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace)
+1. In the Azure portal, in the **Search resources, services, and docs (G+/)** text box at the top of the Azure portal page, type **dp203-*xxxxxxx* (1)** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace) and select the **Resource group (2).**
 
+  ![](./images/ad-task-1-3.png) 
+  
 2. Select your Azure Databricks Service resource (named **databricks*xxxxxxx*** if you used the setup script to create it).
 
-    ![Create storage by clicking confirm.](./images/21055.png)
+   ![Create storage by clicking confirm.](./images/ad-lab5-3.png)
 
 3. In the **Overview** page for your workspace, use the **Launch Workspace** button to open your Azure Databricks workspace in a new browser tab; signing in if prompted.
 
@@ -99,13 +101,17 @@ In this task, you'll import an existing notebook that contains some Python code.
 
 4. View the Azure Databricks workspace portal and note that the sidebar on the left side contains icons for the various tasks you can perform.
 
-5. In the sidebar on the left, select **Workspace**. Then select the **&#8962; Home** folder.
+5. In the sidebar on the left, select **Workspace (1)**. Then select the **&#8962; Home (2)** folder.
 
-6. At the top of the page, in the **&#8942;** menu next to your user name, select **Import**. Then in the **Import** dialog box, select **URL** and import the notebook from `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/27/Process-Data.ipynb`
+6. At the top of the page, in the **&#8942; (3)** menu next to your user name, select **Import (4)**.
 
-    ![Create storage by clicking confirm.](./images/210515.png)
+   ![Create storage by clicking confirm.](./images/ad-task3-1.png)
+  
+8. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/27/Process-Data.ipynb` **(2)** and then click on **Import (3)**.
 
-7. Review the contents of the notebook, which include some Python code cells to:
+    ![Create storage by clicking confirm.](./images/save-url1.png)
+
+9. Review the contents of the notebook, which include some Python code cells to:
     - Retrieve a parameter named **folder** if it is has been passed (otherwise use a default value of *data*).
     - Download data from GitHub and save it in the specified folder in the Databricks File System (DBFS).
     - Exit the notebook, returning the path where the data was saved as an output
@@ -120,21 +126,25 @@ In this task, you will generate a access token in the Azure Databricks Portal.
 
 ### Task 3.1: Generate an access token
 
-1. In the Azure Databricks portal, at on the top right menu bar, select the username and then select **Settings** from the drop-down.
+1. In the Azure Databricks portal, at on the top right menu bar, select the **username (1)** and then select **Settings (2)** from the drop-down.
 
     ![Create storage by clicking confirm.](./images/lab5-1n.png)
    
-2. In the **Settings** page, select **Developer**. Then next to **Access tokens** select **Manage**.
+2. In the **Settings** page, select **Developer (1)**. Then next to **Access tokens** select **Manage (2)**.
 
     ![Create storage by clicking confirm.](./images/lab5-2n.png)
    
-3. Select **Generate new token** and generate a new token with the comment *Data Factory* and a blank lifetime (so the token doesn't expire). Be careful to **copy the token when it is displayed <u>before</u> selecting *Done***.
+3. Select **Generate new token** and generate a new token with the comment **Data Factory (1)** and a **blank lifetime (2)** (so the token doesn't expire) and then click on **Generate (3)**
 
     ![Create storage by clicking confirm.](./images/lab5-3n.png)
 
     ![Create storage by clicking confirm.](./images/lab5-4n.png)
 
-4. Paste the copied token to a text file so you have it handy for later in this exercise.
+4. Be careful to **copy (1) the token when it is displayed <u>before</u> selecting *Done (2)***
+
+   ![Create storage by clicking confirm.](./images/ad-lab5-4.png)
+
+6. Paste the copied token to a text file so you have it handy for later in this exercise.
 
 ### Task 3.2: Create a linked service in Azure Data Factory
 
