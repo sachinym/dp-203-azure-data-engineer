@@ -137,7 +137,7 @@ In this task, you'll use code in a notebook to explore delta lake in Azure Datab
    
 1. Connect the notebook to your cluster, and follow the instructions it contains; running the cells it contains to explore delta lake functionality.
 
-   >**Note:** While running the cells upon following the instructions , if the execution is deplayed please wait for 15-20 minutes.
+   >**Note:** While running the cells upon following the instructions , if the execution is delayed please wait for 15-20 minutes.
 
    ![Create storage by clicking confirm.](./images/ad-task3-2.png)
 
