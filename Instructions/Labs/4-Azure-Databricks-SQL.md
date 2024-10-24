@@ -159,7 +159,7 @@ In this task, you will create a table schema using an external file.
 
 1. Download the [**products.csv**](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/blob/master/Allfiles/labs/26/data/products.csv) file to your local computer to download the file press ctrl+s, saving it as **products.csv**, .
 
-2. In the Azure Databricks workspace portal, in the sidebar, select **(+) New (1)** and then select **Add or Upload data (2)**
+2. In the Azure Databricks workspace portal, in the sidebar, select **(+) New (1)** and then select **Add or upload data (2)**
 
     ![](./images/ad-lab4-11.png)
 
@@ -167,7 +167,7 @@ In this task, you will create a table schema using an external file.
 
    ![](./images/ad-lab4-12.png)
 
-4. Then click on **Browse** to upload the file that you have downloaded to your computer.
+4. Then click on **browse** to upload the file that you have downloaded to your computer.
 
    ![](./images/ad-lab4-13.png)
 
@@ -185,9 +185,13 @@ The ability to create a table by importing data from a file makes it easy to pop
 
 In this task, you will create a query in the adventureworks database which is created earlier.
 
-1. In the sidebar, select **(+) New** and then select **Query**.
+1. In the sidebar, select **(+) New (1)** and then select **Query (2)**.
+
+   ![](./images/ad-lab4-16.png)
 
 2. In the **Schema browser** pane, expand **hive_metastore** and **adventureworks**, and verify that the **products** table is listed.
+
+   ![](./images/ad-lab4-15.png)
 
 3. In the **New query** pane, enter the following SQL code:
 
@@ -198,9 +202,19 @@ In this task, you will create a query in the adventureworks database which is cr
 
 4. Use the **&#9658;Run (1000)** button to run the SQL code.
 
+    ![](./images/ad-lab4-17.png)
+
 5. When the query has completed, review the table of results.
 
-6. Use the **Save** button at the top right of the query editor to save the query as **Products and Categories**.
+   ![](./images/ad-lab4-18.png)
+
+6. Use the **Save** button at the top right of the query editor to save the query.
+
+    ![](./images/ad-lab4-19.png)
+  
+7. Save the query by the name **Products and Categories (1)** and then click on **Save (2)**.
+
+     ![](./images/ad-lab4-20.png)
 
 Saving a query makes it easy to retrieve the same data again at a later time.
 
