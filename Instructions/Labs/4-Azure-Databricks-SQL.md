@@ -236,17 +236,19 @@ In this task, you will be creating a dashboard to visualize the data of Products
     - **Visualization type (4)**: bar
     - **X columns (5)**: Product ID : Count
     >**Note:** Click on **+** icon beside X column and then select **Product ID** from the drop down , initially it appears as **SUM(ProductID)**, Hence click on **SUM(ProductID)** and change **SUM** to **Count**.
-      ![](./images/ad-lab4-21.png)
+    
+    ![](./images/ad-lab4-21.png)
+   
     - **Y column (6)**: Category
     - **color/Group by**: *Leave blank*
 
     ![](./images/Dashboard4.png)
 
-6. **Publish (7)** the visualization. A pop up appears click on again click on **Publish**.
+7. **Publish (7)** the visualization. A pop up appears click on again click on **Publish**.
 
     ![](./images/ad-lab4-22.png)
 
-7. Now the Dashboard has been Published successfully. Click on **view** to view the Dashboard. Alternatively you can also view the dashboard by navigating to the **Dashboard** at the left pane.
+8. Now the Dashboard has been Published successfully. Click on **view** to view the Dashboard. Alternatively you can also view the dashboard by navigating to the **Dashboard** at the left pane.
 
    ![](./images/ad-lab4-23.png)
 
