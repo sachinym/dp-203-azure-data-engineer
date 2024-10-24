@@ -72,7 +72,9 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
 1. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [Exploratory data analysis on Azure Databricks](https://learn.microsoft.com/azure/databricks/exploratory-data-analysis/) article in the Azure Databricks documentation.
 
-    ![Azure portal with a cloud shell pane](./images/cluster-name.png)
+    ![Azure portal with a cloud shell pane](./images/25-6.png)
+
+1. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X** which is located at the top right corner of **cloud shell**
 
 ## Task 2: Create a cluster
 
@@ -118,7 +120,7 @@ In this task, you will be using Azure Databricks Portal to create a cluster.
 
 1. Wait for the cluster to be created. It may take a minute or two.
 
-    ![Create storage by clicking confirm.](./images/21059.png)
+    ![Create storage by clicking confirm.](./images/cluster-name.png)
 
    >**Note**: If your cluster fails to start, your subscription may have an insufficient quota in the region where your Azure Databricks workspace is provisioned. See [CPU core limit prevents cluster creation](https://docs.microsoft.com/azure/databricks/kb/clusters/azure-core-limit) for details. If this happens, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
 

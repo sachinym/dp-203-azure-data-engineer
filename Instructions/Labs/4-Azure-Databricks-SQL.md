@@ -40,24 +40,23 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
     ![Azure portal with a cloud shell pane](./images/21051.png)
 
-
-4. Within the Getting Started pane, select **Mount storage account**, select your **Storage account subscription** from the dropdown and click **Apply**.
+4. Within the Getting Started pane, select **Mount storage account (1)**, select your **Storage account subscription (2)** from the dropdown and click **Apply (3)**.
 
    ![](./images/21052.png)
 
-5. Within the **Mount storage account** pane, select **I want to create a storage account** and click **Next**.
+5. Within the **Mount storage account** pane, select **I want to create a storage account (1)** and click **Next (2)**.
 
    ![](./images/21053.png)
 
+6. If you are prompted to create storage for your Cloud Shell, ensure your **Subscription** is selected, Please make sure you have selected your **Resource Group** which is **Azure-Databricks (1)** , select **Region** from the drop-down **(US) East US (2)** and enter **storage<inject key="DeploymentID" enableCopy="false"/> (3)** for the **Storage account name** and enter **fileshare1 (4)** for the **File share name**, then click on **Create (5)**.
+   
+   ![Create storage by clicking confirm.](./images/21054.png "Create storage advanced settings")
 
-6. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected, Please make sure you have selected your resource group **Azure-Databricks** and enter **storage<inject key="DeploymentID" enableCopy="false"/>** for the **Storage account name** and enter **fileshare1** For the **File share name**, then click on **Create**.
+7. You can see a pop up appearing **Depployment is in Progress** ,Wait for PowerShell terminal to start.
 
-    ![Create storage by clicking confirm.](./images/21054.png "Create storage advanced settings")
+    ![](./images/ad-task-1-2.png)
 
-7. Wait for PowerShell terminal to start.
-
-
-8. In the PowerShell pane, enter the following commands to clone this repo:
+8. In the PowerShell pane, paste the following commands and Click enter to clone this repo:
 
     ```
     rm -r dp-203 -f
@@ -75,17 +74,23 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
 11. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [What is data warehousing on Azure Databricks?](https://learn.microsoft.com/azure/databricks/sql/) article in the Azure Databricks documentation.
 
+    ![Azure portal with a cloud shell pane](./images/25-6.png)
+
+12. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X** which is located at the top right corner of **cloud shell**
+
 ## Task 2: View and start a SQL Warehouse
 
 In this task, you will launch workspace and you'll view and start SQL Warehouse.
 
 1. When the Azure Databricks workspace resource has been deployed, go to it in the Azure portal.
 
-2. In the Azure portal, browse to the **dp203-*xxxxxxx*** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace).
+2. In the Azure portal, in the **Search resources, services, and docs (G+/)** text box at the top of the Azure portal page, type **dp203-*xxxxxxx* (1)** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace) and select the **Resource group (2).**
 
+   ![](./images/ad-task-1-3.png)
+ 
 3. Select your Azure Databricks Service resource (named **databricks*xxxxxxx*** if you used the setup script to create it).
 
-    ![Create storage by clicking confirm.](./images/21055.png)
+    ![Create storage by clicking confirm.](./images/ad-task-1-4.png)
 
 4. In the **Overview** page for your workspace, use the **Launch Workspace** button to open your Azure Databricks workspace in a new browser tab; signing in if prompted.
 
@@ -94,15 +99,30 @@ In this task, you will launch workspace and you'll view and start SQL Warehouse.
     > **Tip**: As you use the Databricks Workspace portal, various tips and notifications may be displayed. Dismiss these and follow the instructions provided to complete the tasks in this exercise.
 
 5. View the Azure Databricks workspace portal and note that the sidebar on the left side contains links for the various types of task you can perform.
-6. In the sidebar, under **SQL**, select **SQL Warehouses**.
+  
+6. In the sidebar, under **SQL (1)**, select **SQL Warehouses (2)**.
 
-   ![](./images/dbsql1.png)
+   ![](./images/ad-lab4-1.png)
 
-7. Observe that the workspace already includes a SQL Warehouse named **Starter Warehouse**.
+7. Observe that the workspace already includes a SQL Warehouse named **Serverless Starter Warehouse**.
 
-8. In the **Actions** (**&#8285;**) menu for the SQL Warehouse, select **Edit**. Then set the **Cluster size** property to **2X-Small** and save your changes.
+   ![](./images/ad-lab4-2.png)
 
-9. Use the **Start** button to start the SQL Warehouse (which may take a minute or two).
+8. In the **Actions** (**&#8285;**) **(1)** menu for the SQL Warehouse, select **Edit (2)**.
+
+    ![](./images/ad-lab4-3.png)
+
+9. A Page appears where in you can configure the Cluster size,set the **Cluster size** property to **2X-Small (1)** and **Save (2)** your changes.
+
+    ![](./images/ad-lab4-4.png)
+    
+12. Use the **Start** button to start the SQL Warehouse (which may take a minute or two).
+
+    ![](./images/ad-lab4-5.png)
+
+13. Now your SQL Warehouse will be up and in running state.
+
+    ![](./images/ad-lab4-6.png)
 
 > **Note**: If your SQL Warehouse fails to start, your subscription may have insufficient quota in the region where your Azure Databricks workspace is provisioned. See [Required Azure vCPU quota](https://docs.microsoft.com/azure/databricks/sql/admin/sql-endpoints#required-azure-vcpu-quota) for details. If this happens, you can try requesting for a quota increase as detailed in the error message when the warehouse fails to start. Alternatively, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
 
@@ -112,16 +132,24 @@ In this task, you will be creating database schema in your Azure Databricks Port
 
 1. When your SQL Warehouse is *running*, select **SQL Editor** in the sidebar.
 
-2. In the **Schema browser** pane, observe that the *hive_metastore* catalogue contains a database named **default**.
+   ![](./images/ad-lab4-7.png)
 
-3. In the **New query** pane, enter the following SQL code:
+3. In the **Schema browser** pane, observe that the *hive_metastore* catalog contains a database named **default**.
+
+   ![](./images/ad-lab4-8.png)
+   
+5. In the **New query** pane, enter the following SQL code:
 
     ```sql
     CREATE SCHEMA adventureworks;
-    ```
-4. Use the **&#9658;Run (1000)** button to run the SQL code.
+    ```    
+6. Use the **&#9658;Run (1000)** button to run the SQL code.
 
-5. When the code has been successfully executed, in the **Schema browser** pane, use the refresh button at the bottom of the pane to refresh the list. Then expand **hive_metastore** and **adventureworks**, and observe that the database has been created, but contains no tables.
+   ![](./images/ad-lab4-9.png)
+
+8. When the code has been successfully executed, in the **Schema browser** pane, use the refresh button at the bottom of the pane to refresh the list. Then expand **hive_metastore (1)** and **adventureworks (2)**, and observe that the database has been created, but contains no tables.
+
+   ![](./images/ad-lab4-10.png)
 
 You can use the **default** database for your tables, but when building an analytical data store its best to create custom databases for specific data.
 
@@ -131,15 +159,25 @@ In this task, you will create a table schema using an external file.
 
 1. Download the [**products.csv**](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/blob/master/Allfiles/labs/26/data/products.csv) file to your local computer to download the file press ctrl+s, saving it as **products.csv**, .
 
-2. In the Azure Databricks workspace portal, in the sidebar, select **(+) New** and then select **Data** and upload the **products.csv** file you downloaded to your computer.
+2. In the Azure Databricks workspace portal, in the sidebar, select **(+) New (1)** and then select **Add or upload data (2)**
 
-   ![](./images/data1.png)
+    ![](./images/ad-lab4-11.png)
 
-   ![](./images/data2.png)
+3. In order to upload the **products.csv** file , click on **Create or modify table**.
 
-3. In the **Add data** page, select the **adventureworks** database from schema dropdown and set the table name to **products**. Then select **Create table** on the bottom right corner of the page.
+   ![](./images/ad-lab4-12.png)
 
-4. When the table has been created, review its details.
+4. Then click on **browse** to upload the file that you have downloaded to your computer.
+
+   ![](./images/ad-lab4-13.png)
+
+5. Once **products.csv** file has been uploaded **(1)**. In the **Add data** page, select the **adventureworks (2)** database from schema dropdown and set the table name to **products (3)**. Then select **Create table (4)** on the bottom right corner of the page.
+
+   ![](./images/ad-lab4-14.png)
+
+6. Now the table named **products** has been created under **adventureworks** database, review the table details.
+
+   ![](./images/ad-lab4-15.png)
 
 The ability to create a table by importing data from a file makes it easy to populate a database. You can also use Spark SQL to create tables using code. The tables themselves are metadata definitions in the hive metastore, and the data they contain is stored in Delta format in Databricks File System (DBFS) storage.
 
@@ -147,9 +185,13 @@ The ability to create a table by importing data from a file makes it easy to pop
 
 In this task, you will create a query in the adventureworks database which is created earlier.
 
-1. In the sidebar, select **(+) New** and then select **Query**.
+1. In the sidebar, select **(+) New (1)** and then select **Query (2)**.
+
+   ![](./images/ad-lab4-16.png)
 
 2. In the **Schema browser** pane, expand **hive_metastore** and **adventureworks**, and verify that the **products** table is listed.
+
+   ![](./images/ad-lab4-15.png)
 
 3. In the **New query** pane, enter the following SQL code:
 
@@ -160,9 +202,19 @@ In this task, you will create a query in the adventureworks database which is cr
 
 4. Use the **&#9658;Run (1000)** button to run the SQL code.
 
+    ![](./images/ad-lab4-17.png)
+
 5. When the query has completed, review the table of results.
 
-6. Use the **Save** button at the top right of the query editor to save the query as **Products and Categories**.
+   ![](./images/ad-lab4-18.png)
+
+6. Use the **Save** button at the top right of the query editor to save the query.
+
+    ![](./images/ad-lab4-19.png)
+  
+7. Save the query by the name **Products and Categories (1)** and then click on **Save (2)**.
+
+     ![](./images/ad-lab4-20.png)
 
 Saving a query makes it easy to retrieve the same data again at a later time.
 
@@ -170,38 +222,47 @@ Saving a query makes it easy to retrieve the same data again at a later time.
 
 In this task, you will be creating a dashboard to visualize the data of Products dataset.
 
-1. In the sidebar, select **Catalog** ,select **hive_metastore > adventureworks > products**.
+1. In the sidebar, select **Catalog (1)** ,select **hive_metastore > adventureworks > products (2)**.
 
-2. In the products, select dropdown **Create > Dashboard**
+2. In the products, select dropdown **Create (3) > Dashboard (4)**
 
    ![](./images/Catalog1.png)
 
-3. In the dialog box, change the name to **Adventure Works Products**.
+3. In the dialog box, change the name to **Adventure Works Products (1)**.
 
-4. Click on the **Add a visualization** **(1)** dialog box, select the **Products** dataset.
+4. Click on the **Add a visualization** **(2)** dialog box, select the **Products (3)** dataset.
 
 5. In the visualization editor, set the following properties:
-    - **Visualization type**: bar
-    - **X columns**: Product ID : Count
-    - **Y column**: Category
+    - **Visualization type (4)**: bar
+    - **X columns (5)**: Product ID : Count
+
+      >**Note:** Click on **+** icon beside X column and then select **Product ID** from the drop down , initially it appears as **SUM(ProductID)**, Hence click on **SUM(ProductID)** and change **SUM** to **Count**.
+       
+    - **Y column (6)**: Category
     - **color/Group by**: *Leave blank*
 
-        ![](./images/Dashboard4.png)
+    Then **Publish (7)** the visualization.
+   
+    ![](./images/Dashboard4.png)
+   
+7. A pop up appears, click on **Publish**.
 
-6. Publish the visualization and view it in the dashboard.
+    ![](./images/ad-lab4-22.png)
 
-7. Select **Done editing** to view the dashboard as users will see it.
+8. Now the Dashboard has been Published successfully. Click on **here** to view the Dashboard. Alternatively you can also view the dashboard by navigating to the **Dashboard** at the left pane.
 
+   ![](./images/ad-lab4-23.png)
+
+   ![](./images/ad-lab4-24.png)
+   
 Dashboards are a great way to share data tables and visualizations with business users. You can schedule the dashboards to be refreshed periodically, and emailed to subscribers.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+
 <validation step="0e124d80-b14d-4de2-b75e-47fb394bba8b" />
-
->**Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
  ## Summary
 
