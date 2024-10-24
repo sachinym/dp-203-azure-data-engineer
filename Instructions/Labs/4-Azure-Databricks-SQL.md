@@ -249,7 +249,7 @@ In this task, you will be creating a dashboard to visualize the data of Products
 
     ![](./images/ad-lab4-22.png)
 
-8. Now the Dashboard has been Published successfully. Click on **view** to view the Dashboard. Alternatively you can also view the dashboard by navigating to the **Dashboard** at the left pane.
+8. Now the Dashboard has been Published successfully. Click on **here** to view the Dashboard. Alternatively you can also view the dashboard by navigating to the **Dashboard** at the left pane.
 
    ![](./images/ad-lab4-23.png)
 
