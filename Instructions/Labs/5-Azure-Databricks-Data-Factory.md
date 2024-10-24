@@ -179,7 +179,7 @@ In this task, you will generate a access token in the Azure Databricks Portal.
     - **Databrick Workspace URL (8)**: *Automatically set to your Databricks workspace URL*
     - **Authentication type (9)**: Access token
     - **Access token (10)**: *Paste your access token*
-    - **Cluster version (11)**: 13.3 LTS (Spark 3.4.1, Scala 2.12)
+    - **Cluster version (11)**: 13.3 LTS (includes Apache Spark 3.4.1, Scala 2.12)
     - **Cluster node type (12)**: Standard_DS3_v2
     - **Python version (13)**: 3
     - **Worker options (14)**: Fixed
