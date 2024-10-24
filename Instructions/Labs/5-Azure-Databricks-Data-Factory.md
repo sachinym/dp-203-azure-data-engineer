@@ -199,26 +199,28 @@ In this task, you will create a pipeline and use it run the Azure Databricks Not
 
 ### Task 4.1: Create a pipeline
 
-1. In Azure Data Factory Studio, in the navigation pane, select **Author**.
+1. In Azure Data Factory Studio, in the navigation pane, select **Author (1)**.
    
-2. On the **Author** page, in the **Factory Resources** pane, use the **+** icon to add a **Pipeline**.
+2. On the **Author** page, in the **Factory Resources** pane, use the **+ (2)** icon then choose **Pipeline (3) > Pipeline (4)**. to add a **Pipeline**.
     
    ![Create storage by clicking confirm.](./images/lab5-9n.png)
    
-3. In the **Properties** pane for the new pipeline, change its name to **Process Data with Databricks**. Then use the **Properties** button (which looks similar to **&#128463;<sub>*</sub>**) on the right end of the toolbar to hide the **Properties** pane.
+3. In the **Properties** pane for the new pipeline, change its name to **Process Data with Databricks (1)**. Then use the **Properties (2)** button (which looks similar to **&#128463;<sub>*</sub>**) on the right end of the toolbar to hide the **Properties** pane.
 
     ![Create storage by clicking confirm.](./images/lab5-10n.png)
    
-4. In the **Activities** pane, expand **Databricks** and drag a **Notebook** activity to the pipeline designer surface.
+4. In the **Activities (1)** pane, expand **Databricks (2)** and drag a **Notebook (3)** activity to the pipeline designer surface.
+
+   ![Create storage by clicking confirm.](./images/ad-lab5-11.png)
    
-5. With the new **Notebook1** activity selected, set the following properties in the bottom pane:
+6. With the new **Notebook1** activity selected, set the following properties in the bottom pane:
     - **General**:
         - **Name**: Process Data
     - **Azure Databricks**:
         - **Databricks linked service**: *Select the **AzureDatabricks** linked service you created previously*
     - **Settings**:
-        - **Notebook path**: *Browse to the **Users/your_user_name** folder and select the **Process-Data** notebook*
-        - **Base parameters**: *Add a new parameter named **folder** with the value **product_data***
+        - **Notebook path (1)**: *Browse to the **Users/your_user_name** folder and select the **Process-Data** notebook*
+        - **Base parameters**: *Add a **new(2)** parameter named **folder (3)** with the value **product_data (4)***
 
     ![Create storage by clicking confirm.](./images/lab5-11n.png)
 
@@ -226,7 +228,7 @@ In this task, you will create a pipeline and use it run the Azure Databricks Not
 
     ![Create storage by clicking confirm.](./images/lab5-13n.png)   
        
-6. Use the **Validate** button above the pipeline designer surface to validate the pipeline. Then use the **Publish all** button to publish (save) it.
+7. Use the **Validate (1)** button above the pipeline designer surface to validate the pipeline. Then use the **Publish all (2)** button to publish (save) it.
 
     ![Create storage by clicking confirm.](./images/lab5-14n.png)
 
@@ -234,7 +236,7 @@ In this task, you will create a pipeline and use it run the Azure Databricks Not
    
 ### Task 4.2: Run the pipeline
 
-1. Above the pipeline designer surface, select **Add trigger**, and then select **Trigger now**.
+1. Above the pipeline designer surface, select **Add trigger (1)**, and then select **Trigger now (2)**.
 
     ![Create storage by clicking confirm.](./images/lab5-16n.png)
    
@@ -242,9 +244,11 @@ In this task, you will create a pipeline and use it run the Azure Databricks Not
    
 3. In the navigation pane on the left, select **Monitor** and observe the **Process Data with Databricks** pipeline on the **Pipeline runs** tab. It may take a while to run as it dynamically creates a Spark cluster and runs the notebook. You can use the **&#8635; Refresh** button on the **Pipeline runs** page to refresh the status.
 
+   ![Create storage by clicking confirm.](./images/ad-lab5-12.png)
+
     > **Note**: If your pipeline fails, your subscription may have insufficient quota in the region where your Azure Databricks workspace is provisioned to create a job cluster. See [CPU core limit prevents cluster creation](https://docs.microsoft.com/azure/databricks/kb/clusters/azure-core-limit) for details. If this happens, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
 
-4. When the run succeeds, select its name to view the run details. Then, on the **Process Data with Databricks** page, in the **Activity Runs** section, select the **Process Data** activity and use its ***output*** icon to view the output JSON from the activity, which should resemble this:
+5. When the run succeeds, select its name to view the run details. Then, on the **Process Data with Databricks** page, in the **Activity Runs** section, select the **Process Data** activity and use its ***output*** icon to view the output JSON from the activity, which should resemble this:
     ```json
     {
         "runPageUrl": "https://adb-..../run/...",
@@ -269,15 +273,14 @@ In this task, you will create a pipeline and use it run the Azure Databricks Not
 
     ![Create storage by clicking confirm.](./images/lab5-17n.png)
 
-5. Note the **runOutput** value, which is the *path* variable to which the notebook saved the data.
+6. Note the **runOutput** value, which is the *path* variable to which the notebook saved the data.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
 
 <validation step="ea0c803b-47db-4f2f-9936-d54c0e8228c1" />
-
->**Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
  ## Summary
 
