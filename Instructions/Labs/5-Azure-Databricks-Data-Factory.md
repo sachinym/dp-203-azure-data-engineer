@@ -87,7 +87,7 @@ In this task, you'll import an existing notebook that contains some Python code.
 
 1. In the Azure portal, in the **Search resources, services, and docs (G+/)** text box at the top of the Azure portal page, type **dp203-*xxxxxxx* (1)** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace) and select the **Resource group (2).**
 
-  ![](./images/ad-task-1-3.png) 
+   ![](./images/ad-task-1-3.png) 
   
 2. Select your Azure Databricks Service resource (named **databricks*xxxxxxx*** if you used the setup script to create it).
 
