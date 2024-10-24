@@ -132,16 +132,24 @@ In this task, you will be creating database schema in your Azure Databricks Port
 
 1. When your SQL Warehouse is *running*, select **SQL Editor** in the sidebar.
 
-2. In the **Schema browser** pane, observe that the *hive_metastore* catalogue contains a database named **default**.
+   ![](./images/ad-lab4-7.png)
 
-3. In the **New query** pane, enter the following SQL code:
+3. In the **Schema browser** pane, observe that the *hive_metastore* catalog contains a database named **default**.
+
+   ![](./images/ad-lab4-8.png)
+   
+5. In the **New query** pane, enter the following SQL code:
 
     ```sql
     CREATE SCHEMA adventureworks;
-    ```
-4. Use the **&#9658;Run (1000)** button to run the SQL code.
+    ```    
+6. Use the **&#9658;Run (1000)** button to run the SQL code.
 
-5. When the code has been successfully executed, in the **Schema browser** pane, use the refresh button at the bottom of the pane to refresh the list. Then expand **hive_metastore** and **adventureworks**, and observe that the database has been created, but contains no tables.
+   ![](./images/ad-lab4-9.png)
+
+8. When the code has been successfully executed, in the **Schema browser** pane, use the refresh button at the bottom of the pane to refresh the list. Then expand **hive_metastore** and **adventureworks**, and observe that the database has been created, but contains no tables.
+
+   ![](./images/ad-lab4-10.png)
 
 You can use the **default** database for your tables, but when building an analytical data store its best to create custom databases for specific data.
 
