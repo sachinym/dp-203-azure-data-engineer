@@ -222,38 +222,44 @@ Saving a query makes it easy to retrieve the same data again at a later time.
 
 In this task, you will be creating a dashboard to visualize the data of Products dataset.
 
-1. In the sidebar, select **Catalog** ,select **hive_metastore > adventureworks > products**.
+1. In the sidebar, select **Catalog (1)** ,select **hive_metastore > adventureworks > products (2)**.
 
-2. In the products, select dropdown **Create > Dashboard**
+2. In the products, select dropdown **Create (3) > Dashboard (4)**
 
    ![](./images/Catalog1.png)
 
-3. In the dialog box, change the name to **Adventure Works Products**.
+3. In the dialog box, change the name to **Adventure Works Products (1)**.
 
-4. Click on the **Add a visualization** **(1)** dialog box, select the **Products** dataset.
+4. Click on the **Add a visualization** **(2)** dialog box, select the **Products (3)** dataset.
 
 5. In the visualization editor, set the following properties:
-    - **Visualization type**: bar
-    - **X columns**: Product ID : Count
-    - **Y column**: Category
+    - **Visualization type (4)**: bar
+    - **X columns (5)**: Product ID : Count
+    >**Note:** Click on **+** icon beside X column and then select **Product ID** from the drop down , initially it appears as **SUM(ProductID)**, Hence click on **SUM(ProductID)** and change **SUM** to **Count**.
+      ![](./images/ad-lab4-21.png)
+    - **Y column (6)**: Category
     - **color/Group by**: *Leave blank*
 
-        ![](./images/Dashboard4.png)
+    ![](./images/Dashboard4.png)
 
-6. Publish the visualization and view it in the dashboard.
+6. **Publish (7)** the visualization. A pop up appears click on again click on **Publish**.
 
-7. Select **Done editing** to view the dashboard as users will see it.
+    ![](./images/ad-lab4-22.png)
 
+7. Now the Dashboard has been Published successfully. Click on **view** to view the Dashboard. Alternatively you can also view the dashboard by navigating to the **Dashboard** at the left pane.
+
+   ![](./images/ad-lab4-23.png)
+
+   ![](./images/ad-lab4-24.png)
+   
 Dashboards are a great way to share data tables and visualizations with business users. You can schedule the dashboards to be refreshed periodically, and emailed to subscribers.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+
 <validation step="0e124d80-b14d-4de2-b75e-47fb394bba8b" />
-
->**Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
  ## Summary
 
