@@ -72,6 +72,8 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
 1. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [Exploratory data analysis on Azure Databricks](https://learn.microsoft.com/azure/databricks/exploratory-data-analysis/) article in the Azure Databricks documentation.
 
+    ![Azure portal with a cloud shell pane](./images/25-6.png)
+
 ## Task 2: Create a cluster
 
 Azure Databricks is a distributed processing platform that uses Apache Spark *clusters* to process data in parallel on multiple nodes. Each cluster consists of a driver node to coordinate the work, and worker nodes to perform processing tasks.
