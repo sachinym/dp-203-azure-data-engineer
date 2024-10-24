@@ -237,9 +237,7 @@ In this task, you will be creating a dashboard to visualize the data of Products
     - **X columns (5)**: Product ID : Count
 
       >**Note:** Click on **+** icon beside X column and then select **Product ID** from the drop down , initially it appears as **SUM(ProductID)**, Hence click on **SUM(ProductID)** and change **SUM** to **Count**.
-    
-      ![](./images/ad-lab4-21.png)
-   
+       
     - **Y column (6)**: Category
     - **color/Group by**: *Leave blank*
 
