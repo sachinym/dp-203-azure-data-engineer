@@ -245,7 +245,7 @@ In this task, you will be creating a dashboard to visualize the data of Products
    
     ![](./images/Dashboard4.png)
    
-7. A pop up appears click on again click on **Publish**.
+7. A pop up appears, click on **Publish**.
 
     ![](./images/ad-lab4-22.png)
 
