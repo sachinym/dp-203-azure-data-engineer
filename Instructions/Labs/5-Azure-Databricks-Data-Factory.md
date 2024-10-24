@@ -149,39 +149,47 @@ In this task, you will generate a access token in the Azure Databricks Portal.
 ### Task 3.2: Create a linked service in Azure Data Factory
 
 1. Return to the Azure portal, and in the **dp203-*xxxxxxx*** resource group, select the **adf*xxxxxxx*** Azure Data Factory resource.
-   
-2. On the **Overview** page, select the **Launch studio** to open the Azure Data Factory Studio. Sign in if prompted.
-   
-3. In Azure Data Factory Studio, use the **>>** icon to expand the navigation pane on the left. Then select the **Manage** page.
 
-    ![Create storage by clicking confirm.](./images/lab5-5n.png)
+    ![Create storage by clicking confirm.](./images/ad-lab5-5.png)
    
-4. On the **Manage** page, in the **Linked services** tab, select **+ New** to add a new linked service.
+3. On the **Overview** page, select the **Launch studio** to open the Azure Data Factory Studio. Sign in if prompted.
 
-    ![Create storage by clicking confirm.](./images/lab5-6n.png)
+    ![Create storage by clicking confirm.](./images/ad-lab5-6.png)
    
-5. In the **New linked service** pane, select the **Compute** tab at the top. Then select **Azure Databricks**.
+5. In Azure Data Factory Studio, use the **>>** icon to expand the navigation pane on the left. Then select the **Manage** page.
+
+   ![Create storage by clicking confirm.](./images/lab5-5n.png)
    
-6. Continue, and create the linked service with the following settings:
-    - **Name**: AzureDatabricks
-    - **Description**: Azure Databricks workspace
-    - **Connect via integration runtime**: AutoResolveInegrationRuntime
-    - **Account selection method**: From Azure subscription
-    - **Azure subscription**: *Select your subscription*
-    - **Databricks workspace**: *Select your **databricksxxxxxxx** workspace*
-    - **Select cluster**: New job cluster
-    - **Databrick Workspace URL**: *Automatically set to your Databricks workspace URL*
-    - **Authentication type**: Access token
-    - **Access token**: *Paste your access token*
-    - **Cluster version**: 13.3 LTS (Spark 3.4.1, Scala 2.12)
-    - **Cluster node type**: Standard_DS3_v2
-    - **Python version**: 3
-    - **Worker options**: Fixed
-    - **Workers**: 1
+6. On the **Manage** page, in the **Linked services (1)** tab, select **+ New (2)** to add a new linked service.
 
-    ![Create storage by clicking confirm.](./images/lab5-7n.png)
+   ![Create storage by clicking confirm.](./images/ad-lab5-7.png)
+   
+7. In the **New linked service** pane, select the **Compute (1)** tab at the top. Then select **Azure Databricks (2)** and click on **Continue (3).**
 
-    ![Create storage by clicking confirm.](./images/lab5-8n.png)
+   ![Create storage by clicking confirm.](./images/ad-lab5-8.png)
+   
+9. Create the linked service with the following settings:
+    - **Name (1)**: AzureDatabricks
+    - **Description (2)**: Azure Databricks workspace
+    - **Connect via integration runtime (3)**: AutoResolveInegrationRuntime
+    - **Account selection method (4)**: From Azure subscription
+    - **Azure subscription (5)**: *Select your subscription*
+    - **Databricks workspace (6)**: *Select your **databricksxxxxxxx** workspace*
+    - **Select cluster (7)**: New job cluster
+    - **Databrick Workspace URL (8)**: *Automatically set to your Databricks workspace URL*
+    - **Authentication type (9)**: Access token
+    - **Access token (10)**: *Paste your access token*
+    - **Cluster version (11)**: 13.3 LTS (Spark 3.4.1, Scala 2.12)
+    - **Cluster node type (12)**: Standard_DS3_v2
+    - **Python version (13)**: 3
+    - **Worker options (14)**: Fixed
+    - **Workers (15)**: 1
+  
+      Once all the neccessary fields are provided click on **Create (16).**
+
+    ![Create storage by clicking confirm.](./images/ad-lab5-9.png)
+
+    ![Create storage by clicking confirm.](./images/ad-lab5-10.png)
 
 ## Task 4: Use a pipeline to run the Azure Databricks notebook
 
