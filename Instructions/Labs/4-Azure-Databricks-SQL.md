@@ -41,23 +41,23 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
     ![Azure portal with a cloud shell pane](./images/21051.png)
 
 
-4. Within the Getting Started pane, select **Mount storage account**, select your **Storage account subscription** from the dropdown and click **Apply**.
+4. Within the Getting Started pane, select **Mount storage account (1)**, select your **Storage account subscription (2)** from the dropdown and click **Apply (3)**.
 
    ![](./images/21052.png)
 
-5. Within the **Mount storage account** pane, select **I want to create a storage account** and click **Next**.
+5. Within the **Mount storage account** pane, select **I want to create a storage account (1)** and click **Next (2)**.
 
    ![](./images/21053.png)
 
+6. If you are prompted to create storage for your Cloud Shell, ensure your **Subscription** is selected, Please make sure you have selected your **Resource Group** which is **Azure-Databricks (1)** , select **Region** from the drop-down **(US) East US (2)** and enter **storage<inject key="DeploymentID" enableCopy="false"/> (3)** for the **Storage account name** and enter **fileshare1 (4)** for the **File share name**, then click on **Create (5)**.
+   
+   ![Create storage by clicking confirm.](./images/21054.png "Create storage advanced settings")
 
-6. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected, Please make sure you have selected your resource group **Azure-Databricks** and enter **storage<inject key="DeploymentID" enableCopy="false"/>** for the **Storage account name** and enter **fileshare1** For the **File share name**, then click on **Create**.
+7. You can see a pop up appearing **Depployment is in Progress** ,Wait for PowerShell terminal to start.
 
-    ![Create storage by clicking confirm.](./images/21054.png "Create storage advanced settings")
+    ![](./images/ad-task-1-2.png)
 
-7. Wait for PowerShell terminal to start.
-
-
-8. In the PowerShell pane, enter the following commands to clone this repo:
+8. In the PowerShell pane, paste the following commands and Click enter to clone this repo:
 
     ```
     rm -r dp-203 -f
@@ -74,6 +74,10 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 10. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
 11. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [What is data warehousing on Azure Databricks?](https://learn.microsoft.com/azure/databricks/sql/) article in the Azure Databricks documentation.
+
+    ![Azure portal with a cloud shell pane](./images/25-6.png)
+
+12. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X** which is located at the top right corner of **cloud shell**
 
 ## Task 2: View and start a SQL Warehouse
 
