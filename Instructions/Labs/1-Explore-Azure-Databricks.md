@@ -75,7 +75,7 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
 1. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [What is Azure Databricks?](https://learn.microsoft.com/azure/databricks/introduction/) article in the Azure Databricks documentation.
 
-   ![Azure portal with a cloud shell pane](./images/25-6.png)
+   ![Azure portal with a cloud shell pane](./images/cluster-name.png)
 
 1. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X** which is located at the top right corner of **cloud shell**
 
