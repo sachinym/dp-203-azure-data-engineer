@@ -72,6 +72,8 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
 1. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [Exploratory data analysis on Azure Databricks](https://learn.microsoft.com/azure/databricks/exploratory-data-analysis/) article in the Azure Databricks documentation.
 
+    ![Azure portal with a cloud shell pane](./images/cluster-name.png)
+
 ## Task 2: Create a cluster
 
 Azure Databricks is a distributed processing platform that uses Apache Spark *clusters* to process data in parallel on multiple nodes. Each cluster consists of a driver node to coordinate the work, and worker nodes to perform processing tasks.
@@ -132,7 +134,7 @@ In this task, you will be importing a notebook to Azure Databricks Portal.
 
    ![Create storage by clicking confirm.](./images/ad-task3-1.png)
 
-1. Then in the **Import** dialog box, select **URL** , in the **URL** import the notebook from `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/24/Databricks-Spark.ipynb` **(2)** and then click on **Import (3)**.
+1. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/24/Databricks-Spark.ipynb` **(2)** and then click on **Import (3)**.
 
    ![Create storage by clicking confirm.](./images/210516.png)
 
