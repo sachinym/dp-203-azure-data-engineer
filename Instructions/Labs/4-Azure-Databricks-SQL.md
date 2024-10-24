@@ -40,7 +40,6 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
     ![Azure portal with a cloud shell pane](./images/21051.png)
 
-
 4. Within the Getting Started pane, select **Mount storage account (1)**, select your **Storage account subscription (2)** from the dropdown and click **Apply (3)**.
 
    ![](./images/21052.png)
@@ -85,11 +84,13 @@ In this task, you will launch workspace and you'll view and start SQL Warehouse.
 
 1. When the Azure Databricks workspace resource has been deployed, go to it in the Azure portal.
 
-2. In the Azure portal, browse to the **dp203-*xxxxxxx*** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace).
+2. In the Azure portal, in the **Search resources, services, and docs (G+/)** text box at the top of the Azure portal page, type **dp203-*xxxxxxx* (1)** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace) and select the **Resource group (2).**
 
+   ![](./images/ad-task-1-3.png)
+ 
 3. Select your Azure Databricks Service resource (named **databricks*xxxxxxx*** if you used the setup script to create it).
 
-    ![Create storage by clicking confirm.](./images/21055.png)
+    ![Create storage by clicking confirm.](./images/ad-task-1-4.png)
 
 4. In the **Overview** page for your workspace, use the **Launch Workspace** button to open your Azure Databricks workspace in a new browser tab; signing in if prompted.
 
@@ -98,15 +99,30 @@ In this task, you will launch workspace and you'll view and start SQL Warehouse.
     > **Tip**: As you use the Databricks Workspace portal, various tips and notifications may be displayed. Dismiss these and follow the instructions provided to complete the tasks in this exercise.
 
 5. View the Azure Databricks workspace portal and note that the sidebar on the left side contains links for the various types of task you can perform.
-6. In the sidebar, under **SQL**, select **SQL Warehouses**.
+  
+6. In the sidebar, under **SQL (1)**, select **SQL Warehouses (2)**.
 
-   ![](./images/dbsql1.png)
+   ![](./images/ad-lab4-1.png)
 
-7. Observe that the workspace already includes a SQL Warehouse named **Starter Warehouse**.
+7. Observe that the workspace already includes a SQL Warehouse named **Serverless Starter Warehouse**.
 
-8. In the **Actions** (**&#8285;**) menu for the SQL Warehouse, select **Edit**. Then set the **Cluster size** property to **2X-Small** and save your changes.
+   ![](./images/ad-lab4-2.png)
 
-9. Use the **Start** button to start the SQL Warehouse (which may take a minute or two).
+8. In the **Actions** (**&#8285;**) **(1)** menu for the SQL Warehouse, select **Edit (2)**.
+
+    ![](./images/ad-lab4-3.png)
+
+9. A Page appears where in you can configure the Cluster size,set the **Cluster size** property to **2X-Small (1)** and **Save (2)** your changes.
+
+    ![](./images/ad-lab4-4.png)
+    
+12. Use the **Start** button to start the SQL Warehouse (which may take a minute or two).
+
+    ![](./images/ad-lab4-5.png)
+
+13. Now your SQL Warehouse will be up and in running state.
+
+    ![](./images/ad-lab4-6.png)
 
 > **Note**: If your SQL Warehouse fails to start, your subscription may have insufficient quota in the region where your Azure Databricks workspace is provisioned. See [Required Azure vCPU quota](https://docs.microsoft.com/azure/databricks/sql/admin/sql-endpoints#required-azure-vcpu-quota) for details. If this happens, you can try requesting for a quota increase as detailed in the error message when the warehouse fails to start. Alternatively, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
 
