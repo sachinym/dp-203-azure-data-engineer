@@ -147,7 +147,7 @@ In this task, you will be creating database schema in your Azure Databricks Port
 
    ![](./images/ad-lab4-9.png)
 
-8. When the code has been successfully executed, in the **Schema browser** pane, use the refresh button at the bottom of the pane to refresh the list. Then expand **hive_metastore** and **adventureworks**, and observe that the database has been created, but contains no tables.
+8. When the code has been successfully executed, in the **Schema browser** pane, use the refresh button at the bottom of the pane to refresh the list. Then expand **hive_metastore (1)** and **adventureworks (2)**, and observe that the database has been created, but contains no tables.
 
    ![](./images/ad-lab4-10.png)
 
@@ -159,15 +159,25 @@ In this task, you will create a table schema using an external file.
 
 1. Download the [**products.csv**](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/blob/master/Allfiles/labs/26/data/products.csv) file to your local computer to download the file press ctrl+s, saving it as **products.csv**, .
 
-2. In the Azure Databricks workspace portal, in the sidebar, select **(+) New** and then select **Data** and upload the **products.csv** file you downloaded to your computer.
+2. In the Azure Databricks workspace portal, in the sidebar, select **(+) New (1)** and then select **Add or Upload data (2)**
 
-   ![](./images/data1.png)
+    ![](./images/ad-lab4-11.png)
 
-   ![](./images/data2.png)
+3. In order to upload the **products.csv** file , click on **Create or modify table**.
 
-3. In the **Add data** page, select the **adventureworks** database from schema dropdown and set the table name to **products**. Then select **Create table** on the bottom right corner of the page.
+   ![](./images/ad-lab4-12.png)
 
-4. When the table has been created, review its details.
+4. Then click on **Browse** to upload the file that you have downloaded to your computer.
+
+   ![](./images/ad-lab4-13.png)
+
+5. Once **products.csv** file has been uploaded **(1)**. In the **Add data** page, select the **adventureworks (2)** database from schema dropdown and set the table name to **products (3)**. Then select **Create table (4)** on the bottom right corner of the page.
+
+   ![](./images/ad-lab4-14.png)
+
+6. Now the table named **products** has been created under **adventureworks** database, review the table details.
+
+   ![](./images/ad-lab4-15.png)
 
 The ability to create a table by importing data from a file makes it easy to populate a database. You can also use Spark SQL to create tables using code. The tables themselves are metadata definitions in the hive metastore, and the data they contain is stored in Delta format in Databricks File System (DBFS) storage.
 
