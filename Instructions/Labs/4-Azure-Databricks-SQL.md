@@ -241,9 +241,11 @@ In this task, you will be creating a dashboard to visualize the data of Products
     - **Y column (6)**: Category
     - **color/Group by**: *Leave blank*
 
+    Then **Publish (7)** the visualization.
+   
     ![](./images/Dashboard4.png)
    
-7. **Publish (7)** the visualization. A pop up appears click on again click on **Publish**.
+7. A pop up appears click on again click on **Publish**.
 
     ![](./images/ad-lab4-22.png)
 
