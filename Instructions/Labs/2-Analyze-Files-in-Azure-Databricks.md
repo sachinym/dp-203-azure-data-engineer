@@ -72,7 +72,7 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
 1. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [Exploratory data analysis on Azure Databricks](https://learn.microsoft.com/azure/databricks/exploratory-data-analysis/) article in the Azure Databricks documentation.
 
-    ![Azure portal with a cloud shell pane](./images/25-6.png)
+    ![Azure portal with a cloud shell pane](./images/cluster-name.png)
 
 ## Task 2: Create a cluster
 
