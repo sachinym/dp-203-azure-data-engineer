@@ -64,44 +64,75 @@ The architecture for this lab incorporates several essential components:
 
 These components work together to create a fully orchestrated data pipeline that ingests, transforms, and prepares data for further analytics or reporting, demonstrating the power of Azure Data Factory and Databricks in handling data engineering workflows.
 
-# Getting Started with Lab
+## Getting Started with Lab
 
-1. Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the lab guide bottom area to switch to different exercises of the lab guide.
+Welcome to your Customer Support Conversation Summarization with Azure OpenAI Workshop! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
 
-   ![](../Instructions/Labs/images/getting-started.png "Lab Environment")
-   
-1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided during registration. You can also open the Lab Guide on separate and full window by selecting the **Split Window** from the lower right corner. Also, you can start, stop, and restart virtual machines from the **Resources** tab.
+## Accessing Your Lab Environment
 
-   ![](../Instructions/Labs/images/envdetails.png "Lab Environment")
+Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
 
-## Login to Azure Portal
+![](./images/labguide.png)
 
-1. In the JumpVM, click on Azure portal shortcut of Microsoft Edge browser which is created on desktop.
+### Virtual Machine & Lab Guide
 
-   ![](../Instructions/Labs/images/azureportal_icon.png "Lab Environment")
-   
-1. On **Sign into Microsoft Azure** tab you will see login screen, in that enter following email/username and then click on **Next**. 
-   * Email/Username: <inject key="AzureAdUserEmail"></inject>
-   
-     ![](../Instructions/Labs/images/image7.png "Enter Email")
-     
-1. Now enter the following password and click on **Sign in**.
-   * Password: <inject key="AzureAdUserPassword"></inject>
-   
-     ![](../Instructions/Labs/images/image8.png "Enter Password")
-     
+Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
+
+## Exploring Your Lab Resources
+
+To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
+
+![](./images/env.png)
+
+## Utilizing the Split Window Feature
+
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
+
+![](./images/split.png)
+
+## Managing Your Virtual Machine
+
+Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+
+![](./images/resourses.png)
+
+## Let's Get Started with Azure Portal
+
+1. On your virtual machine, click on the Azure Portal icon as shown below:
+
+    ![](./images/azure.png)
+
+1. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
+
+    * Email/Username: <inject key="AzureAdUserEmail"></inject>
+
+    ![](./images/image7.png)
+
+1. Next, provide your password:
+
+    * Password: <inject key="AzureAdUserPassword"></inject>
+
+    ![](./images/image8.png)
+
 1. If you see the pop-up **Action Required**, click **Ask Later**.
 
-     ![](../Instructions/Labs/images/asklater.png "Action required window")
-     
-    > If you are getting popup **save password**, then select **Save & Turn on** option.
-       
-1. If you see the pop-up **Stay Signed in?**, click **No**.
+    ![](./images/asklater.png)
 
-1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+1. First-time users are often prompted to Stay Signed In, if you see any such pop-up, click on No.
 
-1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
-   
-1. Use **Next** button from lower right corner to move on to the next page.
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
 
-   ![](../Instructions/Labs/images/next.png "Resource groups")
+## Support Contact
+
+The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance at any time. We offer dedicated support channels tailored specifically for both learners and instructors, ensuring that all your needs are promptly and efficiently addressed.
+
+Learner Support Contacts:
+
+- Email Support: cloudlabs-support@spektrasystems.com
+- Live Chat Support: https://cloudlabs.ai/labs-support
+
+Now, click on **Next** from the lower right corner to move on to the next page.
+
+![](./images/lab-next.png)
+
+### Happy Learning!!
