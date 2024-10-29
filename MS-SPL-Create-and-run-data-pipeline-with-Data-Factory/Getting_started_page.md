@@ -38,6 +38,12 @@ These prerequisites will help participants fully engage with the lab exercises, 
 
 ## Architecture
 
+This lab architecture combines key Azure services to create a streamlined data engineering workflow, primarily using Azure Data Factory and Azure Databricks. Data begins in an **Azure Storage Account**, which serves as the primary source for raw data files. **Azure Data Factory** acts as the main orchestration tool, coordinating Extract, Transform, Load (ETL) processes and managing data flows. Within Data Factory, **Data Flows** are configured to handle data transformations such as data cleansing,enrichment, and preparation. Data Factory then integrates with **Azure Databricks** to perform more complex data processing and transformation using Apache Spark, allowing for scalable and collaborative data manipulation.
+
+To simplify resource management and streamline setup, **Azure Cloud Shell** provides a command-line interface to execute provisioning scripts directly within the Azure portal. **Monitoring Tools** within Data Factory provide real-time tracking and visibility into data pipeline execution, helping ensure that workflows operate smoothly and efficiently. Together, this architecture enables participants to build and manage robust, scalable data workflows, preparing them for sophisticated data engineering and integration tasks on the Azure platform.
+
+## Architecture Diagram
+
 ![]()
 
 ## Explanation of Components
