@@ -44,7 +44,7 @@ To simplify resource management and streamline setup, **Azure Cloud Shell** prov
 
 ## Architecture Diagram
 
-![]()
+![](./images/architecture-diagram.png)
 
 ## Explanation of Components
 
