@@ -2,58 +2,107 @@
 
 You can use notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables. When you need to orchestrate these tasks as part of a data engineering pipeline, you can use Azure Data Factory.
 
-This exercise should take approximately **40** minutes to complete.
+In this lab, you'll explore about notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables.
 
+### Estimated timing: 120 minutes
 
-## Provision Azure resources
+## Lab Objectives
+
+You will be able to complete the following tasks:
+
+ - Task 1: Provision Azure resources
+ - Task 2: Import a notebook
+ - Task 3: Enable Azure Databricks integration with Azure Data Factory
+ - Task 4: Use a pipeline to run the Azure Databricks notebook
+
+## Task 1: Provision Azure resources
 
 In this exercise, you'll use a script to provision a new Azure Databricks workspace and an Azure Data Factory resource in your Azure subscription.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](../Instructions/Labs/images/cloud-shell.png)
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+    ![]()
 
-3. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
+1. Within the Getting Started pane, select **Mount storage account (1)**, select your **Storage account subscription (2)** from the dropdown and click **Apply (3)**.
 
-4. In the PowerShell pane, enter the following commands to clone this repo:
+    ![]()
+
+1. Within the **Mount storage account** pane, select **I want to create a storage account (1)** and click **Next (2)**.
+
+    ![]()
+
+1. If you are prompted to create storage for your Cloud Shell, ensure your **Subscription** is selected, Please make sure you have selected your **Resource Group** which is **Azure-Databricks (1)** , select **Region** from the drop-down **(US) East US (2)** and enter **storage<inject key="DeploymentID" enableCopy="false"/> (3)** for the **Storage account name** and enter **fileshare1 (4)** for the **File share name**, then click on **Create (5)**.
+
+    ![]()
+
+1. You can see a pop up appearing **Depployment is in Progress** ,Wait for PowerShell terminal to start.
+
+    ![]()
+
+1. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-5. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/27
     ./setup.ps1
     ```
 
-6. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-7. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review [What is Azure Data Factory?](https://docs.microsoft.com/azure/data-factory/introduction).
-8. When the script has completed, close the cloud shell pane and browse to the **dp203-*xxxxxxx*** resource group that was created by the script to verify that it contains an Azure Databricks workspace and an Azure Data Factory (V2) resource (you may need to refresh the resource group view).
+1. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review [What is Azure Data Factory?](https://docs.microsoft.com/azure/data-factory/introduction).
 
-## Import a notebook
+1. When the script has completed, close the cloud shell pane and browse to the **dp203-*xxxxxxx*** resource group that was created by the script to verify that it contains an Azure Databricks workspace and an Azure Data Factory (V2) resource (you may need to refresh the resource group view).
+
+## Task 2: Import a notebook
 
 You can create notebooks in your Azure Databricks workspace to run code written in a range of programming languages. In this exercise, you'll import an existing notebook that contains some Python code.
 
 1. In the Azure portal, in the **dp203-*xxxxxxx*** resource group, select the **databricks*xxxxxxx*** Azure Databricks Service resource.
-2. In the **Overview** page for **databricks*xxxxxxx***, use the **Launch Workspace** button to open your Azure Databricks workspace in a new browser tab; signing in if prompted.
-3. If a **What's your current data project?** message is displayed, select **Finish** to close it. Then view the Azure Databricks workspace portal and note that the sidebar on the left side contains icons for the various tasks you can perform. The sidebar expands to show the names of the task categories.
-4. Expand the sidebar and select the **Workspace** tab. Then select the **Users** folder and in the **&#9662;** menu for the **&#8962; *your_user_name*** folder, select **Import**.
-5. In the **Import Notebooks** dialog box, select **URL** and import the notebook from `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/27/Process-Data.ipynb`
-6. Select **&#8962; Home** and then open the **Process-Data** notebook you just imported.
+
+    ![]()
+
+1. In the **Overview** page for **databricks*xxxxxxx***, use the **Launch Workspace** button to open your Azure Databricks workspace in a new browser tab; signing in if prompted.
+
+    ![]()
+
+1. If a **What's your current data project?** message is displayed, select **Finish** to close it. Then view the Azure Databricks workspace portal and note that the sidebar on the left side contains icons for the various tasks you can perform. The sidebar expands to show the names of the task categories.
+
+    ![]()
+
+1. Expand the sidebar and select the **Workspace (1)** tab. Then under the **Workspace (2)** folder, select **Users (3)** folder. 
+
+    ![]()
+
+1. Click on the **&#8942; (1)** menu next to your user name, select **Import (2)**.
+
+    ![]()
+
+1.  Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/27/Process-Data.ipynb` **(2)** and then click on **Import (3)**.
+
+    ![]()
+
+1. Expand the sidebar and select the **Workspace (1)** tab. Then in the **Home (2)** folder, open the **Process-Data (3)** notebook you just imported.
+
+    ![]()
 
     **Note**: If a tip is displayed, use the **Got it** button to close it. This applies to any future tips that may be displayed as you navigate the workspace interface for the first time.
 
-7. Review the contents of the notebook, which include some Python code cells to:
+1. Review the contents of the notebook, which include some Python code cells to:
+    
     - Retrieve a parameter named **folder** if it is has been passed (otherwise use a default value of *data*).
+    
     - Download data from GitHub and save it in the specified folder in the Databricks File System (DBFS).
+    
     - Exit the notebook, returning the path where the data was saved as an output
+
 
     > **Tip**: The notebook could contain practically any data processing logic you need. This simple example is designed to show the key principles.
 
@@ -120,6 +169,7 @@ Now that you have created a linked service, you can use it in a pipeline to run 
     > **Note**: If your pipeline fails, your subscription may have insufficient quota in the region where your Azure Databricks workspace is provisioned to create a job cluster. See [CPU core limit prevents cluster creation](https://docs.microsoft.com/azure/databricks/kb/clusters/azure-core-limit) for details. If this happens, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
 
 4. When the run succeeds, select its name to view the run details. Then, on the **Process Data with Databricks** page, in the **Activity Runs** section, select the **Process Data** activity and use its ***output*** icon to view the output JSON from the activity, which should resemble this:
+
     ```json
     {
         "runPageUrl": "https://adb-..../run/...",
@@ -144,5 +194,9 @@ Now that you have created a linked service, you can use it in a pipeline to run 
 
 5. Note the **runOutput** value, which is the *path* variable to which the notebook saved the data.
 
-You have successfully completed the lab.
+## Summary
+
+In this lab, you have performed tasks to integrate Azure Databricks with Azure Data Factory. You imported a notebook, enabled Azure Databricks integration with Azure Data Factory, and used a pipeline to run the Azure Databricks notebook efficiently.
+
+### You have successfully completed the lab.
 
