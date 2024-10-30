@@ -66,7 +66,7 @@ These components work together to create a fully orchestrated data pipeline that
 
 ## Getting Started with Lab
 
-Welcome to your Customer Support Conversation Summarization with Azure OpenAI Workshop! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
+Welcome to your Create and run data pipeline with Data Factory lab! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
 
 ## Accessing Your Lab Environment
 
