@@ -107,7 +107,7 @@ In this exercise, you'll import an existing notebook that contains some Python c
     
     - Exit the notebook, returning the path where the data was saved as an output
 
-        > **Tip**: The notebook could contain practically any data processing logic you need. This simple example is designed to show the key principles.
+       > **Tip**: The notebook could contain practically any data processing logic you need. This simple example is designed to show the key principles.
 
 ## Task 3: Enable Azure Databricks integration with Azure Data Factory
 
