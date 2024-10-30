@@ -262,7 +262,7 @@ In this task, you will create a pipeline and use it to run the Azure Databricks 
     }
     ```
 
-    ![](./images/task4-10.png)
+    ![](./images/task4-11.png)
 
 1. Note the **runOutput** value, which is the *path* variable to which the notebook saved the data.
 
