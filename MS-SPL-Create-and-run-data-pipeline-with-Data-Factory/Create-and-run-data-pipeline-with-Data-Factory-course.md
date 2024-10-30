@@ -37,7 +37,7 @@ In this exercise, you'll use a script to provision a new Azure Databricks worksp
 
     ![](./images/task1-4.png)
 
-1. You can see a pop up appearing **Depployment is in Progress** ,Wait for PowerShell terminal to start.
+1. You can see a pop up appearing **Deployment is in Progress** ,Wait for PowerShell terminal to start.
 
     ![](./images/task1-5.png)
 
