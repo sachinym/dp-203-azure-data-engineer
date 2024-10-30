@@ -205,12 +205,19 @@ In this task, you will create a pipeline and use it to run the Azure Databricks 
     ![](./images/task4-3.png)
 
 1. With the new **Notebook1** activity selected, set the following properties in the bottom pane:
+    
     - **General**:
+        
         - **Name**: Process Data
+    
     - **Azure Databricks**:
+        
         - **Databricks linked service**: *Select the **AzureDatabricks** linked service you created previously*
+    
     - **Settings**:
+        
         - **Notebook path (1)**: *Browse to the **Users/your_user_name** folder and select the **Process-Data** notebook*
+        
         - **Base parameters**: *Add a **new (2)** parameter named **folder (3)** with the value **product_data (4)***
 
     ![](./images/task4-4.png)    
