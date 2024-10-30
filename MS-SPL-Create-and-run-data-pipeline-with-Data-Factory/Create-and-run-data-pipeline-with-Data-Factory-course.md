@@ -224,17 +224,19 @@ In this task, you will create a pipeline and use it to run the Azure Databricks 
 
     ![](./images/task4-7.png)
 
+    ![](./images/task4-8.png)
+
 ### Task4.2: Run the pipeline
 
 1. Above the pipeline designer surface, select **Add trigger (1)**, and then select **Trigger now (2)**.
 
-    ![](./images/task4-8.png)
+    ![](./images/task4-9.png)
 
 1. In the **Pipeline run** pane, select **OK** to run the pipeline.
 
 1. In the navigation pane on the left, select **Monitor** and observe the **Process Data with Databricks** pipeline on the **Pipeline runs** tab. It may take a while to run as it dynamically creates a Spark cluster and runs the notebook. You can use the **&#8635; Refresh** button on the **Pipeline runs** page to refresh the status.
 
-    ![](./images/task4-9.png)
+    ![](./images/task4-10.png)
 
     > **Note**: If your pipeline fails, your subscription may have insufficient quota in the region where your Azure Databricks workspace is provisioned to create a job cluster. See [CPU core limit prevents cluster creation](https://docs.microsoft.com/azure/databricks/kb/clusters/azure-core-limit) for details. If this happens, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
 
