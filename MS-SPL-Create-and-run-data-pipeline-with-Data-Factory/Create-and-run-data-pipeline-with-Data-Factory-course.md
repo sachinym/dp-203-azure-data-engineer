@@ -163,7 +163,7 @@ In this task, you will generate a access token in the Azure Databricks Portal an
 1. Create the linked service with the following settings:
     - **Name (1)**: AzureDatabricks
     - **Description (2)**: Azure Databricks workspace
-    - **Connect via integration runtime (3)**: AutoResolveInegrationRuntime
+    - **Connect via integration runtime (3)**: AutoResolveIntegrationRuntime
     - **Account selection method (4)**: From Azure subscription
     - **Azure subscription (5)**: *Select your subscription*
     - **Databricks workspace (6)**: *Select your **databricksxxxxxxx** workspace*
@@ -171,7 +171,7 @@ In this task, you will generate a access token in the Azure Databricks Portal an
     - **Databrick Workspace URL (8)**: *Automatically set to your Databricks workspace URL*
     - **Authentication type (9)**: Access token
     - **Access token (10)**: *Paste your access token*
-    - **Cluster version (11)**: 11.3 LTS (includes Apache Spark 3.4.1, Scala 2.12)
+    - **Cluster version (11)**: 11.3 LTS (includes Apache Spark 3.3.0, Scala 2.12)
     - **Cluster node type (12)**: Standard_DS3_v2
     - **Python version (13)**: 3
     - **Worker options (14)**: Fixed
