@@ -5,7 +5,7 @@
     "BaseURL": "https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer",
     "Files": [
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/prod/Instructions/Labs/00-GettingStarted.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/MS-SPL/MS-SPL-Create-and-run-data-pipeline-with-Data-Factory/Getting_started_page.md",
         "Order": 1
       },
       {
