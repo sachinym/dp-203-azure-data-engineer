@@ -118,6 +118,8 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
     ![](./images/asklater.png)
 
+    > **NOTE**: Do not enable MFA, select **Ask Later**.
+
 1. First-time users are often prompted to **Stay Signed In**, if you see any such pop-up, click on No.
 
 1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.

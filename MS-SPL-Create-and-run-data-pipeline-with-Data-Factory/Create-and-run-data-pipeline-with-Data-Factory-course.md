@@ -1,10 +1,10 @@
 # Hands-on Lab : Create and run Data Pipeline with Data Factory
 
+### Estimated Duration: 120 minutes
+
 You can use notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables. When you need to orchestrate these tasks as part of a data engineering pipeline, you can use Azure Data Factory.
 
 In this lab, you'll explore about notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables.
-
-### Estimated timing: 120 minutes
 
 ## Lab Objectives
 
@@ -115,7 +115,7 @@ To use Azure Databricks from an Azure Data Factory pipeline, you need to create 
 
 In this task, you will generate a access token in the Azure Databricks Portal and create a linked service in Azure Data Factory.
 
-### Task 3.1: Generate an access token
+### Task 3.1 : Generate an access token
 
 1. In the Azure Databricks portal, at on the top right menu bar, select the **username (1)** and then select **Settings (2)** from the drop-down.
 
@@ -138,6 +138,7 @@ In this task, you will generate a access token in the Azure Databricks Portal an
 1. Paste the copied token to a text file so you have it handy for later in this exercise.
 
 ### Task3.2: Create a linked service in Azure Data Factory
+
 
 1. Return to the Azure portal, and in the **dp203-*xxxxxxx*** resource group, select the **adf*xxxxxxx*** Azure Data Factory resource.
 
