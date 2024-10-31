@@ -1,10 +1,10 @@
 # Hands-on Lab : Create and run Data Pipeline with Data Factory
 
+### Estimated Duration: 120 minutes
+
 You can use notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables. When you need to orchestrate these tasks as part of a data engineering pipeline, you can use Azure Data Factory.
 
 In this lab, you'll explore about notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables.
-
-### Estimated timing: 120 minutes
 
 ## Lab Objectives
 
@@ -107,8 +107,7 @@ In this exercise, you'll import an existing notebook that contains some Python c
     
     - Exit the notebook, returning the path where the data was saved as an output
 
-
-    > **Tip**: The notebook could contain practically any data processing logic you need. This simple example is designed to show the key principles.
+       > **Tip**: The notebook could contain practically any data processing logic you need. This simple example is designed to show the key principles.
 
 ## Task 3: Enable Azure Databricks integration with Azure Data Factory
 
@@ -116,7 +115,7 @@ To use Azure Databricks from an Azure Data Factory pipeline, you need to create 
 
 In this task, you will generate a access token in the Azure Databricks Portal and create a linked service in Azure Data Factory.
 
-### Task 3.1: Generate an access token
+### Task 3.1 : Generate an access token
 
 1. In the Azure Databricks portal, at on the top right menu bar, select the **username (1)** and then select **Settings (2)** from the drop-down.
 
@@ -139,6 +138,7 @@ In this task, you will generate a access token in the Azure Databricks Portal an
 1. Paste the copied token to a text file so you have it handy for later in this exercise.
 
 ### Task3.2: Create a linked service in Azure Data Factory
+
 
 1. Return to the Azure portal, and in the **dp203-*xxxxxxx*** resource group, select the **adf*xxxxxxx*** Azure Data Factory resource.
 
@@ -206,12 +206,19 @@ In this task, you will create a pipeline and use it to run the Azure Databricks 
     ![](./images/task4-3.png)
 
 1. With the new **Notebook1** activity selected, set the following properties in the bottom pane:
+    
     - **General**:
+        
         - **Name**: Process Data
+    
     - **Azure Databricks**:
+        
         - **Databricks linked service**: *Select the **AzureDatabricks** linked service you created previously*
+    
     - **Settings**:
+        
         - **Notebook path (1)**: *Browse to the **Users/your_user_name** folder and select the **Process-Data** notebook*
+        
         - **Base parameters**: *Add a **new (2)** parameter named **folder (3)** with the value **product_data (4)***
 
     ![](./images/task4-4.png)    
