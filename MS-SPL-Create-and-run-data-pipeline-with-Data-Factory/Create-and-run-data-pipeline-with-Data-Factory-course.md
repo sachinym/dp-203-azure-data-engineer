@@ -115,7 +115,7 @@ To use Azure Databricks from an Azure Data Factory pipeline, you need to create 
 
 In this task, you will generate a access token in the Azure Databricks Portal and create a linked service in Azure Data Factory.
 
-### Task 3.1 : Generate an access token
+### Task 3.1: Generate an access token
 
 1. In the Azure Databricks portal, at on the top right menu bar, select the **username (1)** and then select **Settings (2)** from the drop-down.
 
@@ -137,7 +137,7 @@ In this task, you will generate a access token in the Azure Databricks Portal an
 
 1. Paste the copied token to a text file so you have it handy for later in this exercise.
 
-### Task3.2: Create a linked service in Azure Data Factory
+### Task 3.2: Create a linked service in Azure Data Factory
 
 
 1. Return to the Azure portal, and in the **dp203-*xxxxxxx*** resource group, select the **adf*xxxxxxx*** Azure Data Factory resource.
@@ -189,7 +189,7 @@ Now that you have created a linked service, you can use it in a pipeline to run 
 
 In this task, you will create a pipeline and use it to run the Azure Databricks Notebook.
 
-### Task4.1: Create a pipeline
+### Task 4.1: Create a pipeline
 
 1. In Azure Data Factory Studio, in the navigation pane, select **Author (1)**.
 
@@ -233,7 +233,7 @@ In this task, you will create a pipeline and use it to run the Azure Databricks 
 
     ![](./images/task4-8.png)
 
-### Task4.2: Run the pipeline
+### Task 4.2: Run the pipeline
 
 1. Above the pipeline designer surface, select **Add trigger (1)**, and then select **Trigger now (2)**.
 
