@@ -275,6 +275,13 @@ In this task, you will create a pipeline and use it to run the Azure Databricks 
 
 1. Note the **runOutput** value, which is the *path* variable to which the notebook saved the data.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+
+<validation step="cdd7893c-0641-43c1-af28-86eaaae0844c" />
+
 ## Summary
 
 In this lab, you have performed tasks to integrate Azure Databricks with Azure Data Factory. You imported a notebook, enabled Azure Databricks integration with Azure Data Factory, and used a pipeline to run the Azure Databricks notebook efficiently.
