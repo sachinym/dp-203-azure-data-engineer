@@ -4,9 +4,7 @@
 
 ## Overview
 
-SQL is an industry-standard language for querying and manipulating data. Many data analysts perform data analytics by using SQL to query tables in a relational database. Azure Databricks includes SQL functionality that builds on Spark and Delta Lake technologies to provide a relational database layer over files in a data lake.
-
-In this lab, you'll learn about Azure Databricks that provides SQL Warehouses that enable data analysts to work with data using familiar relational SQL queries.
+In this hands-on lab, you will gain experience with Azure Databricks, focusing on using SQL Warehouses for data management and analysis. You will learn to provision a Databricks workspace, start a SQL Warehouse, and create custom database schemas to organize your data effectively. Through various tasks, you will upload data files, create tables, and execute SQL queries to analyze and visualize the data. The lab also covers building dashboards to present insights in a clear and impactful way. By the end of the lab, you will be proficient in using Azure Databricks for SQL-based data analytics, query execution, and data visualization in a cloud-based environment.
 
 ## Objective
 

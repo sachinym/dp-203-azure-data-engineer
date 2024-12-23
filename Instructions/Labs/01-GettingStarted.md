@@ -4,11 +4,7 @@
 
 ## Overview
 
-Azure Databricks is a Microsoft Azure-based version of the popular open-source Databricks platform.
-
-Similarly to Azure Synapse Analytics, an Azure Databricks *workspace* provides a central point for managing Databricks clusters, data, and resources on Azure.
-
-In this lab, you'll learn about Azure Databricks workspace which provides a central point for managing Databricks clusters, data, and resources on Azure.
+In this hands-on lab, you will set up an Azure Databricks workspace and work with its powerful capabilities for big data processing and machine learning. Over the course of this lab, you'll learn how to provision a workspace, create a Spark cluster, and utilize notebooks for data analysis and visualization. You will also explore how Spark's distributed processing can be used to analyze data files, save them as tables, and query them using SQL for insights. Additionally, the lab will demonstrate how to integrate Azure Databricks with other Azure services to streamline data storage, processing, and collaboration. By the end of the lab, you will have gained practical experience with Azure Databricks for data engineering and analytics tasks.
 
 ## Objective
 

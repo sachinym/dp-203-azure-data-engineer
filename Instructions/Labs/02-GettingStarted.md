@@ -4,9 +4,7 @@
 
 ## Overview
 
-Azure Databricks is a Microsoft Azure-based version of the popular open-source Databricks platform. Azure Databricks is built on Apache Spark, and offers a highly scalable solution for data engineering and analysis tasks that involve working with data in files. One of the benefits of Spark is support for a wide range of programming languages, including Java, Scala, Python, and SQL; making Spark a very flexible solution for data processing workloads including data cleansing and manipulation, statistical analysis and machine learning, and data analytics and visualization.
-
-In this lab, you'll learn about Apache Spark clusters to process data in parallel on multiple nodes. As in many Spark environments, Databricks supports the use of notebooks to combine notes and interactive code cells that you can use to explore data.
+In this hands-on lab, you will explore Azure Databricks, a scalable platform for data engineering and analysis built on Apache Spark. Through a series of tasks, you will learn how to provision an Azure Databricks workspace, set up a cluster for parallel data processing, and use notebooks for interactive data exploration and analysis. These activities will demonstrate how Azure Databricks can streamline data processing tasks such as data cleansing, statistical analysis, and machine learning. By the end of the lab, you will gain practical experience in using Azure Databricks for efficient, data-driven projects.
 
 ## Objective
 
@@ -37,6 +35,8 @@ The architecture involves using **Azure Databricks** platform, which integrates 
    ![Azure portal with a cloud shell pane](./Lab-Scenario-Preview/media/lab02-databricks.png)
 
 ## Explanation of Components
+
+The architecture for this lab involves the following key components:
 
 - **Azure Databricks Workspace**: This is the central hub for managing and organizing resources, clusters, and notebooks. It integrates Apache Spark with Azure, enabling seamless data processing, collaborative development, and interactive analysis.
 
