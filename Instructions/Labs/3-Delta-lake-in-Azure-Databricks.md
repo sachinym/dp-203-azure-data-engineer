@@ -1,24 +1,8 @@
 # Lab 03: Use Delta Lake in Azure Databricks
 
-## Lab Scenario
+## Overview
 
-Delta Lake is an open source project to build a transactional data storage layer for Spark on top of a data lake. Delta Lake adds support for relational semantics for both batch and streaming data operations, and enables the creation of a *Lakehouse* architecture in which Apache Spark can be used to process and query data in tables that are based on underlying files in the data lake.
-
-In this lab, you'll learn about Delta Lake which is an open source relational storage area for Spark that you can use to implement a data lakehouse architecture in Azure Databricks.
-
-### Lab Objectives
-
-In this lab, you will perform:
-
- - Task 1:  Provision an Azure Databricks workspace
- - Task 2: Create a cluster
- - Task 3: Explore data lake using a notebook
- 
-### Estimated timing: 60 minutes
-
-### Architecture Diagram
-
-   ![Azure portal with a cloud shell pane](./Lab-Scenario-Preview/media/lab03-databricks.png)
+This lab guide introduces you to using Delta Lake in Azure Databricks to implement a lakehouse architecture. Delta Lake combines the scalability of a data lake with the reliability and performance of a data warehouse, enabling seamless batch and streaming data processing. Through this lab, you will learn to provision an Azure Databricks workspace, create a Spark cluster for distributed data processing, and use notebooks to explore Delta Lake functionality. By the end of the lab, you will have a foundational understanding of Delta Lake's role in managing structured and unstructured data efficiently, supporting analytics and machine learning workflows in Azure Databricks.
 
 ## Task 1:  Provision an Azure Databricks workspace
 
