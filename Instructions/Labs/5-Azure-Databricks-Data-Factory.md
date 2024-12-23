@@ -15,12 +15,6 @@ In this lab, you will perform:
  - Task 3: Enable Azure Databricks integration with Azure Data Factory
  - Task 4: Use a pipeline to run the Azure Databricks notebook
 
-### Estimated timing: 60 minutes
-
-### Architecture Diagram
-
-   ![Azure portal with a cloud shell pane](./Lab-Scenario-Preview/media/lab05-databricks.png)
-
 ## Task 1: Provision Azure resources
 
 In this task, you'll use a script to provision a new Azure Databricks workspace and an Azure Data Factory resource in your Azure subscription.
