@@ -1,6 +1,6 @@
 # Lab 01: Explore Azure Databricks
 
-## Lab-Scenario
+## Overview
 
 Azure Databricks is a Microsoft Azure-based version of the popular open-source Databricks platform.
 
@@ -16,12 +16,6 @@ In this lab, you will perform:
  - Task 2: Create a cluster
  - Task 3: Use Spark to analyze a data file
  - Task 4: Create and query table
-
- ### Estimated timing: 60 minutes
- 
- ### Architecture Diagram
-
-   ![Azure portal with a cloud shell pane](./Lab-Scenario-Preview/media/lab01-databricks.png)
 
 ## Task 1: Provision an Azure Databricks workspace
 

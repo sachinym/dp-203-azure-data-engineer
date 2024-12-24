@@ -1,6 +1,6 @@
 # Lab 04: Use a SQL Warehouse in Azure Databricks
 
-## Lab Scenario
+## Overview
 
 SQL is an industry-standard language for querying and manipulating data. Many data analysts perform data analytics by using SQL to query tables in a relational database. Azure Databricks includes SQL functionality that builds on Spark and Delta Lake technologies to provide a relational database layer over files in a data lake.
 
@@ -16,12 +16,6 @@ In this lab, you will perform:
  - Task 4: Create a table
  - Task 5: Create a query
  - Task 6: Create a dashboard
-
-### Estimated timing: 60 minutes
-
-### Architecture Diagram
-
-   ![Azure portal with a cloud shell pane](./Lab-Scenario-Preview/media/lab04-databricks.png)
 
 ## Task 1: Provision an Azure Databricks workspace
 
