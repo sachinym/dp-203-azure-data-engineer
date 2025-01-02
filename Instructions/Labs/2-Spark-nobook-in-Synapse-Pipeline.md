@@ -81,7 +81,7 @@ In this task, you will be using synapse workspace to run the Spark Notebook inte
 
    ![](./images/labimg5.png)
 
-7. Open the **data**** folder and view the CSV files it contains. Right-click any of the files and select **Preview** to see a sample of the data. Close the preview when finished.
+7. Open the **data** folder and view the CSV files it contains. Right-click any of the files and select **Preview** to see a sample of the data. Close the preview when finished.
 
 8. Right-click any of the files and select **Preview** to see the data it contains. Note that the files contain a header row, so you can select the option to display column headers.
 

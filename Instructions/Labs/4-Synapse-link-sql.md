@@ -96,12 +96,18 @@ Your Azure SQL server hosts a sample database named **AdventureWorksLT**. This d
 In this task, you will explore the transactional database which is created.
 
 1. In the **Overview** page for your Azure SQL server, at the bottom of the page, select the **AdventureWorksLT** database:
-   
+
+    ![](./images/lab4-task3-1.png)
+
 2. In the **AdventureWorksLT** database page, from the left navigation pane, select the **Query editor** tab and log in using SQL server authentication with the following credentials:
     - **Login** SQLUser
     - **Password**: *The password you specified when running the setup script.*
-      
+
+    ![](./images/lab4-task3-2.png)
+
 3. When the query editor opens, expand the **Tables** node and view the list of tables in the database. Note that they include tables in a **SalesLT** schema (for example, **SalesLT.Customer**).
+
+    ![](./images/lab4-task3-3.png)
 
 ## Task 4: Configure Azure Synapse Link
 
@@ -112,12 +118,17 @@ In this task, You will use your Azure Synapse Workspace to configure Synapse Lin
 ### Task 4.1: Start the dedicated SQL pool
 
 1. In the Azure portal, close the query editor for your Azure SQL database (discarding any changes) and return to the page for your **dp203-*xxxxxxx*** resource group.
+
 2. Open the **synapse*xxxxxxx*** Synapse workspace, and on its **Overview** page, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; signing in if prompted.
-   
+
+    ![](./images/lab4-task4-1.png)
+
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio.
-   
+
 4. On the **Manage** page, on the **SQL pools** tab, select the row for the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655;** icon to start it; confirming that you want to resume it when prompted.
-   
+
+    ![](./images/lab4-task4-2.png)
+
 5. Wait for the SQL pool to resume. This can take a few minutes. You can use the **&#8635; Refresh** button to check its status periodically. The status will show as **Online** when it is ready.
 
 ### Task 4.2: Create the target schema
@@ -125,7 +136,9 @@ In this task, You will use your Azure Synapse Workspace to configure Synapse Lin
 1. In Synapse Studio, on the **Data** page, on the **Workspace** tab, expand **SQL databases** and select your **sql*xxxxxxx*** database.
    
 2. In the **...** menu for the **sql*xxxxxxx*** database, select **New SQL script** > **Empty script**.
-   
+
+    ![](./images/lab4-task4-3.png)
+
 3. In the **SQL Script 1** pane, enter the following SQL code and use the  **&#9655; Run** button to run it.
 
     ```sql
