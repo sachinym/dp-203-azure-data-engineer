@@ -1,22 +1,16 @@
 # Lab 2: Use an Apache Spark notebook in a pipeline
 
-## Lab Scenario
+## Overview
 
 In this lab, we're going to create an Azure Synapse Analytics pipeline that includes an activity to run an Apache Spark notebook.
 
-### Lab Objectives
+### Objectives
   
 In this lab, you will be able to complete the following tasks:
 
 - Task 1: Provision an Azure Synapse Analytics workspace
 - Task 2: Run a Spark notebook interactively
 - Task 3: Run the notebook in a pipeline
-
-### Estimated timing: 45 minutes
-
-### Architecture Diagram
-
-   ![Azure portal with a cloud shell pane](./Lab-Scenario-Preview/media/lab2dp.png)
 
 ## Task 1: Provision an Azure Synapse Analytics workspace
 

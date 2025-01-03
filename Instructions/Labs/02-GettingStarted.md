@@ -1,24 +1,50 @@
 # Build a Data Pipeline in Synapse Analytics
 
-### Overall Estimated Duration: 45 Minutes
+### Overall Estimated Duration: 60 Minutes
 
 ## Overview
 
+In this hands-on lab, you will provision an Azure Synapse Analytics workspace, interactively run a Spark notebook, and automate the transformation of data by executing the notebook within a pipeline. The lab starts by guiding you through the steps to create an Azure Synapse workspace, including configuring a Spark pool and linking your storage account. You will then run a Spark notebook to transform sales data interactively, using Apache Spark to load, process, and save the data in a new format. Lastly, you'll automate the entire process by creating a pipeline that runs the notebook, enabling you to efficiently handle large datasets in a scalable manner. This lab enhances your understanding of Spark in Azure Synapse Analytics and its integration with data pipelines.
 
 ## Objective
 
+This lab is aimed to give learners hands-on experience with Azure Synapse Analytics, focusing on running Spark notebooks interactively and automating data transformation processes within pipelines. By the end of this lab, you will be able to:
+
+- **Provision an Azure Synapse Analytics workspace:** This exercise will guide you through setting up an Azure Synapse Analytics workspace with access to data lake storage and a Spark pool, enabling you to work with large-scale data processing.
+
+- **Run a Spark notebook interactively:** You will learn how to use Synapse Studio to run a Spark notebook, interactively transforming data and saving the results in a different format.
+
+- **Automate data transformation with a pipeline:** You will create a pipeline to run the Spark notebook automatically, streamlining data processing and enabling you to handle large datasets efficiently.
 
 ## Prerequisites
 
+Participants should have:
+
+- **Azure Synapse Analytics:** Familiarity with Azure Synapse Analytics, including understanding its components like workspaces, Spark pools, and data integration.
+
+- **Apache Spark and Notebooks:** Knowledge of Spark concepts and how to work with Spark notebooks for data processing and transformation.
+
+- **Azure Data Lake Storage:** Understanding of Azure Data Lake Storage and how to manage and interact with data stored in it.
+
+- **Azure Pipelines:** Knowledge of creating and managing data pipelines in Azure Synapse, including configuring activities and linking them to notebooks for automation.
 
 ## Architecture
 
+The architecture for this lab involves provisioning an Azure Synapse Analytics workspace, which includes setting up a Spark pool and linking it to an Azure Data Lake Storage account. Data from the storage account is processed using an Apache Spark notebook, which is run interactively to transform raw sales data into a more structured format (e.g., Parquet). The transformed data is saved back to the Data Lake storage. To automate this process, the notebook is encapsulated within an Azure Synapse pipeline, allowing for the execution of the notebook as part of an orchestrated data flow. The pipeline can be triggered either manually or on a schedule, making the entire data transformation process scalable and repeatable. The integration of these components in a seamless workflow enables efficient data processing at scale.
 
 ## Architecture Diagram
 
+   ![Azure portal with a cloud shell pane](./images/lab2dp.png)
 
 ## Explanation of Components
 
+The architecture for this lab involves the following key components:
+
+- **Azure Synapse Analytics Workspace:** This is the core environment where data processing and transformation tasks are managed. It integrates various services, including Spark pools and Data Lake Storage, enabling seamless data operations and analytics.
+
+- **Apache Spark Pool:** A cluster of resources in Synapse that provides scalable distributed processing power for running Spark notebooks. It's essential for processing large datasets in parallel, making it ideal for big data transformations.
+
+- **Azure Synapse Pipelines:** These are used for orchestrating and automating data workflows. By encapsulating the Spark notebook in a pipeline, it enables efficient automation of data transformation tasks, improving scalability and repeatability.
 
 ## Getting Started with Lab
  
