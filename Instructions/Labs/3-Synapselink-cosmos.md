@@ -1,6 +1,6 @@
 # Lab 3: Use Azure Synapse Link for Azure Cosmos DB
 
-## Lab Scenario
+## Overview
 
 Azure Synapse Link for Azure Cosmos DB is a cloud-native *hybrid transactional analytical processing* (HTAP) technology that enables you to run near-real-time analytics over operational data stored in Azure Cosmos DB from Azure Synapse Analytics. 
 
@@ -14,12 +14,6 @@ In this lab, you will be able to complete the following tasks:
 - Task 2: Configure Synapse Link in Azure Cosmos DB.
 - Task 3: Configure Synapse Link in Azure Synapse Analytics.
 - Task 4: Query Azure Cosmos DB from Azure Synapse Analytics.
-
-### Estimated timing: 45 minutes
-
-### Architecture Diagram
-
-   ![Azure portal with a cloud shell pane](./Lab-Scenario-Preview/media/lab3dp.png)
 
 ## Task 1: Provision Azure resources
 
