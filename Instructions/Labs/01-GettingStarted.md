@@ -1,24 +1,50 @@
 # Build a Data Pipeline in Synapse Analytics
 
-### Overall Estimated Duration: 45 Minutes
+### Overall Estimated Duration: 60 Minutes
 
 ## Overview
 
+In this hands-on lab, you will build a data pipeline in Azure Synapse Analytics, enabling efficient data integration and transformation processes. Azure Synapse Analytics provides a robust platform for data engineering, combining data storage, integration, and analytics. You will begin by provisioning a Synapse Analytics workspace and configuring the necessary resources, including a dedicated SQL pool and linked storage accounts. You will then explore the source data files and destination tables to understand the data flow before implementing a pipeline that incorporates a data flow for extracting, transforming, and loading product data. The lab includes steps to debug the pipeline, ensuring the data flow logic works as intended, followed by publishing and executing the pipeline to validate the data integration process. By completing this lab, you will gain practical experience in leveraging Azure Synapse Analytics for managing and transforming data within an enterprise data warehouse.
 
 ## Objective
 
+This lab is aimed at providing learners hands-on experience with Azure Synapse Analytics by building and debugging a data pipeline to integrate and transform data into a dedicated SQL pool. By the end of this lab, you will be able to:
+
+- **Get started with Azure Synapse Analytics:** This hands-on exercise is designed to teach you the fundamentals of using Azure Synapse Analytics to manage data flows and perform transformations. Participants will set up an Azure Synapse Analytics workspace and begin leveraging its capabilities to integrate data into a data warehouse.
+
+- **Build and debug a data pipeline:** You will create a pipeline that encapsulates a data flow, including data ingestion, transformation, and loading. This pipeline will use Azure Synapse Analytics to insert new data and update existing records in a dedicated SQL pool.
+
+- **Publish and execute the pipeline:** Learn how to publish the pipeline and run it effectively, verifying the successful transfer and transformation of data into a target table within a data warehouse.
 
 ## Prerequisites
 
+Participants should have:
+
+- **SQL for Data Analysis:** Ability to write and optimize SQL queries for data extraction and transformation.
+
+- **Basic Knowledge of Machine Learning Concepts:** Familiarity with machine learning algorithms, model evaluation metrics, and training workflows.
+
+- **Cloud Platform Familiarity:** Hands-on experience with cloud environments such as AWS, Azure, or Google Cloud, including working with storage and compute resources.
+
+- **Version Control with Git:** Understanding of Git for managing code changes, including branching and merging.
 
 ## Architecture
 
+The architecture is a cloud-based data processing workflow leveraging distributed computing and data analytics platforms. It integrates a scalable cloud environment for data storage and processing with tools like Apache Spark for distributed data transformation and analysis. Data is ingested from multiple sources into a centralized data lake or storage solution, processed through Spark clusters, and made available for querying and visualization via interactive notebooks or dashboards. This setup ensures high performance, scalability, and seamless collaboration, enabling efficient handling of large datasets and complex analytical workflows.
 
 ## Architecture Diagram
 
+   ![Azure portal with a cloud shell pane](./images/lab1dp.png)
 
 ## Explanation of Components
 
+The architecture for this lab involves the following key components:
+
+- **Azure Synapse Analytics:** A cloud-based integrated analytics platform that enables the creation of data pipelines, data flows, and transformation activities, allowing efficient integration, querying, and management of large datasets across multiple sources and destinations.  
+
+- **Data Flow Activity:** A powerful component within Azure Synapse that allows users to build and orchestrate complex data transformations, including ingesting, filtering, aggregating, and transforming data from different sources to a target destination.  
+
+- **Lookup Transformation:** A key data flow component that enables the matching of incoming data with an existing dataset, allowing for the identification of records in a data warehouse and the execution of conditional logic like insertions or updates based on whether a match is found.  
 
 ## Getting Started with Lab
  
