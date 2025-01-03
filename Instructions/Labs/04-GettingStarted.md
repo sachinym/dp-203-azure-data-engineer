@@ -1,24 +1,54 @@
 # Build a Data Pipeline in Synapse Analytics
 
-### Overall Estimated Duration: 45 Minutes
+### Overall Estimated Duration: 60 Minutes
 
 ## Overview
 
+In this hands-on lab, you will set up Azure Synapse Link for SQL to synchronize data from an Azure SQL Database to an Azure Synapse Analytics workspace. This synchronization enables efficient low-latency analytical workloads in Synapse Analytics without burdening the operational database. Throughout the lab, you will provision the necessary Azure resources, configure the Azure SQL Database with required settings, and explore the transactional database. Additionally, you will configure Azure Synapse Link by starting the dedicated SQL pool, creating a schema, and setting up a link connection for data synchronization. Finally, you will view the replicated data and run analytical queries in Synapse Analytics, allowing you to perform analytical tasks while ensuring minimal impact on business applications.
 
 ## Objective
 
+This lab is aimed to give learners hands-on experience with Azure Synapse Link for SQL, enabling them to synchronize data between an Azure SQL Database and an Azure Synapse Analytics workspace for low-latency analytical workloads. By the end of this lab, you will be able to:
+
+- **Provision the required Azure resources:** This hands-on exercise teaches you how to provision the necessary resources for Azure Synapse Link, including setting up an Azure SQL Database and Synapse Analytics workspace.
+  
+- **Explore the transactional database:** Learn how to explore a sample transactional database and understand the operational data before synchronization.
+
+- **Set up Azure Synapse Link for SQL:** You will configure Azure Synapse Link to synchronize data from Azure SQL Database to Synapse Analytics, enabling you to run low-latency analytical queries.
+
+- **View and analyze replicated data:** After synchronization, you will query the replicated data in the dedicated SQL pool in Synapse Analytics, allowing you to perform analytical tasks without impacting operational workloads.
 
 ## Prerequisites
 
+Participants should have:
+
+- **Azure SQL Database and Synapse Analytics Knowledge:** Understanding of Azure SQL Database and Azure Synapse Analytics, including their architecture, components, and basic configurations.
+
+- **Familiarity with PowerShell and Script Execution:** Knowledge of running PowerShell scripts within the Azure Cloud Shell environment for provisioning and configuring resources.
+
+- **SQL Querying and Database Management:** Experience with querying databases using SQL, exploring tables, and managing database schemas.
+
+- **Azure Resource Management and Security Configuration:** Familiarity with managing Azure resources and configuring security settings such as firewall rules and managed identities for Azure services.
+
+- **Basic Understanding of Data Integration Concepts:** Knowledge of how data integration works, especially regarding syncing data between operational and analytical systems.
 
 ## Architecture
 
+The architecture in this lab involves integrating an Azure SQL Database with Azure Synapse Analytics to enable low-latency synchronization of transactional data for analytical workloads. The Azure SQL Database serves as the source, where operational data resides, and the Azure Synapse Analytics workspace, with its dedicated SQL pool, acts as the destination for synchronized data. Azure Synapse Link facilitates the seamless synchronization between the two, ensuring that data from the SQL Database is automatically replicated to the dedicated SQL pool in Synapse Analytics for analytics purposes. This architecture enables users to perform complex analytical queries on the replicated data without impacting the operational database, optimizing performance for both transactional and analytical tasks. The system also includes necessary configurations such as managed identities, firewall settings, and linked services to establish secure communication between the databases and the analytics platform.
 
 ## Architecture Diagram
 
+   ![Azure portal with a cloud shell pane](./images/lab4dp.png)
 
 ## Explanation of Components
 
+The architecture for this lab involves the following key components:
+
+- **Azure Synapse Link for SQL:** This component enables low-latency synchronization of operational data from Azure SQL Database to Azure Synapse Analytics, allowing for real-time analytics without placing a load on the source database.
+
+- **Dedicated SQL Pool in Synapse Analytics:** It serves as the target destination for replicated data, providing a scalable platform to run complex analytical queries without affecting the performance of transactional systems.
+
+- **Linked Services in Synapse Studio:** Linked services provide the necessary connection between the Azure SQL Database and the Synapse Analytics workspace, facilitating secure data movement and synchronization between the operational and analytical environments.
 
 ## Getting Started with Lab
  
