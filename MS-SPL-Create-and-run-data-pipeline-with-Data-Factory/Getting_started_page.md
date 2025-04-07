@@ -1,6 +1,6 @@
 # Create and Run Data Pipeline with Data Factory
 
-### Overall Estimated Duration: 2 hours
+### Overall Estimated Duration: 4 hours
 
 ## Overview
 
