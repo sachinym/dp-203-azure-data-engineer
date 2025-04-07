@@ -1,6 +1,6 @@
 # Hands-on Lab : Create and run Data Pipeline with Data Factory
 
-### Estimated Duration: 120 minutes
+### Estimated Duration: 240 minutes
 
 You can use notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables. When you need to orchestrate these tasks as part of a data engineering pipeline, you can use Azure Data Factory.
 
