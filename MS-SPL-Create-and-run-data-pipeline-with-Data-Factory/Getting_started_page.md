@@ -88,13 +88,19 @@ To get a better understanding of your lab resources and credentials, navigate to
 
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
 
-![](./images/split.png)
+![](./images/nleg4.png)
 
 ## Managing Your Virtual Machine
 
 Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
 
-![](./images/resourses.png)
+![](./images/resources-vm-manage.png)
+
+## Lab Guide Zoom In/Zoom Out
+
+To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+
+![](./images/labzoom-1.png)
 
 ## Let's Get Started with Azure Portal
 
@@ -123,6 +129,8 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 1. First-time users are often prompted to **Stay Signed In**, if you see any such pop-up, click on No.
 
 1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
+
+    ![](./images/Azure-cancel-tour.png)
 
 ## Support Contact
 
